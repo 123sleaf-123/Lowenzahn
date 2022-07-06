@@ -4,20 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="799d64fa-f8a0-49ed-8ab0-bffc15bcbbb7" name="Changes" comment="更新了后端，完成了登录验证，主要流程是：&#10;&#10;&#10;从前端接受json输入转化为中介变量ManagerDTO，&#10;&#10;而后ManagerController的login方法判断输入是否合法，&#10;&#10;并将合法变量交由ManagerService的login方法进行数据库查询判断，&#10;&#10;若结果不为空，登陆成功，返回true到前端。">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/controller/dto/ManagerDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mybatis/ManagerMapper.xml" afterDir="false" />
+    <list default="true" id="799d64fa-f8a0-49ed-8ab0-bffc15bcbbb7" name="Changes" comment="登录功能已经实现了&#10;&#10;遇到的最大的问题就是没意识到强行把router改成静态的了，一打开立刻就好了&#10;&#10;接收从后端传来的结果，判断是否放行">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/controller/ManagerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/controller/ManagerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/controller/WarehouseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/controller/WarehouseController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/mapper/ManagerMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/mapper/ManagerMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/service/ManagerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/service/ManagerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/service/impl/ManagerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/service/impl/ManagerServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/api/modules/system.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/api/modules/system.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/router/globalRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/router/globalRoutes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/Login.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/vue.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/vue.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/layoutpages/management/Warehouses.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/layoutpages/management/Warehouses.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,7 +122,21 @@
       <option name="project" value="LOCAL" />
       <updated>1657100532922</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="更新了后端，完成了登录验证，主要流程是：&#10;&#10;&#10;从前端接受json输入转化为中介变量ManagerDTO，&#10;&#10;而后ManagerController的login方法判断输入是否合法，&#10;&#10;并将合法变量交由ManagerService的login方法进行数据库查询判断，&#10;&#10;若结果不为空，登陆成功，返回true到前端。">
+      <created>1657136834423</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1657136834423</updated>
+    </task>
+    <task id="LOCAL-00004" summary="登录功能已经实现了&#10;&#10;遇到的最大的问题就是没意识到强行把router改成静态的了，一打开立刻就好了&#10;&#10;接收从后端传来的结果，判断是否放行">
+      <created>1657138774947</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1657138774947</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -155,7 +160,8 @@
     <MESSAGE value="首次提交" />
     <MESSAGE value="第二次提交" />
     <MESSAGE value="更新了后端，完成了登录验证，主要流程是：&#10;&#10;&#10;从前端接受json输入转化为中介变量ManagerDTO，&#10;&#10;而后ManagerController的login方法判断输入是否合法，&#10;&#10;并将合法变量交由ManagerService的login方法进行数据库查询判断，&#10;&#10;若结果不为空，登陆成功，返回true到前端。" />
-    <option name="LAST_COMMIT_MESSAGE" value="更新了后端，完成了登录验证，主要流程是：&#10;&#10;&#10;从前端接受json输入转化为中介变量ManagerDTO，&#10;&#10;而后ManagerController的login方法判断输入是否合法，&#10;&#10;并将合法变量交由ManagerService的login方法进行数据库查询判断，&#10;&#10;若结果不为空，登陆成功，返回true到前端。" />
+    <MESSAGE value="登录功能已经实现了&#10;&#10;遇到的最大的问题就是没意识到强行把router改成静态的了，一打开立刻就好了&#10;&#10;接收从后端传来的结果，判断是否放行" />
+    <option name="LAST_COMMIT_MESSAGE" value="登录功能已经实现了&#10;&#10;遇到的最大的问题就是没意识到强行把router改成静态的了，一打开立刻就好了&#10;&#10;接收从后端传来的结果，判断是否放行" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -77,6 +77,7 @@ const form = reactive({
     pwd: "123",
 });
 const { userName, pwd } = toRefs(form);
+// router.options.isAddDynamicMenuRoutes = false;
 
 const login = () => {
     let user = {mgrName: userName.value, pwd: pwd.value}
@@ -84,6 +85,8 @@ const login = () => {
         if (!res.data) {
             this.$message.error("username or password error!");
         } else {
+            VE_API.system.login(form);
+            console.log(res);
             router.push({ name: "AppMain" });
         }
     })
