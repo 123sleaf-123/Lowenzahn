@@ -15,8 +15,8 @@ public class WorkerController {
     private WorkerMapper workerMapper;
     private Gson gson = new Gson();
 
-    //查询接口
-    @GetMapping("/worker/query")
+    //查询员工
+    @GetMapping("/worker")
     public String getWorkers(){
         List<Worker> workers = workerMapper.selectList(null);
         return gson.toJson(workers);
