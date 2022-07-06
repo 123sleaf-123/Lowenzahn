@@ -108,7 +108,7 @@ const menuList = [
     {
         parentId: -1,
         id: 100,
-        name: "系统设置", //看官网，这个名字是3-5之间的
+        name: "SETTINGS", //看官网，这个名字是3-5之间的
         url: "",
         menu: "",
         type: 0,
@@ -273,7 +273,7 @@ const menuList = [
     {
         parentId: -1,
         id: 15,
-        name: "参考资料", //看官网，这个名字是3-5之间的
+        name: "REFERENCE", //看官网，这个名字是3-5之间的
         url: "",
         menu: "",
         type: 0,
@@ -321,7 +321,7 @@ const menuList = [
         url: "management/Warehouses", //这个类似上面的id一个，只是初始值是从100开始的
         menu: "",
         type: 1,
-        icon: "House",
+        icon: "HomeFilled",
         sort: 3,
         iframe: 0,
     },
