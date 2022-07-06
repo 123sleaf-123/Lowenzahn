@@ -15,6 +15,7 @@ let scssVariables = require("./src/styles/variables.scss.js");
 module.exports = {
     publicPath: "",
     productionSourceMap: false,
+    lintOnSave: false,
 
     devServer: {
         setupMiddlewares: (middlewares, devServer) => {

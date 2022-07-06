@@ -4,13 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="799d64fa-f8a0-49ed-8ab0-bffc15bcbbb7" name="Changes" comment="增加管理员">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/service/ManagerService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/service/impl/ManagerServiceImpl.java" afterDir="false" />
+    <list default="true" id="799d64fa-f8a0-49ed-8ab0-bffc15bcbbb7" name="Changes" comment="更新了后端，完成了登录验证，主要流程是：&#10;&#10;&#10;从前端接受json输入转化为中介变量ManagerDTO，&#10;&#10;而后ManagerController的login方法判断输入是否合法，&#10;&#10;并将合法变量交由ManagerService的login方法进行数据库查询判断，&#10;&#10;若结果不为空，登陆成功，返回true到前端。">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/controller/dto/ManagerDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mybatis/ManagerMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/controller/ManagerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/controller/ManagerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/controller/WarehouseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/controller/WarehouseController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/mapper/ManagerMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/mapper/ManagerMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/pojo/Manager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/pojo/Manager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/service/ManagerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/service/ManagerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/service/impl/ManagerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/service/impl/ManagerServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/api/modules/system.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/api/modules/system.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/Login.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/vue.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/vue.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,7 +27,6 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -65,8 +71,7 @@
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;396a0ebe03f8b287e2c3e97c1b5a1619&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -98,7 +103,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="应用程序.LwenzahnApplication" />
+        <item itemvalue="Application.LwenzahnApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -110,9 +115,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1657095709286</updated>
-      <workItem from="1657102577294" duration="3815000" />
-      <workItem from="1657111494255" duration="1641000" />
-      <workItem from="1657114033054" duration="4900000" />
+      <workItem from="1657102577294" duration="3144000" />
     </task>
     <task id="LOCAL-00001" summary="首次提交">
       <created>1657097829854</created>
@@ -128,14 +131,7 @@
       <option name="project" value="LOCAL" />
       <updated>1657100532922</updated>
     </task>
-    <task id="LOCAL-00003" summary="增加管理员">
-      <created>1657105795227</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1657105795227</updated>
-    </task>
-    <option name="localTasksCounter" value="4" />
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -146,19 +142,7 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="master" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
+            <State />
           </value>
         </entry>
       </map>
@@ -170,8 +154,8 @@
     </ignored-roots>
     <MESSAGE value="首次提交" />
     <MESSAGE value="第二次提交" />
-    <MESSAGE value="增加管理员" />
-    <option name="LAST_COMMIT_MESSAGE" value="增加管理员" />
+    <MESSAGE value="更新了后端，完成了登录验证，主要流程是：&#10;&#10;&#10;从前端接受json输入转化为中介变量ManagerDTO，&#10;&#10;而后ManagerController的login方法判断输入是否合法，&#10;&#10;并将合法变量交由ManagerService的login方法进行数据库查询判断，&#10;&#10;若结果不为空，登陆成功，返回true到前端。" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新了后端，完成了登录验证，主要流程是：&#10;&#10;&#10;从前端接受json输入转化为中介变量ManagerDTO，&#10;&#10;而后ManagerController的login方法判断输入是否合法，&#10;&#10;并将合法变量交由ManagerService的login方法进行数据库查询判断，&#10;&#10;若结果不为空，登陆成功，返回true到前端。" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

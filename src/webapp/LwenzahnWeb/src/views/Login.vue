@@ -10,7 +10,7 @@
     <common>
         <div class="ve_container">
             <el-card :body-style="{ background: 'rgba(0,0,0,0.15)' }">
-                <h1>vue3-element-admin</h1>
+                <h1>Identity Check</h1>
                 <transition name="el-fade-in-linear">
                     <el-form
                         :model="form"
@@ -24,7 +24,7 @@
                         <el-form-item prop="userName">
                             <el-input
                                 v-model.trim="userName"
-                                placeholder="用户名"
+                                placeholder="USERNAME"
                             >
                                 <template #prepend>
                                     <el-icon :size="20"><Avatar /></el-icon>
@@ -35,7 +35,7 @@
                             <el-input
                                 v-model.trim="pwd"
                                 show-password
-                                placeholder="密码"
+                                placeholder="PASSWORD"
                             >
                                 <template #prepend>
                                     <el-icon :size="20"><Key /></el-icon>
@@ -45,10 +45,11 @@
                         <el-form-item>
                             <el-button
                                 class="ve_submit"
+                                round
                                 type="primary"
-                                @click="onSubmit"
+                                @click="login"
                             >
-                                登录
+                                Login
                             </el-button>
                         </el-form-item>
                     </el-form>
@@ -59,44 +60,44 @@
 </template>
 
 <script setup>
-import { SET_TOKEN, SET_UNAME } from "@/store/modules/app/type";
+// import { SET_TOKEN, SET_UNAME } from "@/store/modules/app/type";
 import Common from "@/components/Common";
 import { ref, reactive, toRefs } from "vue";
-import { useStore } from "vuex";
+import axios from "axios";
+// import { useStore } from "vuex";
 import { useRouter } from "vue-router";
 const rules = {
     userName: [{ required: true, message: "请输入用户名", trigger: "blur" }],
     pwd: [{ required: true, message: "请输入密码", trigger: "blur" }],
 };
-const store = useStore();
+// const store = useStore();
 const router = useRouter();
 const form = reactive({
-    userName: "Administrator",
-    pwd: "123456",
+    userName: "Tom",
+    pwd: "123",
 });
 const { userName, pwd } = toRefs(form);
-const ref_form = ref(null);
-const success = ref(false);
-sessionStorage.clear();
-store.dispatch(`app/${SET_TOKEN}`, "");
-router.options.isAddDynamicMenuRoutes = false;
 
-const onSubmit = () => {
-    ref_form.value.validate(async (valid) => {
-        if (valid) {
-            const data = await VE_API.system.login(form);
-            if (data.code === "00") {
-                const { token, uname } = data;
-                store.dispatch(`app/${SET_TOKEN}`, token);
-                store.dispatch(`app/${SET_UNAME}`, uname);
-                success.value = true;
-                router.push({ name: "AppMain" });
-            }
+const login = () => {
+    let user = {mgrName: userName.value, pwd: pwd.value}
+    axios.post("http://localhost:8080/manager/login", user).then(res => {
+        if (!res.data) {
+            this.$message.error("username or password error!");
         } else {
-            return;
+            router.push({ name: "AppMain" });
         }
-    });
-};
+    })
+}
+// const onSubmit = () => {
+//     ref_form.value.validate(async (valid) => {
+//         if (valid) {
+//             // const data = await VE_API.system.login(form);
+//             router.push({ name: "AppMain" });
+//         } else {
+//             return;
+//         }
+//     });
+// };
 </script>
 
 <style lang="scss" scoped>

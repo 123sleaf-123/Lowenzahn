@@ -1,10 +1,13 @@
 package com.Lwenzahn.service;
 
 import com.Lwenzahn.pojo.Manager;
-import org.apache.ibatis.annotations.Mapper;
-import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.stereotype.Service;
 
-@Mapper
+import java.util.HashMap;
+import java.util.List;
+
 public interface ManagerService {
-    Manager login(Manager manager);
+    List<Manager> findManagerByMap(HashMap<String, String> queryMap);
+
+    boolean login(String mgrName, String pwd);
 }
