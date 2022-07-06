@@ -10,4 +10,8 @@ public class Manager {
     private String pwd;
     private String mgrName;
     private Integer power;
+    public Manager(String mgrName, String pwd){
+        this.mgrName = mgrName;
+        this.pwd = pwd;
+    }
 }
