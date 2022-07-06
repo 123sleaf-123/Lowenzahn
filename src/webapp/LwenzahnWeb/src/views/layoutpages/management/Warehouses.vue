@@ -1,16 +1,16 @@
 <template>
-  <div>1111</div>
+    <WarehouseTable></WarehouseTable>
 </template>
 
 <script>
+import WarehouseTable from './components/WarehouseTable.vue'
 export default {
-    name: "Warehouse",
+    name: "warehouses",
     components: {
-
-    }
-}
+        WarehouseTable
+    },
+};
 </script>
 
 <style>
-
 </style>

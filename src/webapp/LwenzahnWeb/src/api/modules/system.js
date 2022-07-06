@@ -547,7 +547,7 @@ module.exports = {
             //     code: "01",
             //     message: "username or password error!",
             // };
-            // user.name = userName;
+            user.name = userName;
             // let _user = userList.find((item) => item.name == user.name);
             // if (!_user) {
             //     debugger;
