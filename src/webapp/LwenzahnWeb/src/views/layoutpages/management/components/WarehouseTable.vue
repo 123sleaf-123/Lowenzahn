@@ -34,43 +34,36 @@
     <AddWarehouseDialog></AddWarehouseDialog>
   </div> -->
   <table class="table caption-top table-hover">
-        <caption>
-          <h1 class="text-center">Warehouse Management System</h1>
-          <el-button-group>
-            <el-button type="primary" @click="getWarehouses" icon="MessageBox">Show</el-button>
-            <el-button type="primary" @click="dialogVisible = true">
-              Add<el-icon class="el-icon--right">
-                <Plus />
-              </el-icon>
-            </el-button>
-          </el-button-group>
-        </caption>
-        <thead class="table-dark">
-          <tr>
-            <th scope="col">Warehouse id</th>
-            <th scope="col">Warehouse Name</th>
-            <th scope="col">Warehouse Area(m^2)</th>
-            <th scope="col">Warehouse Address</th>
-            <th scope="col">Operations</th>
-          </tr>
-        </thead>
-        <tbody>
-          <warehouseItem v-for="wh in warehouses" :key="wh.id" :warehouse="wh"></warehouseItem>
-        </tbody>
-      </table>
-      <el-dialog
-    v-model="dialogVisible"
-    title="Tips"
-    width="30%"
-    :before-close="handleClose"
-  >
+    <caption>
+      <h1 class="text-center">Warehouse Management System</h1>
+      <el-button-group>
+        <el-button type="primary" @click="getWarehouses" icon="MessageBox">Show</el-button>
+        <el-button type="primary" @click="dialogVisible = true">
+          Add<el-icon class="el-icon--right">
+            <Plus />
+          </el-icon>
+        </el-button>
+      </el-button-group>
+    </caption>
+    <thead class="table-dark">
+      <tr>
+        <th scope="col">Warehouse id</th>
+        <th scope="col">Warehouse Name</th>
+        <th scope="col">Warehouse Area(m^2)</th>
+        <th scope="col">Warehouse Address</th>
+        <th scope="col">Operations</th>
+      </tr>
+    </thead>
+    <tbody>
+      <warehouseItem v-for="wh in warehouses" :key="wh.id" :warehouse="wh"></warehouseItem>
+    </tbody>
+  </table>
+  <el-dialog v-model="dialogVisible" title="Tips" width="30%" :before-close="handleClose">
     <span>This is a message</span>
     <template #footer>
       <span class="dialog-footer">
         <el-button @click="dialogVisible = false">Cancel</el-button>
-        <el-button type="primary" @click="dialogVisible = false"
-          >Confirm</el-button
-        >
+        <el-button type="primary" @click="dialogVisible = false">Confirm</el-button>
       </span>
     </template>
   </el-dialog>
