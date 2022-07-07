@@ -1,5 +1,7 @@
 <template>
-  <GoodTable></GoodTable>
+  <div>
+    <GoodTable></GoodTable>
+  </div>
 </template>
 
 <script>

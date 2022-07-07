@@ -1,59 +1,61 @@
 <template>
-  <el-dialog :title="title" append-to-body destroy-on-close :model-value="showDialog" @close="closeDialog()">
-    <!-- <span>{{ rowData }}</span> -->
-    <!-- 表单 -->
-    <el-form :model="form" ref="formRef" :rules="rules" label-width="100px" :inline="false">
-      <el-form-item prop="whid" label="Wh ID">
-        <el-input v-model="id" placeholder="" clearable></el-input>
-      </el-form-item>
-      <el-form-item prop="whName" label="Wh Name">
-        <el-input v-model="name" placeholder="" clearable></el-input>
-      </el-form-item>
-      <el-form-item prop="area" label="Area">
-        <el-input v-model="area" placeholder="" clearable></el-input>
-      </el-form-item>
-      <el-form-item prop="address" label="Address">
-        <el-input v-model="address" placeholder="" clearable></el-input>
-      </el-form-item>
-    </el-form>
+  <div>
+    <el-dialog :title="title" append-to-body destroy-on-close :model-value="showDialog" @close="closeDialog()">
+      <!-- <span>{{ rowData }}</span> -->
+      <!-- 表单 -->
+      <el-form :model="form" ref="formRef" :rules="rules" label-width="100px" :inline="false">
+        <el-form-item prop="whid" label="Wh ID">
+          <el-input v-model="whid" placeholder="" clearable></el-input>
+        </el-form-item>
+        <el-form-item prop="whName" label="Wh Name">
+          <el-input v-model="whName" placeholder="" clearable></el-input>
+        </el-form-item>
+        <el-form-item prop="area" label="Area">
+          <el-input v-model="area" placeholder="" clearable></el-input>
+        </el-form-item>
+        <el-form-item prop="address" label="Address">
+          <el-input v-model="address" placeholder="" clearable></el-input>
+        </el-form-item>
+      </el-form>
 
-    <template v-slot:footer>
-      <span>
-        <el-button @click="closeDialog()">取消</el-button>
-        <el-button type="primary" @click="onSubmit()">确定</el-button>
-      </span>
-    </template>
-  </el-dialog>
+      <template v-slot:footer>
+        <span>
+          <el-button @click="closeDialog()">取消</el-button>
+          <el-button type="primary" @click="onSubmit()">确定</el-button>
+        </span>
+      </template>
+    </el-dialog>
+  </div>
 </template>
 
 <script setup>
 import { reactive, toRefs, ref } from "vue";
 import axios from "axios";
 const rules = {
-  name: [
+  whid: [
     {
       required: true,
       message: "请输入用户名",
       trigger: "blur",
     },
   ],
-  userName: [
+  whName: [
     {
       required: true,
       message: "请输入账户",
       trigger: "blur",
     },
   ],
-  password: [
+  area: [
     {
-      required: true,
+      required: false,
       message: "请输入密码",
       trigger: "blur",
     },
   ],
-  role: [
+  address: [
     {
-      required: true,
+      required: false,
       message: "请选择角色",
       trigger: "change",
     },
@@ -80,25 +82,25 @@ const closeDialog = () => {
 };
 const formRef = ref(null);
 const form = reactive({
-  id: "",
-  name: "",
+  whid: "",
+  whName: "",
   area: "",
   address: "",
 });
-const { id, name, area, address } = toRefs(form);
+const { whid, whName, area, address } = toRefs(form);
 const roleList = ref([]);
-
 /**
  * @description: 初始化
  * @param {*}
  * @return {*}
  */
-// rowData.value &&
-//   ((name.value = rowData.value.name),
-//     (userName.value = rowData.value.userName),
-//     (password.value = rowData.value.password),
-//     (role.value = rowData.value.role),
-//     (status.value = rowData.value.status));
+rowData.value &&
+  (
+    (whid.value = rowData.value.whid),
+    (whName.value = rowData.value.whName),
+    (area.value = rowData.value.area),
+    (address.value = rowData.value.address)
+  );
 /**
  * @description: 获取角色列表
  * @param {*}
@@ -117,20 +119,29 @@ const getRoleList = async () => {
     roleList.value = list;
   }
 };
-getRoleList();
+// getRoleList();
 /**
  * @description:提交
  * @param {*}
  * @return {*}
  */
 const onSubmit = () => {
-  axios.post("http://localhost:8080/warehouses/updating", {
-    id: id.value,
-    whName: name.value,
-    area: area.value,
-    address: address.value,
-  }).then(res => {
-    console.log(res)
+  console.log(rowData.value);
+  formRef.value.validate(async (valid) => {
+    if (valid) {
+      axios.post("http://localhost:8080/warehouses/updating", {
+        whid: whid.value,
+        whName: whName.value,
+        area: area.value,
+        address: address.value,
+      }).then(res => {
+        console.log(res)
+      })
+      emit("closeDialog", false);
+    } else {
+      console.log("error submit!!");
+      return false;
+    }
   })
 };
 </script>

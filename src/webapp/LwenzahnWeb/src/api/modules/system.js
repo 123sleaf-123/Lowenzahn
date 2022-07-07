@@ -536,7 +536,6 @@ module.exports = {
             return delList(opt, roleList);
         },
     },
-
     userMenuList: {
         url: "/userMenuList",
         type: "post",

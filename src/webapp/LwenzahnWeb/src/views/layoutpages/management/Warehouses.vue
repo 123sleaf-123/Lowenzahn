@@ -1,5 +1,7 @@
 <template>
-    <WarehouseTable></WarehouseTable>
+    <div>
+        <WarehouseTable></WarehouseTable>
+    </div>
 </template>
 
 <script>

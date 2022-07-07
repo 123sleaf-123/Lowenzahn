@@ -4,17 +4,14 @@
       <!-- <span>{{ rowData }}</span> -->
       <!-- 表单 -->
       <el-form :model="form" ref="formRef" :rules="rules" label-width="100px" :inline="false">
-        <el-form-item prop="whid" label="Wh ID">
-          <el-input v-model="whid" placeholder="" clearable></el-input>
+        <el-form-item prop="wkrid" label="Wkr ID">
+          <el-input v-model="wkrid" placeholder="" clearable></el-input>
         </el-form-item>
-        <el-form-item prop="whName" label="Wh Name">
-          <el-input v-model="whName" placeholder="" clearable></el-input>
+        <el-form-item prop="wkrName" label="Wkr Name">
+          <el-input v-model="wkrName" placeholder="" clearable></el-input>
         </el-form-item>
-        <el-form-item prop="area" label="Area">
-          <el-input v-model="area" placeholder="" clearable></el-input>
-        </el-form-item>
-        <el-form-item prop="address" label="Address">
-          <el-input v-model="address" placeholder="" clearable></el-input>
+        <el-form-item prop="pwd" label="Area">
+          <el-input v-model="pwd" placeholder="" clearable></el-input>
         </el-form-item>
       </el-form>
 
@@ -32,32 +29,25 @@
 import { reactive, toRefs, ref } from "vue";
 import axios from "axios";
 const rules = {
-  whid: [
+  wkrid: [
     {
       required: true,
       message: "请输入用户名",
       trigger: "blur",
     },
   ],
-  whName: [
+  wkrName: [
     {
       required: true,
       message: "请输入账户",
       trigger: "blur",
     },
   ],
-  area: [
+  pwd: [
     {
-      required: false,
+      required: true,
       message: "请输入密码",
       trigger: "blur",
-    },
-  ],
-  address: [
-    {
-      required: false,
-      message: "请选择角色",
-      trigger: "change",
     },
   ],
 };
@@ -82,12 +72,11 @@ const closeDialog = () => {
 };
 const formRef = ref(null);
 const form = reactive({
-  whid: "",
-  whName: "",
-  area: "",
-  address: "",
+  wkrid: "",
+  wkrName: "",
+  pwd: "",
 });
-const { whid, whName, area, address } = toRefs(form);
+const { wkrid, wkrName, pwd } = toRefs(form);
 const roleList = ref([]);
 
 /**
@@ -128,11 +117,10 @@ getRoleList();
 const onSubmit = () => {
   formRef.value.validate(async (valid) => {
     if (valid) {
-      axios.post("http://localhost:8080/warehouses/adding", {
-        whid: whid.value,
-        whName: whName.value,
-        area: area.value,
-        address: address.value,
+      axios.post("http://localhost:8080/worker/adding", {
+        wkrid: wkrid.value,
+        wkrName: wkrName.value,
+        pwd: pwd.value,
       }).then(res => {
         console.log(res)
       })

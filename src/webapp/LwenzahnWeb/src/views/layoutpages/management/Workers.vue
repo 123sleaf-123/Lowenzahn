@@ -1,5 +1,7 @@
 <template>
-    <WorkerTable></WorkerTable>
+    <div>
+        <WorkerTable></WorkerTable>
+    </div>
 </template>
 
 <script>
@@ -13,5 +15,4 @@ export default {
 </script>
 
 <style>
-
 </style>

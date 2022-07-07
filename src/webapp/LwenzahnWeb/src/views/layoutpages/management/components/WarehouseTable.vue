@@ -15,74 +15,62 @@
             </el-button>
           </el-button-group>
         </div>
-        <el-table :data="warehouses" style="width: 100%" empty-text="There aren't any warehouse!" @row-click="clickRow">
+        <el-table :data="warehouses" style="width: 100%" empty-text="There aren't any warehouse!">
           <el-table-column prop="whid" label="Warehouse id"></el-table-column>
           <el-table-column prop="whName" label="Warehouse Name"></el-table-column>
           <el-table-column prop="area" label="Area"></el-table-column>
           <el-table-column prop="address" label="Address"></el-table-column>
           <el-table-column label="Operations">
-            <el-button type="primary" round @click="onEditing" icon="Edit">Edit</el-button>
+            <template #default="scope">
+              <el-button type="primary" round @click.prevent="editRow(scope.$index)" icon="Edit">Edit</el-button>
+              <el-button type="danger" round @click.prevent="deleteRow(scope.$index)">
+                Remove
+              </el-button>
+            </template>
+            <!-- <el-button type="primary" round @click="onEditing" icon="Edit">Edit</el-button> -->
             <!-- <el-popconfirm title="Are you sure to delete this?">
               <template #reference>
                 <el-button type="danger" round @click="deleteItem">Delete</el-button>
               </template>
             </el-popconfirm> -->
-            <el-button type="danger" round @click="deleteItem">Delete</el-button>
+            <!-- <el-button type="danger" round @click="onDeleting">Delete</el-button> -->
           </el-table-column>
         </el-table>
       </el-main>
     </el-container>
+    <AddWhDialog :show-dialog="is_adding" :title="addTitle" @close-dialog="closeAdding"></AddWhDialog>
+    <EditWarehouse key="is_editing" :show-dialog="is_editing" :title="editTitle" :rowData="this.warehouse"
+      @close-dialog="closeEditing"></EditWarehouse>
+    <!-- <DeleteWarehouse :show-dialog="is_deleting" :title="deleteTitle" :rowData="this.warehouse" @close-dialog="cancelDeleting" ref="delChild"></DeleteWarehouse> -->
+    <DeleteWarehouse key="is_deleting" :show-dialog="is_deleting" :title="deleteTitle" :rowData="this.warehouse"
+      @close-dialog="cancelDeleting"></DeleteWarehouse>
   </div>
-  <!-- <table class="table caption-top table-hover">
-    <caption>
-      <h1 class="text-center">Warehouse Management System</h1>
-      <el-button-group>
-        <el-button type="primary" @click="getWarehouses" icon="MessageBox">Show</el-button>
-        <el-button type="primary" @click="onAdding">
-          Add<el-icon class="el-icon--right">
-            <Plus />
-          </el-icon>
-        </el-button>
-      </el-button-group>
-    </caption>
-    <thead class="table-dark">
-      <tr>
-        <th scope="col">Warehouse id</th>
-        <th scope="col">Warehouse Name</th>
-        <th scope="col">Warehouse Area(m^2)</th>
-        <th scope="col">Warehouse Address</th>
-        <th scope="col">Operations</th>
-      </tr>
-    </thead>
-    <tbody>
-      <warehouseItem v-for="wh in warehouses" :key="wh.id" :warehouse="wh"></warehouseItem>
-    </tbody>
-  </table> -->
-  <AddWhDialog :show-dialog="is_adding" :title="addTitle" @close-dialog="closeAdding"></AddWhDialog>
-  <EditWarehouse :show-dialog="is_editing" :title="editTitle" @close-dialog="closeEditing"></EditWarehouse>
 </template>
 
 <script>
 import axios from "axios";
-import warehouseItem from "./warehouseItem.vue";
 import AddWhDialog from "./AddWhDialog.vue";
 import EditWarehouse from "./EditWarehouse.vue";
+import DeleteWarehouse from "./DeleteWarehouse.vue";
 export default {
   name: "WarehouseTable",
   components: {
     warehouseItem,
     AddWhDialog,
     EditWarehouse,
+    DeleteWarehouse,
   },
   data() {
     return {
       warehouses: [],
+      warehouse: null,
       addTitle: 'New Warehouse',
-      editTitle: 'Edit Warehouse',
+      editTitle: 'Warehouse Information',
+      deleteTitle: 'WARNING!',
       is_adding: false,
       is_editing: false,
       is_deleting: false,
-      editWarehouse: null,
+      // editWarehouse: null,
     }
   },
   methods: {
@@ -101,50 +89,25 @@ export default {
     closeAdding() {
       this.is_adding = false;
     },
-    // sumbitAdding
-    onEditing() {
-      this.is_edit = true;
-      // this.editWarehouse = 
-    },
-    onDeleting() {
-      this.is_deleting = true;
-    },
     closeEditing() {
-      this.is_edit = false;
+      this.is_editing = false;
     },
-    addItem() {
-      axios.post("http://localhost:8080/warehouses/adding", this.warehouse).then(res => {
-        console.log(res)
-      })
-    },
-    deleteItem() {
-      // if (this.is_deleting) {
-      axios.post("http://localhost:8080/warehouses/deleting", this.warehouse).then(res => {
-        console.log(res)
-      })
-      // } else {
-      //   this.is_deleting = true;
-      // }
-    },
-    accept() {
-      axios.post("http://localhost:8080/warehouses/updating", this.warehouse).then(res => {
-        console.log(res)
-      })
-      this.is_edit = false
-    },
-    abort() {
-      this.is_edit = false
+    cancelDeleting() {
+      this.is_deleting = false;
     },
     clickRow(row) {
       console.log(row);
       console.log(row.data);
-      this.warehouses = row.data;
-
+      this.warehouse = row.data;
     },
-    updateOrDelete() {
-      this.is_deleting = false;
-      this.is_edit = false;
-    }
+    editRow(index) {
+      this.warehouse = this.warehouses[index];
+      this.is_editing = true;
+    },
+    deleteRow(index) {
+      this.warehouse = this.warehouses[index];
+      this.is_deleting = true;
+    },
   },
 };
 </script>
