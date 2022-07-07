@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="799d64fa-f8a0-49ed-8ab0-bffc15bcbbb7" name="Changes" comment="吓死我了，我差点以为又出错了">
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    <list default="true" id="799d64fa-f8a0-49ed-8ab0-bffc15bcbbb7" name="Changes" comment="小修小补&#10;&#10;给WorkerController添加了@RequestMapping(&quot;/worker&quot;)，这样子之后写起来也方便&#10;&#10;正在准备添加typescript，但是可能会造成出错，因此要上传一次">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/controller/WorkerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/controller/WorkerController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/layoutpages/management/components/AddWhDialog.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/layoutpages/management/components/AddWhDialog.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/layoutpages/management/components/WarehouseTable.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/layoutpages/management/components/WarehouseTable.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -145,7 +144,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657141817618</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="小修小补&#10;&#10;给WorkerController添加了@RequestMapping(&quot;/worker&quot;)，这样子之后写起来也方便&#10;&#10;正在准备添加typescript，但是可能会造成出错，因此要上传一次">
+      <created>1657172082726</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1657172082726</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -171,7 +177,8 @@
     <MESSAGE value="更新了后端，完成了登录验证，主要流程是：&#10;&#10;&#10;从前端接受json输入转化为中介变量ManagerDTO，&#10;&#10;而后ManagerController的login方法判断输入是否合法，&#10;&#10;并将合法变量交由ManagerService的login方法进行数据库查询判断，&#10;&#10;若结果不为空，登陆成功，返回true到前端。" />
     <MESSAGE value="登录功能已经实现了&#10;&#10;遇到的最大的问题就是没意识到强行把router改成静态的了，一打开立刻就好了&#10;&#10;接收从后端传来的结果，判断是否放行" />
     <MESSAGE value="吓死我了，我差点以为又出错了" />
-    <option name="LAST_COMMIT_MESSAGE" value="吓死我了，我差点以为又出错了" />
+    <MESSAGE value="小修小补&#10;&#10;给WorkerController添加了@RequestMapping(&quot;/worker&quot;)，这样子之后写起来也方便&#10;&#10;正在准备添加typescript，但是可能会造成出错，因此要上传一次" />
+    <option name="LAST_COMMIT_MESSAGE" value="小修小补&#10;&#10;给WorkerController添加了@RequestMapping(&quot;/worker&quot;)，这样子之后写起来也方便&#10;&#10;正在准备添加typescript，但是可能会造成出错，因此要上传一次" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

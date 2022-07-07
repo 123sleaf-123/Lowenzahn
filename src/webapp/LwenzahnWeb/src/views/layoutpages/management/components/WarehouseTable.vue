@@ -1,5 +1,5 @@
 <template>
-  <!-- <div style="text-align: -webkit-center">
+  <div style="text-align: -webkit-center">
     <el-container>
       <el-header>
         <h1>Warehouses</h1>
@@ -7,7 +7,7 @@
       <el-main>
         <el-button-group>
           <el-button type="primary" @click="getWarehouses" icon="MessageBox">Show</el-button>
-          <el-button type="primary" @click="addItem">
+          <el-button type="primary" @click="onAdding">
             Add<el-icon class="el-icon--right">
               <Plus />
             </el-icon>
@@ -19,26 +19,24 @@
           <el-table-column prop="area" label="Area"></el-table-column>
           <el-table-column prop="address" label="Address"></el-table-column>
           <el-table-column label="Operations">
-            <el-button type="primary" round @click="editItem">Edit</el-button>
-            <el-popconfirm title="Are you sure to delete this?">
+            <el-button type="primary" round @click="onEditing" icon="Edit">Edit</el-button>
+            <!-- <el-popconfirm title="Are you sure to delete this?">
               <template #reference>
                 <el-button type="danger" round @click="deleteItem">Delete</el-button>
               </template>
-            </el-popconfirm>
+            </el-popconfirm> -->
+            <el-button type="danger" round @click="deleteItem">Delete</el-button>
           </el-table-column>
         </el-table>
       </el-main>
     </el-container>
-  </div> -->
-  <!-- <div v-show="is_adding">
-    <AddWarehouseDialog></AddWarehouseDialog>
-  </div> -->
-  <table class="table caption-top table-hover">
+  </div>
+  <!-- <table class="table caption-top table-hover">
     <caption>
       <h1 class="text-center">Warehouse Management System</h1>
       <el-button-group>
         <el-button type="primary" @click="getWarehouses" icon="MessageBox">Show</el-button>
-        <el-button type="primary" @click="dialogVisible = true">
+        <el-button type="primary" @click="onAdding">
           Add<el-icon class="el-icon--right">
             <Plus />
           </el-icon>
@@ -57,31 +55,31 @@
     <tbody>
       <warehouseItem v-for="wh in warehouses" :key="wh.id" :warehouse="wh"></warehouseItem>
     </tbody>
-  </table>
-  <el-dialog v-model="dialogVisible" title="Tips" width="30%" :before-close="handleClose">
-    <span>This is a message</span>
-    <template #footer>
-      <span class="dialog-footer">
-        <el-button @click="dialogVisible = false">Cancel</el-button>
-        <el-button type="primary" @click="dialogVisible = false">Confirm</el-button>
-      </span>
-    </template>
-  </el-dialog>
+  </table> -->
+  <AddWhDialog :show-dialog="is_adding" :title="addTitle" @close-dialog="closeAdding"></AddWhDialog>
+  <EditWarehouse :show-dialog="is_editing" :title="editTitle" @close-dialog="closeEditing"></EditWarehouse>
 </template>
 
 <script>
 import axios from "axios";
 import warehouseItem from "./warehouseItem.vue";
-// import AddWarehouseDialog from "./AddWarehouseDialog.vue"
+import AddWhDialog from "./AddWhDialog.vue";
+import EditWarehouse from "./EditWarehouse.vue";
 export default {
   name: "WarehouseTable",
   components: {
     warehouseItem,
-    // AddWarehouseDialog,
+    AddWhDialog,
+    EditWarehouse,
   },
   data() {
     return {
-      warehouses: []
+      warehouses: [],
+      addTitle: 'New Warehouse',
+      editTitle: 'Edit Warehouse',
+      is_adding: false,
+      is_editing: false,
+      editWarehouse: null,
     }
   },
   methods: {
@@ -94,14 +92,24 @@ export default {
         this.warehouses = res.data;
       });
     },
-    editItem() {
-      this.is_edit = true
+    onAdding() {
+      this.is_adding = true;
+    },
+    closeAdding() {
+      this.is_adding = false;
+    },
+    // sumbitAdding
+    onEditing() {
+      this.is_edit = true;
+      // this.editWarehouse = 
+    },
+    closeEditing() {
+      this.is_edit = false;
     },
     addItem() {
-      // axios.post("http://localhost:8080/warehouses/adding", this.warehouse).then(res => {
-      //   console.log(res)
-      // })
-      this.is_adding = true;
+      axios.post("http://localhost:8080/warehouses/adding", this.warehouse).then(res => {
+        console.log(res)
+      })
     },
     deleteItem() {
       axios.post("http://localhost:8080/warehouses/deleting", this.warehouse).then(res => {

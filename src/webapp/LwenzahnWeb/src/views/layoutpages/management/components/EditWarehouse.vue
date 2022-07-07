@@ -15,18 +15,6 @@
       <el-form-item prop="address" label="Address">
         <el-input v-model="address" placeholder="" clearable></el-input>
       </el-form-item>
-      <!-- <el-form-item label="角色" prop="role">
-        <el-select style="width: 100%" v-model="role" placeholder="" clearable>
-          <el-option v-for="item in roleList" :key="item.id" :label="item.name" :value="item.id"
-            :disabled="item.status == 0"></el-option>
-        </el-select>
-      </el-form-item> -->
-      <!-- <el-form-item label="状态">
-        <el-radio-group v-model="status">
-          <el-radio-button :label="1">启用</el-radio-button>
-          <el-radio-button :label="0">停用</el-radio-button>
-        </el-radio-group>
-      </el-form-item> -->
     </el-form>
 
     <template v-slot:footer>
@@ -136,27 +124,7 @@ getRoleList();
  * @return {*}
  */
 const onSubmit = () => {
-  // formRef.value.validate(async (valid) => {
-  //   if (valid) {
-  //     let res;
-  //     if (title.value == "添加") {
-  //       res = await VE_API.system.userAdd(form);
-  //     } else {
-  //       res = await VE_API.system.userEdit({
-  //         id: rowData.value.id,
-  //         ...form,
-  //       });
-  //     }
-  //     const { code } = res;
-  //     if (code == "00") {
-  //       closeDialog();
-  //     }
-  //   } else {
-  //     console.log("error submit!!");
-  //     return false;
-  //   }
-  // });
-  axios.post("http://localhost:8080/warehouses/adding", {
+  axios.post("http://localhost:8080/warehouses/updating", {
     id: id.value,
     whName: name.value,
     area: area.value,
