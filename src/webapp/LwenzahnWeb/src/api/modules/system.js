@@ -316,7 +316,7 @@ const menuList = [
     },
     {
         parentId: 200,
-        id: 19,
+        id: 18,
         name: "WAREHOUSES", //看官网，这个名字是3-5之间的
         url: "management/Warehouses", //这个类似上面的id一个，只是初始值是从100开始的
         menu: "",
@@ -327,9 +327,20 @@ const menuList = [
     },
     {
         parentId: 200,
-        id: 20,
+        id: 19,
         name: "GOODS", //看官网，这个名字是3-5之间的
         url: "management/Goods", //这个类似上面的id一个，只是初始值是从100开始的
+        menu: "",
+        type: 1,
+        icon: "GoodsFilled",
+        sort: 3,
+        iframe: 0,
+    },
+    {
+        parentId: 200,
+        id: 20,
+        name: "WORKERS", //看官网，这个名字是3-5之间的
+        url: "management/Workers", //这个类似上面的id一个，只是初始值是从100开始的
         menu: "",
         type: 1,
         icon: "GoodsFilled",
@@ -558,7 +569,7 @@ module.exports = {
             //     code: "01",
             //     message: "username or password error!",
             // };
-            user.name = userName;
+            // user.name = userName;
             // let _user = userList.find((item) => item.name == user.name);
             // if (!_user) {
             //     debugger;
@@ -584,6 +595,8 @@ module.exports = {
             //         }
             //     }
             // }
+            // user.userId = _user.id;
+            // user.roleId = _user.role;
             return data;
         },
     },

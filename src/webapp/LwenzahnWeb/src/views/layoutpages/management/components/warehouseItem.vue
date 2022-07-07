@@ -49,7 +49,7 @@ export default {
       this.is_edit=false
     }
   },
-  props: ['warehouse']
+  // props: ['warehouse']
 }
 </script>
 

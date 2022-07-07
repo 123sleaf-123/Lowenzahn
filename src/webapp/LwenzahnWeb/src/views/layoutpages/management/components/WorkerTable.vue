@@ -2,20 +2,24 @@
   <div style="text-align: -webkit-center">
     <el-container>
       <el-header>
-        <h1>Goods</h1>
+        <h1>Workers</h1>
       </el-header>
       <el-main>
         <el-button-group>
-          <el-button type="primary" @click="getGoods" icon="Refresh">Refresh</el-button>
+          <el-button type="primary" @click="getWorkers" icon="Refresh">Refresh</el-button>
         </el-button-group>
         <el-table :data="goods" style="width: 100%">
-          <el-table-column prop="gid" label="Good id"></el-table-column>
-          <el-table-column prop="goodName" label="Good Name"></el-table-column>
-          <el-table-column prop="type" label="Type"></el-table-column>
+          <el-table-column prop="wkrid" label="Worker id"></el-table-column>
+          <el-table-column prop="wkrName" label="Worker Name"></el-table-column>
+          <el-table-column prop="pwd" label="Password"></el-table-column>
           <!-- <el-table-column prop="shelfid" label="Shelfid"></el-table-column>
           <el-table-column prop="floor" label="Floor"></el-table-column>
           <el-table-column prop="start" label="Start"></el-table-column>
           <el-table-column prop="end" label="End"></el-table-column> -->
+          <el-table-column label="Operations">
+            <el-button type="primary" round @click="onEditing" icon="Edit">Edit</el-button>
+            <el-button type="danger" round @click="deleteItem">Delete</el-button>
+          </el-table-column>
         </el-table>
       </el-main>
     </el-container>
@@ -25,7 +29,7 @@
 <script>
 import axios from "axios";
 export default {
-  name: "GoodTable",
+  name: "WorkerTable",
   components: {
   },
   data() {
@@ -34,9 +38,9 @@ export default {
     }
   },
   methods: {
-    getGoods() {
+    getWorkers() {
       axios({
-        url: "http://localhost:8080/good",
+        url: "http://localhost:8080/worker",
         method: 'GET',
       }).then((res) => {
         console.log(res.data);

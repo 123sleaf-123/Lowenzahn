@@ -5,15 +5,17 @@
         <h1>Warehouses</h1>
       </el-header>
       <el-main>
-        <el-button-group>
-          <el-button type="primary" @click="getWarehouses" icon="MessageBox">Show</el-button>
-          <el-button type="primary" @click="onAdding">
-            Add<el-icon class="el-icon--right">
-              <Plus />
-            </el-icon>
-          </el-button>
-        </el-button-group>
-        <el-table :data="warehouses" style="width: 100%">
+        <div style="text-align:end">
+          <el-button-group>
+            <el-button @click="getWarehouses" icon="Refresh"></el-button>
+            <el-button type="primary" @click="onAdding">
+              <el-icon class="el-icon--right">
+                <Plus />
+              </el-icon>
+            </el-button>
+          </el-button-group>
+        </div>
+        <el-table :data="warehouses" style="width: 100%" empty-text="There aren't any warehouse!" @row-click="clickRow">
           <el-table-column prop="whid" label="Warehouse id"></el-table-column>
           <el-table-column prop="whName" label="Warehouse Name"></el-table-column>
           <el-table-column prop="area" label="Area"></el-table-column>
@@ -79,6 +81,7 @@ export default {
       editTitle: 'Edit Warehouse',
       is_adding: false,
       is_editing: false,
+      is_deleting: false,
       editWarehouse: null,
     }
   },
@@ -103,6 +106,9 @@ export default {
       this.is_edit = true;
       // this.editWarehouse = 
     },
+    onDeleting() {
+      this.is_deleting = true;
+    },
     closeEditing() {
       this.is_edit = false;
     },
@@ -112,9 +118,13 @@ export default {
       })
     },
     deleteItem() {
+      // if (this.is_deleting) {
       axios.post("http://localhost:8080/warehouses/deleting", this.warehouse).then(res => {
         console.log(res)
       })
+      // } else {
+      //   this.is_deleting = true;
+      // }
     },
     accept() {
       axios.post("http://localhost:8080/warehouses/updating", this.warehouse).then(res => {
@@ -124,6 +134,16 @@ export default {
     },
     abort() {
       this.is_edit = false
+    },
+    clickRow(row) {
+      console.log(row);
+      console.log(row.data);
+      this.warehouses = row.data;
+
+    },
+    updateOrDelete() {
+      this.is_deleting = false;
+      this.is_edit = false;
     }
   },
 };

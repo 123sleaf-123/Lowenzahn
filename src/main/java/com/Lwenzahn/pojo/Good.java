@@ -9,8 +9,4 @@ public class Good {
     private Integer gid;
     private String goodName;
     private String type;
-    private Integer shelfid;
-    private Integer floor;
-    private String start;
-    private String end;
 }
