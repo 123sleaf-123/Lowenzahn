@@ -47,6 +47,7 @@ public class ManagerController {
         managerMapper.updateById(manager);
     }
 
+    //登录
     @PostMapping("/login")
     public boolean login(@RequestBody ManagerDTO managerDTO) {
         String mgrName = managerDTO.getMgrName();
