@@ -20,8 +20,8 @@
           <el-table-column label="Operations">
             <template #default="scope">
               <el-button type="primary" round @click.prevent="editRow(scope.$index)" icon="Edit">Edit</el-button>
-              <el-button type="danger" round @click.prevent="deleteRow(scope.$index)">
-                Remove
+              <el-button type="danger" round @click.prevent="deleteRow(scope.$index)" icon="Delete">
+                Del
               </el-button>
             </template>
           </el-table-column>

@@ -346,6 +346,17 @@ const menuList = [
         icon: "GoodsFilled",
         sort: 3,
         iframe: 0,
+    },
+    {
+        parentId: 200,
+        id: 21,
+        name: "SEARCHGOOD", //看官网，这个名字是3-5之间的
+        url: "management/Search", //这个类似上面的id一个，只是初始值是从100开始的
+        menu: "",
+        type: 1,
+        icon: "GoodsFilled",
+        sort: 3,
+        iframe: 0,
     }
 ];
 const userList = [

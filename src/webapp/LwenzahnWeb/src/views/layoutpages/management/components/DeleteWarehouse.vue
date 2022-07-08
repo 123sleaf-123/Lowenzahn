@@ -3,7 +3,7 @@
     <el-dialog :title="title" append-to-body destroy-on-close :model-value="showDialog" @close="closeDialog()">
       <template v-slot:footer>
         <span>
-          <el-button @click="closeDialog()">Cancel</el-button>
+          <el-button type="info" @click="closeDialog()">Cancel</el-button>
           <el-button type="danger" @click="onSubmit()">Delete</el-button>
         </span>
       </template>

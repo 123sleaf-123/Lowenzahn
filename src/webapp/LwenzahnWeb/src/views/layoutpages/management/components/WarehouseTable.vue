@@ -20,11 +20,17 @@
           <el-table-column prop="whName" label="Warehouse Name"></el-table-column>
           <el-table-column prop="area" label="Area"></el-table-column>
           <el-table-column prop="address" label="Address"></el-table-column>
+          <!-- <el-table-column label="Goods Info">
+            <template #default="scope">
+              <el-button type="primary" text icon="Search" @click.prevent="searchWarehouse(scope.$index)">Details
+              </el-button>
+            </template>
+          </el-table-column> -->
           <el-table-column label="Operations">
             <template #default="scope">
               <el-button type="primary" round @click.prevent="editRow(scope.$index)" icon="Edit">Edit</el-button>
-              <el-button type="danger" round @click.prevent="deleteRow(scope.$index)">
-                Remove
+              <el-button type="danger" round @click.prevent="deleteRow(scope.$index)" icon="Delete">
+                Del
               </el-button>
             </template>
             <!-- <el-button type="primary" round @click="onEditing" icon="Edit">Edit</el-button> -->
@@ -38,12 +44,13 @@
         </el-table>
       </el-main>
     </el-container>
-    <AddWhDialog :show-dialog="is_adding" :title="addTitle" @close-dialog="closeAdding"></AddWhDialog>
+    <AddWhDialog :show-dialog="is_adding" :title="addTitle" @closeDialog="closeAdding"></AddWhDialog>
     <EditWarehouse key="is_editing" :show-dialog="is_editing" :title="editTitle" :rowData="this.warehouse"
-      @close-dialog="closeEditing"></EditWarehouse>
-    <!-- <DeleteWarehouse :show-dialog="is_deleting" :title="deleteTitle" :rowData="this.warehouse" @close-dialog="cancelDeleting" ref="delChild"></DeleteWarehouse> -->
+      @closeDialog="closeEditing"></EditWarehouse>
     <DeleteWarehouse key="is_deleting" :show-dialog="is_deleting" :title="deleteTitle" :rowData="this.warehouse"
-      @close-dialog="cancelDeleting"></DeleteWarehouse>
+      @closeDialog="cancelDeleting"></DeleteWarehouse>
+    <!-- <SearchGoodInWarehouse key="is_searching" :show-dialog="is_searching" :title="searchingTitle"
+      :rowData="this.warehouse" @closeDialog="cancelDeleting"></SearchGoodInWarehouse> -->
   </div>
 </template>
 
@@ -52,13 +59,14 @@ import axios from "axios";
 import AddWhDialog from "./AddWhDialog.vue";
 import EditWarehouse from "./EditWarehouse.vue";
 import DeleteWarehouse from "./DeleteWarehouse.vue";
+// import SearchGoodInWarehouse from "./SearchGoodInWarehouse.vue"
 export default {
   name: "WarehouseTable",
   components: {
-    warehouseItem,
     AddWhDialog,
     EditWarehouse,
     DeleteWarehouse,
+    // SearchGoodInWarehouse,
   },
   data() {
     return {
@@ -67,10 +75,11 @@ export default {
       addTitle: 'New Warehouse',
       editTitle: 'Warehouse Information',
       deleteTitle: 'WARNING!',
+      searchingTitle: 'Warehouse Goods',
       is_adding: false,
       is_editing: false,
       is_deleting: false,
-      // editWarehouse: null,
+      is_searching: false,
     }
   },
   methods: {
@@ -95,6 +104,9 @@ export default {
     cancelDeleting() {
       this.is_deleting = false;
     },
+    finishSearching() {
+      this.is_searching = false;
+    },
     clickRow(row) {
       console.log(row);
       console.log(row.data);
@@ -108,6 +120,11 @@ export default {
       this.warehouse = this.warehouses[index];
       this.is_deleting = true;
     },
+    searchWarehouse(index) {
+      this.warehouse = this.warehouses[index];
+      this.is_searching = true;
+
+    }
   },
 };
 </script>
