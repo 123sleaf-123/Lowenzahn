@@ -9,13 +9,13 @@
 <template>
     <el-row :gutter="20" style="padding-bottom: 10px">
         <el-col :span="12">
-            <div class="ve-card ve_card1">
+            <div class="ve-card ve_card1" @click="query">
                 <el-icon>
                     <HomeFilled />
                 </el-icon>
                 <div>
                     <p>Warehouses</p>
-                    <span>6</span>
+                    <span>{{ this.warehouses }}</span>
                 </div>
             </div>
         </el-col>
@@ -26,7 +26,7 @@
                 </el-icon>
                 <div>
                     <p>Managers</p>
-                    <span>6</span>
+                    <span>{{ this.managers }}</span>
                 </div>
             </div>
         </el-col>
@@ -41,7 +41,7 @@
                 </el-icon>
                 <div>
                     <p>Workers</p>
-                    <span>6</span>
+                    <span>{{ this.workers }}</span>
                 </div>
             </div>
         </el-col>
@@ -52,14 +52,58 @@
                 </el-icon>
                 <div>
                     <p>Goods</p>
-                    <span>6</span>
+                    <span>{{ this.goods }}</span>
                 </div>
             </div>
         </el-col>
     </el-row>
 </template>
 
-<!-- <script setup></script> -->
+<script>
+import axios from "axios"
+export default {
+    data() {
+        return {
+            warehouses: null,
+            workers: null,
+            managers: null,
+            goods: null
+        }
+    },
+    methods: {
+        query() {
+            axios({
+                url: "http://localhost:8080/warehouses",
+                method: 'GET',
+            }).then((res) => {
+                console.log(res.data);
+                this.warehouses = res.data.length;
+            });
+            axios({
+                url: "http://localhost:8080/worker",
+                method: 'GET',
+            }).then((res) => {
+                console.log(res.data);
+                this.workers = res.data.length;
+            });
+            axios({
+                url: "http://localhost:8080/manager",
+                method: 'GET',
+            }).then((res) => {
+                console.log(res.data);
+                this.managers = res.data.length;
+            });
+            axios({
+                url: "http://localhost:8080/good",
+                method: 'GET',
+            }).then((res) => {
+                console.log(res.data);
+                this.goods = res.data.length;
+            });
+        }
+    }
+}
+</script>
 
 <style lang="scss" scoped>
 .el-row {

@@ -4,15 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="799d64fa-f8a0-49ed-8ab0-bffc15bcbbb7" name="Changes" comment="完成了仓库与工人的增删查改">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/controller/dto/GoodInfoDTO.java" afterDir="false" />
+    <list default="true" id="799d64fa-f8a0-49ed-8ab0-bffc15bcbbb7" name="Changes" comment="新增了货物位置查询页面和功能&#10;&#10;主要是在WarehouseController添加查询方法，并在warehouseMapper接口中利用@Select注解进行多表联查。&#10;&#10;其实不太规范，感觉在Service些比较好&#10;&#10;前端命途多舛，参数传递搞死人">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/controller/WarehouseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/controller/WarehouseController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/mapper/WarehouseMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/mapper/WarehouseMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/api/modules/system.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/api/modules/system.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/assets/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/assets/logo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/layoutpages/management/components/DeleteWarehouse.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/layoutpages/management/components/DeleteWarehouse.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/layoutpages/management/components/WarehouseTable.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/layoutpages/management/components/WarehouseTable.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/components/dashboard/Shortcuts.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/components/dashboard/Shortcuts.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/layoutpages/management/components/AddWorker.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/layoutpages/management/components/AddWorker.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/layoutpages/management/components/EditWorker.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/layoutpages/management/components/EditWorker.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/layoutpages/management/components/WorkerTable.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/layoutpages/management/components/WorkerTable.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -170,7 +166,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657222020750</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="新增了货物位置查询页面和功能&#10;&#10;主要是在WarehouseController添加查询方法，并在warehouseMapper接口中利用@Select注解进行多表联查。&#10;&#10;其实不太规范，感觉在Service些比较好&#10;&#10;前端命途多舛，参数传递搞死人">
+      <created>1657238763999</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1657238763999</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -199,7 +202,8 @@
     <MESSAGE value="小修小补&#10;&#10;给WorkerController添加了@RequestMapping(&quot;/worker&quot;)，这样子之后写起来也方便&#10;&#10;正在准备添加typescript，但是可能会造成出错，因此要上传一次" />
     <MESSAGE value="完成了货物和工人查询的页面，但是编辑和删除的操作仍未完成" />
     <MESSAGE value="完成了仓库与工人的增删查改" />
-    <option name="LAST_COMMIT_MESSAGE" value="完成了仓库与工人的增删查改" />
+    <MESSAGE value="新增了货物位置查询页面和功能&#10;&#10;主要是在WarehouseController添加查询方法，并在warehouseMapper接口中利用@Select注解进行多表联查。&#10;&#10;其实不太规范，感觉在Service些比较好&#10;&#10;前端命途多舛，参数传递搞死人" />
+    <option name="LAST_COMMIT_MESSAGE" value="新增了货物位置查询页面和功能&#10;&#10;主要是在WarehouseController添加查询方法，并在warehouseMapper接口中利用@Select注解进行多表联查。&#10;&#10;其实不太规范，感觉在Service些比较好&#10;&#10;前端命途多舛，参数传递搞死人" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

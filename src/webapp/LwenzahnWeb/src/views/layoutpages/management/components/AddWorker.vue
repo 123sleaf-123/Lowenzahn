@@ -10,8 +10,8 @@
         <el-form-item prop="wkrName" label="Wkr Name">
           <el-input v-model="wkrName" placeholder="" clearable></el-input>
         </el-form-item>
-        <el-form-item prop="pwd" label="Area">
-          <el-input v-model="pwd" placeholder="" clearable></el-input>
+        <el-form-item prop="pwd" label="Password">
+          <el-input type="password" show-password v-model="pwd" placeholder="" clearable></el-input>
         </el-form-item>
       </el-form>
 

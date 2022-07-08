@@ -29,7 +29,7 @@ import { computed } from "vue";
 import { useStore } from "vuex";
 const store = useStore();
 const opened = computed(() => store.getters.opened);
-const title = "vue3-element-admin";
+const title = "Lwenzahn WEB";
 </script>
 
 <style lang="scss" scoped>
