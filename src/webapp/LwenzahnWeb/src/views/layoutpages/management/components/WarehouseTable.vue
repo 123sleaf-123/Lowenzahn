@@ -37,15 +37,17 @@
           </el-table-column>
           <el-table-column label="Operations">
             <template #default="scope">
-              <el-button v-show="!is_editing || (!is_editing && scope.$index === row_editing)" type="primary" round @click.prevent="editRow(scope.$index)" icon="Edit">Edit
+              <el-button v-show="!is_editing || (!is_editing && scope.$index === row_editing)" type="primary" round
+                @click.prevent="editRow(scope.$index)" icon="Edit">Edit
               </el-button>
-              <el-button v-show="!is_editing || (!is_editing && scope.$index === row_editing)" type="danger" round @click.prevent="deleteRow(scope.$index)"
-                icon="Delete">
+              <el-button v-show="!is_editing || (!is_editing && scope.$index === row_editing)" type="danger" round
+                @click.prevent="deleteRow(scope.$index)" icon="Delete">
                 Del
               </el-button>
-              <el-button v-show="is_editing && scope.$index === row_editing" type="success" round @click.prevent="saveChange(scope.$index)"
-                icon="Check">Save</el-button>
-              <el-button v-show="is_editing && scope.$index === row_editing" type="info" round @click="onEditing" icon="close">Cancel</el-button>
+              <el-button v-show="is_editing && scope.$index === row_editing" type="success" round
+                @click.prevent="saveChange(scope.$index)" icon="Check">Save</el-button>
+              <el-button v-show="is_editing && scope.$index === row_editing" type="info" round
+                @click.prevent="cancelChange(scope.$index)" icon="close">Cancel</el-button>
             </template>
           </el-table-column>
         </el-table>
@@ -67,6 +69,7 @@ import AddWhDialog from "./AddWhDialog.vue";
 import EditWarehouse from "./EditWarehouse.vue";
 import DeleteWarehouse from "./DeleteWarehouse.vue";
 // import SearchGoodInWarehouse from "./SearchGoodInWarehouse.vue"
+import VueRouter from 'vue-router';
 export default {
   name: "WarehouseTable",
   components: {
@@ -105,10 +108,10 @@ export default {
     },
     onEditing() {
       this.is_editing = !this.is_editing;
-      this.row_editing = index;
     },
     closeAdding() {
       this.is_adding = false;
+      this.refresh();
     },
     closeEditing() {
       this.is_editing = false;
@@ -135,8 +138,23 @@ export default {
       axios.post("http://localhost:9090/warehouses/updating", this.warehouse).then(res => {
         console.log(res)
       })
-    }
+      this.refresh();
+    },
+    cancelChange(index) {
+      this.editRow = index;
+      this.warehouses[index] = this.warehouse;
+      this.is_editing = false;
+      this.refresh();
+    },
+    refresh() {
+      // this.$route.replace("/management-Warehouses-18");
+      location.reload()
+      this.$router.go(0)
+    },
   },
+  mounted() {
+    this.getWarehouses();
+  }
 };
 </script>
 
