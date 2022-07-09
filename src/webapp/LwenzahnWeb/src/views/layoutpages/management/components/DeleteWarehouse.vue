@@ -69,10 +69,10 @@ const formRef = ref(null);
 const form = reactive({
   id: "",
   name: "",
-  area: "",
-  address: "",
+  warehouseArea: "",
+  warehouseAddress: "",
 });
-const { id, name, area, address } = toRefs(form);
+const { id, name, warehouseArea, warehouseAddress } = toRefs(form);
 const roleList = ref([]);
 
 /**
@@ -110,7 +110,7 @@ const getRoleList = async () => {
  * @return {*}
  */
 const onSubmit = () => {
-  axios.post("http://localhost:8080/warehouses/deleting", rowData.value).then(res => {
+  axios.post("http://localhost:9090/warehouses/deleting", rowData.value).then(res => {
     console.log(res)
   })
   emit("closeDialog", false);

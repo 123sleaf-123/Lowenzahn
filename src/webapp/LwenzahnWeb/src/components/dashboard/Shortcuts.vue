@@ -73,28 +73,28 @@ export default {
     methods: {
         query() {
             axios({
-                url: "http://localhost:8080/warehouses",
+                url: "http://localhost:9090/warehouses",
                 method: 'GET',
             }).then((res) => {
                 console.log(res.data);
                 this.warehouses = res.data.length;
             });
             axios({
-                url: "http://localhost:8080/worker",
+                url: "http://localhost:9090/worker",
                 method: 'GET',
             }).then((res) => {
                 console.log(res.data);
                 this.workers = res.data.length;
             });
             axios({
-                url: "http://localhost:8080/manager",
+                url: "http://localhost:9090/manager",
                 method: 'GET',
             }).then((res) => {
                 console.log(res.data);
                 this.managers = res.data.length;
             });
             axios({
-                url: "http://localhost:8080/good",
+                url: "http://localhost:9090/good",
                 method: 'GET',
             }).then((res) => {
                 console.log(res.data);

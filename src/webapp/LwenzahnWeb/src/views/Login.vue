@@ -64,6 +64,7 @@
 import Common from "@/components/Common";
 import { ref, reactive, toRefs } from "vue";
 import axios from "axios";
+import { ElMessage } from 'element-plus';
 // import { useStore } from "vuex";
 import { useRouter } from "vue-router";
 const rules = {
@@ -80,13 +81,13 @@ const { userName, pwd } = toRefs(form);
 // router.options.isAddDynamicMenuRoutes = false;
 
 const login = () => {
-    let user = {mgrName: userName.value, pwd: pwd.value}
-    axios.post("http://localhost:8080/manager/login", user).then(res => {
+    let user = {managerName: userName.value, managerPassword: pwd.value}
+    axios.post("http://localhost:9090/manager/login", user).then(res => {
+        console.log(res);
         if (!res.data) {
-            this.$message.error("username or password error!");
+            ElMessage.error("USERNAME or PASSWORD error!");
         } else {
             VE_API.system.login(form);
-            console.log(res);
             router.push({ name: "AppMain" });
         }
     })

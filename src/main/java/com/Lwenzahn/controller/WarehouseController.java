@@ -45,7 +45,7 @@ public class WarehouseController {
     // Query goods in the warehouse
     @PostMapping("/queryGoods")
     public String getGoodsInWarehouse(@RequestBody Warehouse warehouse) {
-        List<GoodInfoDTO> goodInfoDTOS = warehouseMapper.findGoodInfo(warehouse.getWhid());
+        List<GoodInfoDTO> goodInfoDTOS = warehouseMapper.findGoodInfo(warehouse.getWarehouseId());
         return gson.toJson(goodInfoDTOS);
     }
 }

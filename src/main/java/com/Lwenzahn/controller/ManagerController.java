@@ -50,8 +50,8 @@ public class ManagerController {
     //登录
     @PostMapping("/login")
     public boolean login(@RequestBody ManagerDTO managerDTO) {
-        String mgrName = managerDTO.getMgrName();
-        String pwd = managerDTO.getPwd();
+        String mgrName = managerDTO.getManagerName();
+        String pwd = managerDTO.getManagerPassword();
         System.out.println(mgrName);
         System.out.println(pwd);
         if (mgrName == null || pwd == null) return false;

@@ -46,7 +46,7 @@
         <el-divider direction="vertical"></el-divider>
         <el-dropdown @command="handleCommand">
             <span class="ve_nav_dropdown">
-                你好!{{ uname }}
+                Hello!{{ uname }}
                 <el-icon>
                     <arrow-down-bold />
                 </el-icon>
@@ -54,7 +54,7 @@
             <template #dropdown>
                 <el-dropdown-menu>
                     <el-dropdown-item :command="{ name: 'Login' }">
-                        退出登录
+                        Sign Out
                     </el-dropdown-item>
                 </el-dropdown-menu>
             </template>

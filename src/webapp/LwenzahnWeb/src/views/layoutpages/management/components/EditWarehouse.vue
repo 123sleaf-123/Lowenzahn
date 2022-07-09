@@ -4,17 +4,17 @@
       <!-- <span>{{ rowData }}</span> -->
       <!-- 表单 -->
       <el-form :model="form" ref="formRef" :rules="rules" label-width="100px" :inline="false">
-        <el-form-item prop="whid" label="Wh ID">
-          <el-input v-model="whid" placeholder="" clearable></el-input>
+        <el-form-item prop="warehouseId" label="Wh ID">
+          <el-input v-model="warehouseId" placeholder="" clearable></el-input>
         </el-form-item>
-        <el-form-item prop="whName" label="Wh Name">
-          <el-input v-model="whName" placeholder="" clearable></el-input>
+        <el-form-item prop="warehouseName" label="Wh Name">
+          <el-input v-model="warehouseName" placeholder="" clearable></el-input>
         </el-form-item>
-        <el-form-item prop="area" label="Area">
-          <el-input v-model="area" placeholder="" clearable></el-input>
+        <el-form-item prop="warehouseArea" label="warehouseArea">
+          <el-input v-model="warehouseArea" placeholder="" clearable></el-input>
         </el-form-item>
-        <el-form-item prop="address" label="Address">
-          <el-input v-model="address" placeholder="" clearable></el-input>
+        <el-form-item prop="warehouseAddress" label="warehouseAddress">
+          <el-input v-model="warehouseAddress" placeholder="" clearable></el-input>
         </el-form-item>
       </el-form>
 
@@ -32,28 +32,28 @@
 import { reactive, toRefs, ref } from "vue";
 import axios from "axios";
 const rules = {
-  whid: [
+  warehouseId: [
     {
       required: true,
       message: "请输入用户名",
       trigger: "blur",
     },
   ],
-  whName: [
+  warehouseName: [
     {
       required: true,
       message: "请输入账户",
       trigger: "blur",
     },
   ],
-  area: [
+  warehouseArea: [
     {
       required: false,
       message: "请输入密码",
       trigger: "blur",
     },
   ],
-  address: [
+  warehouseAddress: [
     {
       required: false,
       message: "请选择角色",
@@ -82,12 +82,12 @@ const closeDialog = () => {
 };
 const formRef = ref(null);
 const form = reactive({
-  whid: "",
-  whName: "",
-  area: "",
-  address: "",
+  warehouseId: "",
+  warehouseName: "",
+  warehouseArea: "",
+  warehouseAddress: "",
 });
-const { whid, whName, area, address } = toRefs(form);
+const { warehouseId, warehouseName, warehouseArea, warehouseAddress } = toRefs(form);
 const roleList = ref([]);
 /**
  * @description: 初始化
@@ -96,10 +96,10 @@ const roleList = ref([]);
  */
 rowData.value &&
   (
-    (whid.value = rowData.value.whid),
-    (whName.value = rowData.value.whName),
-    (area.value = rowData.value.area),
-    (address.value = rowData.value.address)
+    (warehouseId.value = rowData.value.warehouseId),
+    (warehouseName.value = rowData.value.warehouseName),
+    (warehouseArea.value = rowData.value.warehouseArea),
+    (warehouseAddress.value = rowData.value.warehouseAddress)
   );
 /**
  * @description: 获取角色列表
@@ -129,11 +129,11 @@ const onSubmit = () => {
   console.log(rowData.value);
   formRef.value.validate(async (valid) => {
     if (valid) {
-      axios.post("http://localhost:8080/warehouses/updating", {
-        whid: whid.value,
-        whName: whName.value,
-        area: area.value,
-        address: address.value,
+      axios.post("http://localhost:9090/warehouses/updating", {
+        warehouseId: warehouseId.value,
+        warehouseName: warehouseName.value,
+        warehouseArea: warehouseArea.value,
+        warehouseAddress: warehouseAddress.value,
       }).then(res => {
         console.log(res)
       })

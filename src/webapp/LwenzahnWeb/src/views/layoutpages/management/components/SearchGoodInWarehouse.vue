@@ -4,8 +4,8 @@
             <div style="text-align: -webkit-center">
                 <el-table :data="goodsInfo" style="width: 100%" empty-text="There aren't any good info!">
                     <el-table-column prop="goodName" label="Name"></el-table-column>
-                    <el-table-column prop="type" label="Type"></el-table-column>
-                    <el-table-column prop="position" label="Pos"></el-table-column>
+                    <el-table-column prop="goodType" label="Type"></el-table-column>
+                    <el-table-column prop="warehouseId" label="Pos"></el-table-column>
                     <el-table-column prop="storeFloor" label="Floor"></el-table-column>
                 </el-table>
             </div>
@@ -59,7 +59,7 @@ export default {
         },
         getGoodInfo() {
             console.log(this.whData);
-            axios.post("http://localhost:8080/warehouses/queryGoods", this.whData).then((res) => {
+            axios.post("http://localhost:9090/warehouses/queryGoods", this.whData).then((res) => {
                 console.log(res.data);
                 this.goodsInfo = res.data;
             });

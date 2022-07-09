@@ -9,13 +9,26 @@
           <el-button type="primary" @click="getGoods" icon="Refresh">Refresh</el-button>
         </el-button-group>
         <el-table :data="goods" style="width: 100%">
-          <el-table-column prop="gid" label="Good id"></el-table-column>
-          <el-table-column prop="goodName" label="Good Name"></el-table-column>
-          <el-table-column prop="type" label="Type"></el-table-column>
-          <!-- <el-table-column prop="shelfid" label="Shelfid"></el-table-column>
-          <el-table-column prop="floor" label="Floor"></el-table-column>
-          <el-table-column prop="start" label="Start"></el-table-column>
-          <el-table-column prop="end" label="End"></el-table-column> -->
+          <el-table-column prop="goodsId" label="Good id"></el-table-column>
+          <el-table-column prop="goodsName" label="Good Name"></el-table-column>
+          <el-table-column prop="goodsType" label="Type">
+            <template #default="scope">
+              <span v-if="scope.row.goodsType === 'weapon'">
+                <el-icon>
+                  <Back />
+                </el-icon> {{ scope.row.goodsType }}
+              </span>
+              <span v-else>
+                {{ scope.row.goodsType }}
+              </span>
+            </template>
+          </el-table-column>
+          <el-table-column prop="goodsWeight" label="Weight (Kg)">
+            <template #default="scope">
+            <div v-if="scope.row.goodsWeight === undefined">No Weight Data.</div>
+            <div v-else>{{ scope.row.goodsWeight }}</div>
+            </template>
+          </el-table-column>
         </el-table>
       </el-main>
     </el-container>
@@ -36,14 +49,16 @@ export default {
   methods: {
     getGoods() {
       axios({
-        url: "http://localhost:8080/good",
+        url: "http://localhost:9090/good",
         method: 'GET',
       }).then((res) => {
         console.log(res.data);
         this.goods = res.data;
       });
     },
-
+    test(data) {
+      console.log(data);
+    }
   },
 };
 </script>

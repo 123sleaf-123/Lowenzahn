@@ -6,7 +6,7 @@ import lombok.Data;
 @Data
 public class Worker {
     @TableId
-    private Integer wkrid;
-    private String wkrName;
-    private String pwd;
+    private Integer workerId;
+    private String workerName;
+    private String workerPassword;
 }

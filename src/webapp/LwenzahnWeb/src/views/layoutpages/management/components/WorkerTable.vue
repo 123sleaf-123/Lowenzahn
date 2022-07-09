@@ -14,30 +14,30 @@
           </el-button>
         </el-button-group>
         <el-table :data="goods" style="width: 100%">
-          <el-table-column prop="wkrid" label="Worker id">
+          <el-table-column prop="workerId" label="Worker ID">
           </el-table-column>
-          <el-table-column prop="wkrName" label="Worker Name">
+          <el-table-column prop="workerName" label="Worker Name">
             <template #default="scope">
-              <span v-if="!is_editing">{{ scope.row.wkrName }}</span>
-              <el-input v-model="scope.row.wkrName" v-else></el-input>
+              <span v-if="!is_editing">{{ scope.row.workerName }}</span>
+              <el-input v-model="scope.row.workerName" v-else-if="scope.$index === row_editing"></el-input>
             </template>
           </el-table-column>
-          <el-table-column prop="pwd" label="Password">
+          <el-table-column prop="workerPassword" label="Password">
             <template #default="scope">
-              <span v-if="!is_editing">{{ scope.row.pwd }}</span>
-              <el-input v-model="scope.row.pwd" v-else></el-input>
+              <span v-if="!is_editing">{{ scope.row.workerPassword }}</span>
+              <el-input v-model="scope.row.workerPassword" v-else-if="scope.$index === row_editing"></el-input>
             </template>
           </el-table-column>
           <el-table-column label="Operations">
             <template #default="scope">
               <!-- <el-button type="primary" round @click.prevent="editRow(scope.$index)" icon="Edit">Edit</el-button>
               <el-button type="danger" round @click.prevent="deleteRow(scope.$index)" icon="Delete">Del</el-button> -->
-              <el-button v-show="!is_editing" type="primary" round @click="onEditing" icon="Edit">Edit</el-button>
-              <el-button v-show="!is_editing" type="danger" round @click="deleteRow(scope.$index)" icon="Delete">Del
+              <el-button v-show="!is_editing || (!is_editing && scope.$index === row_editing)" type="primary" round @click="editRow(scope.$index)" icon="Edit">Edit</el-button>
+              <el-button v-show="!is_editing || (!is_editing && scope.$index === row_editing)" type="danger" round @click="deleteRow(scope.$index)" icon="Delete">Del
               </el-button>
-              <el-button v-show="is_editing" type="info" round @click="onEditing" icon="close">Cancel</el-button>
-              <el-button v-show="is_editing" type="success" round @click.prevent="saveChange(scope.$index)"
+              <el-button v-show="is_editing && scope.$index === row_editing" type="success" round @click.prevent="saveChange(scope.$index)"
                 icon="Check">Save</el-button>
+              <el-button v-show="is_editing && scope.$index === row_editing" type="info" round @click="onEditing" icon="close">Cancel</el-button>
             </template>
           </el-table-column>
         </el-table>
@@ -73,12 +73,13 @@ export default {
       is_adding: false,
       is_editing: false,
       is_deleting: false,
+      row_editing: -1,
     }
   },
   methods: {
     getWorkers() {
       axios({
-        url: "http://localhost:8080/worker",
+        url: "http://localhost:9090/worker",
         method: 'GET',
       }).then((res) => {
         console.log(res.data);
@@ -108,6 +109,7 @@ export default {
     editRow(index) {
       this.good = this.goods[index];
       this.is_editing = true;
+      this.row_editing = index;
     },
     deleteRow(index) {
       this.good = this.goods[index];
@@ -116,7 +118,7 @@ export default {
     saveChange(index) {
       this.good = this.goods[index];
       this.is_editing = false;
-      axios.post("http://localhost:8080/worker/updating", this.good).then(res => {
+      axios.post("http://localhost:9090/worker/updating", this.good).then(res => {
         console.log(res)
       })
     }

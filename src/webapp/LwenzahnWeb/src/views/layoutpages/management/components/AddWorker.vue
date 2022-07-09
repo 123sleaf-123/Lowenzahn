@@ -4,14 +4,14 @@
       <!-- <span>{{ rowData }}</span> -->
       <!-- 表单 -->
       <el-form :model="form" ref="formRef" :rules="rules" label-width="100px" :inline="false">
-        <el-form-item prop="wkrid" label="Wkr ID">
-          <el-input v-model="wkrid" placeholder="" clearable></el-input>
+        <el-form-item prop="workerId" label="Wkr ID">
+          <el-input v-model="workerId" placeholder="" clearable></el-input>
         </el-form-item>
-        <el-form-item prop="wkrName" label="Wkr Name">
-          <el-input v-model="wkrName" placeholder="" clearable></el-input>
+        <el-form-item prop="workerName" label="Wkr Name">
+          <el-input v-model="workerName" placeholder="" clearable></el-input>
         </el-form-item>
-        <el-form-item prop="pwd" label="Password">
-          <el-input type="password" show-password v-model="pwd" placeholder="" clearable></el-input>
+        <el-form-item prop="workerPassword" label="Password">
+          <el-input type="password" show-password v-model="workerPassword" placeholder="" clearable></el-input>
         </el-form-item>
       </el-form>
 
@@ -29,21 +29,21 @@
 import { reactive, toRefs, ref } from "vue";
 import axios from "axios";
 const rules = {
-  wkrid: [
+  workerId: [
     {
       required: true,
       message: "请输入用户名",
       trigger: "blur",
     },
   ],
-  wkrName: [
+  workerName: [
     {
       required: true,
       message: "请输入账户",
       trigger: "blur",
     },
   ],
-  pwd: [
+  workerPassword: [
     {
       required: true,
       message: "请输入密码",
@@ -72,11 +72,11 @@ const closeDialog = () => {
 };
 const formRef = ref(null);
 const form = reactive({
-  wkrid: "",
-  wkrName: "",
-  pwd: "",
+  workerId: "",
+  workerName: "",
+  workerPassword: "",
 });
-const { wkrid, wkrName, pwd } = toRefs(form);
+const { workerId, workerName, workerPassword } = toRefs(form);
 const roleList = ref([]);
 
 /**
@@ -117,10 +117,10 @@ getRoleList();
 const onSubmit = () => {
   formRef.value.validate(async (valid) => {
     if (valid) {
-      axios.post("http://localhost:8080/worker/adding", {
-        wkrid: wkrid.value,
-        wkrName: wkrName.value,
-        pwd: pwd.value,
+      axios.post("http://localhost:9090/worker/adding", {
+        workerId: workerId.value,
+        workerName: workerName.value,
+        workerPassword: workerPassword.value,
       }).then(res => {
         console.log(res)
       })

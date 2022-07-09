@@ -25,8 +25,8 @@ public class ManagerServiceImpl implements ManagerService {
         QueryWrapper<Manager> queryWrapper = new QueryWrapper<>();
         System.out.println(mgrName);
         System.out.println(pwd);
-        queryWrapper.eq("mgr_Name", mgrName);
-        queryWrapper.eq("pwd", pwd);
+        queryWrapper.eq("manager_name", mgrName);
+        queryWrapper.eq("manager_password", pwd);
         Manager manager = managerMapper.selectOne(queryWrapper);
         return manager != null;
     }
