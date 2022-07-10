@@ -47,7 +47,7 @@
               <el-button v-show="is_editing && scope.$index === row_editing" type="success" round
                 @click.prevent="saveChange(scope.$index)" icon="Check">Save</el-button>
               <el-button v-show="is_editing && scope.$index === row_editing" type="info" round
-                @click.prevent="cancelChange(scope.$index)" icon="close">Cancel</el-button>
+                @click.prevent="cancelChange(scope.$index)" icon="Close">Cancel</el-button>
             </template>
           </el-table-column>
         </el-table>
@@ -69,15 +69,15 @@ import AddWhDialog from "./AddWhDialog.vue";
 import EditWarehouse from "./EditWarehouse.vue";
 import DeleteWarehouse from "./DeleteWarehouse.vue";
 // import SearchGoodInWarehouse from "./SearchGoodInWarehouse.vue"
-import VueRouter from 'vue-router';
+import { useRouter } from "vue-router";
 export default {
   name: "WarehouseTable",
   components: {
     AddWhDialog,
     EditWarehouse,
     DeleteWarehouse,
-    // SearchGoodInWarehouse,
   },
+  inject: ['reload'],
   data() {
     return {
       warehouses: [],
@@ -91,6 +91,7 @@ export default {
       is_deleting: false,
       is_searching: false,
       row_editing: -1,
+      router: useRouter(),
     }
   },
   methods: {
@@ -111,7 +112,7 @@ export default {
     },
     closeAdding() {
       this.is_adding = false;
-      this.refresh();
+      this.reload();
     },
     closeEditing() {
       this.is_editing = false;
@@ -138,19 +139,19 @@ export default {
       axios.post("http://localhost:9090/warehouses/updating", this.warehouse).then(res => {
         console.log(res)
       })
-      this.refresh();
+      this.reload();
     },
     cancelChange(index) {
       this.editRow = index;
       this.warehouses[index] = this.warehouse;
       this.is_editing = false;
-      this.refresh();
+      this.reload();
     },
-    refresh() {
-      // this.$route.replace("/management-Warehouses-18");
-      location.reload()
-      this.$router.go(0)
-    },
+    // reload() {
+    //   location.reload()
+    //   this.$router.go(0)
+    //   this.router.push({name: 'AppMain'})
+    // },
   },
   mounted() {
     this.getWarehouses();

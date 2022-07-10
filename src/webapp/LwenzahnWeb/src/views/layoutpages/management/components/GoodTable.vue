@@ -9,6 +9,8 @@
           <el-button type="primary" @click="getGoods" icon="Refresh">Refresh</el-button>
         </el-button-group>
         <el-table :data="goods" style="width: 100%">
+          <el-table-column label="Image">
+          </el-table-column>
           <el-table-column prop="goodsId" label="Good id"></el-table-column>
           <el-table-column prop="goodsName" label="Good Name"></el-table-column>
           <el-table-column prop="goodsType" label="Type">
@@ -25,8 +27,8 @@
           </el-table-column>
           <el-table-column prop="goodsWeight" label="Weight (Kg)">
             <template #default="scope">
-            <div v-if="scope.row.goodsWeight === undefined">No Weight Data.</div>
-            <div v-else>{{ scope.row.goodsWeight }}</div>
+              <div v-if="scope.row.goodsWeight === undefined">No Weight Data.</div>
+              <div v-else>{{ scope.row.goodsWeight }}</div>
             </template>
           </el-table-column>
         </el-table>
@@ -56,10 +58,10 @@ export default {
         this.goods = res.data;
       });
     },
-    test(data) {
-      console.log(data);
-    }
   },
+  mounted() {
+    this.getGoods();
+  }
 };
 </script>
 

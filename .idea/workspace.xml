@@ -4,36 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="799d64fa-f8a0-49ed-8ab0-bffc15bcbbb7" name="Changes" comment="新增了主页面的数据更新&#10;&#10;更改了logo和标题&#10;&#10;修改了“改”操作的操作方式（页面=&gt;输入框）">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/pojo/Goods.java" afterDir="false" />
+    <list default="true" id="799d64fa-f8a0-49ed-8ab0-bffc15bcbbb7" name="Changes" comment="现在打开页面内容也会自动刷新了">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/controller/GoodController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/controller/GoodsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/controller/ManagerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/controller/ManagerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/controller/WarehouseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/controller/WarehouseController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/controller/dto/GoodInfoDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/controller/dto/GoodInfoDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/controller/dto/ManagerDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/controller/dto/ManagerDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/mapper/GoodMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/mapper/GoodsMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/mapper/WarehouseMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/mapper/WarehouseMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/pojo/Good.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/pojo/Manager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/pojo/Manager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/pojo/Warehouse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/pojo/Warehouse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/pojo/Worker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/pojo/Worker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/service/ManagerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/service/ManagerService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/service/impl/ManagerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/service/impl/ManagerServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/components/dashboard/Shortcuts.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/components/dashboard/Shortcuts.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/components/layout/components/Personal.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/components/layout/components/Personal.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/jsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/jsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/api/modules/system.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/api/modules/system.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/components/layout/components/Logo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/components/layout/components/Logo.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/Login.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/layoutpages/management/Search.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/layoutpages/management/Search.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/layoutpages/management/components/AddWhDialog.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/layoutpages/management/components/AddWhDialog.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/layoutpages/management/components/AddWorker.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/layoutpages/management/components/AddWorker.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/layoutpages/management/components/DeleteWarehouse.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/layoutpages/management/components/DeleteWarehouse.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/layoutpages/management/components/DeleteWorker.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/layoutpages/management/components/DeleteWorker.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/layoutpages/management/components/EditWarehouse.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/layoutpages/management/components/EditWarehouse.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/layoutpages/management/components/EditWorker.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/layoutpages/management/components/EditWorker.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/layoutpages/management/components/GoodTable.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/layoutpages/management/components/GoodTable.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/layoutpages/management/components/SearchGoodInWarehouse.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/layoutpages/management/components/SearchGoodInWarehouse.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/layoutpages/management/components/WarehouseTable.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/layoutpages/management/components/WarehouseTable.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/layoutpages/management/components/WorkerTable.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/layoutpages/management/components/WorkerTable.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/tsconfig.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +40,7 @@
       </GitPushTagMode>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="RESET_MODE" value="HARD" />
+    <option name="RESET_MODE" value="KEEP" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -204,7 +189,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657243091587</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="现在打开页面内容也会自动刷新了">
+      <created>1657392169694</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1657392169694</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -235,7 +227,8 @@
     <MESSAGE value="完成了仓库与工人的增删查改" />
     <MESSAGE value="新增了货物位置查询页面和功能&#10;&#10;主要是在WarehouseController添加查询方法，并在warehouseMapper接口中利用@Select注解进行多表联查。&#10;&#10;其实不太规范，感觉在Service些比较好&#10;&#10;前端命途多舛，参数传递搞死人" />
     <MESSAGE value="新增了主页面的数据更新&#10;&#10;更改了logo和标题&#10;&#10;修改了“改”操作的操作方式（页面=&gt;输入框）" />
-    <option name="LAST_COMMIT_MESSAGE" value="新增了主页面的数据更新&#10;&#10;更改了logo和标题&#10;&#10;修改了“改”操作的操作方式（页面=&gt;输入框）" />
+    <MESSAGE value="现在打开页面内容也会自动刷新了" />
+    <option name="LAST_COMMIT_MESSAGE" value="现在打开页面内容也会自动刷新了" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

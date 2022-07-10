@@ -13,7 +13,7 @@
             </el-icon>
           </el-button>
         </el-button-group>
-        <el-table :data="goods" style="width: 100%">
+        <el-table :data="workers" style="width: 100%">
           <el-table-column prop="workerId" label="Worker ID">
           </el-table-column>
           <el-table-column prop="workerName" label="Worker Name">
@@ -24,7 +24,7 @@
           </el-table-column>
           <el-table-column prop="workerPassword" label="Password">
             <template #default="scope">
-              <span v-if="!is_editing">{{ scope.row.workerPassword }}</span>
+              <span v-if="!is_editing || scope.$index !== row_editing">******</span>
               <el-input v-model="scope.row.workerPassword" v-else-if="scope.$index === row_editing"></el-input>
             </template>
           </el-table-column>
@@ -32,19 +32,22 @@
             <template #default="scope">
               <!-- <el-button type="primary" round @click.prevent="editRow(scope.$index)" icon="Edit">Edit</el-button>
               <el-button type="danger" round @click.prevent="deleteRow(scope.$index)" icon="Delete">Del</el-button> -->
-              <el-button v-show="!is_editing || (!is_editing && scope.$index === row_editing)" type="primary" round @click="editRow(scope.$index)" icon="Edit">Edit</el-button>
-              <el-button v-show="!is_editing || (!is_editing && scope.$index === row_editing)" type="danger" round @click="deleteRow(scope.$index)" icon="Delete">Del
+              <el-button v-show="!is_editing || (!is_editing && scope.$index === row_editing)" type="primary" round
+                @click="editRow(scope.$index)" icon="Edit">Edit</el-button>
+              <el-button v-show="!is_editing || (!is_editing && scope.$index === row_editing)" type="danger" round
+                @click="deleteRow(scope.$index)" icon="Delete">Del
               </el-button>
-              <el-button v-show="is_editing && scope.$index === row_editing" type="success" round @click.prevent="saveChange(scope.$index)"
-                icon="Check">Save</el-button>
-              <el-button v-show="is_editing && scope.$index === row_editing" type="info" round @click="onEditing" icon="close">Cancel</el-button>
+              <el-button v-show="is_editing && scope.$index === row_editing" type="success" round
+                @click.prevent="saveChange(scope.$index)" icon="Check">Save</el-button>
+              <el-button v-show="is_editing && scope.$index === row_editing" type="info" round
+                @click.prevent="cancelChange(scope.$index)" icon="Close">Cancel</el-button>
             </template>
           </el-table-column>
         </el-table>
       </el-main>
     </el-container>
     <AddWorker :show-dialog="is_adding" :title="addTitle" @close-dialog="closeAdding"></AddWorker>
-    <!-- <EditWorker key="is_editing" :show-dialog="is_editing" :title="editTitle" :rowData="this.good"
+    <!-- <EditWorker key="is_editing" :show-dialog="is_editing" :title="editTitle" :rowData="this.worker"
       @close-dialog="closeEditing"></EditWorker> -->
     <DeleteWorker key="is_deleting" :show-dialog="is_deleting" :title="deleteTitle" :rowData="this.warehouse"
       @close-dialog="cancelDeleting"></DeleteWorker>
@@ -65,8 +68,8 @@ export default {
   },
   data() {
     return {
-      goods: [],
-      good: null,
+      workers: [],
+      worker: null,
       addTitle: 'New Worker',
       editTitle: 'Worker Information',
       deleteTitle: 'WARNING!',
@@ -76,6 +79,7 @@ export default {
       row_editing: -1,
     }
   },
+  inject: ['reload'],
   methods: {
     getWorkers() {
       axios({
@@ -83,7 +87,7 @@ export default {
         method: 'GET',
       }).then((res) => {
         console.log(res.data);
-        this.goods = res.data;
+        this.workers = res.data;
       });
     },
     onAdding() {
@@ -94,6 +98,7 @@ export default {
     },
     closeAdding() {
       this.is_adding = false;
+      this.reload();
     },
     closeEditing() {
       this.is_editing = false;
@@ -104,24 +109,34 @@ export default {
     clickRow(row) {
       console.log(row);
       console.log(row.data);
-      this.good = row.data;
+      this.worker = row.data;
     },
     editRow(index) {
-      this.good = this.goods[index];
+      this.worker = this.workers[index];
       this.is_editing = true;
       this.row_editing = index;
     },
     deleteRow(index) {
-      this.good = this.goods[index];
+      this.worker = this.workers[index];
       this.is_deleting = true;
     },
     saveChange(index) {
-      this.good = this.goods[index];
+      this.worker = this.workers[index];
       this.is_editing = false;
-      axios.post("http://localhost:9090/worker/updating", this.good).then(res => {
+      axios.post("http://localhost:9090/worker/updating", this.worker).then(res => {
         console.log(res)
       })
-    }
+      this.reload();
+    },
+    cancelChange(index) {
+      this.editRow = index;
+      this.workers[index] = this.worker;
+      this.is_editing = false;
+      this.reload();
+    },
+  },
+  mounted() {
+    this.getWorkers();
   },
 };
 </script>

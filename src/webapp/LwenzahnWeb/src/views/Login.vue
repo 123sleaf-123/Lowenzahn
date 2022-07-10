@@ -47,7 +47,7 @@
                                 class="ve_submit"
                                 round
                                 type="primary"
-                                @click="login"
+                                @click="onSubmit"
                             >
                                 Login
                             </el-button>
@@ -60,46 +60,68 @@
 </template>
 
 <script setup>
-// import { SET_TOKEN, SET_UNAME } from "@/store/modules/app/type";
+import { SET_TOKEN, SET_UNAME } from "@/store/modules/app/type";
 import Common from "@/components/Common";
 import { ref, reactive, toRefs } from "vue";
 import axios from "axios";
 import { ElMessage } from 'element-plus';
-// import { useStore } from "vuex";
+import { useStore } from "vuex";
 import { useRouter } from "vue-router";
 const rules = {
     userName: [{ required: true, message: "请输入用户名", trigger: "blur" }],
     pwd: [{ required: true, message: "请输入密码", trigger: "blur" }],
 };
-// const store = useStore();
+const store = useStore();
 const router = useRouter();
 const form = reactive({
     userName: "Tom",
     pwd: "123",
 });
 const { userName, pwd } = toRefs(form);
+const ref_form = ref(null);
+const success = ref(false);
+sessionStorage.clear();
+store.dispatch(`app/${SET_TOKEN}`, "");
 // router.options.isAddDynamicMenuRoutes = false;
 
-const login = () => {
-    let user = {managerName: userName.value, managerPassword: pwd.value}
+const onSubmit = () => {
+    let user = { managerName: userName.value, managerPassword: pwd.value }
     axios.post("http://localhost:9090/manager/login", user).then(res => {
         console.log(res);
-        if (!res.data) {
-            ElMessage.error("USERNAME or PASSWORD error!");
-        } else {
-            VE_API.system.login(form);
-            router.push({ name: "AppMain" });
+        switch (res.data) {
+            case -1: {
+                ElMessage.error("INVALID PASSWORD!");
+                break;
+            }
+            case 1: {
+                ElMessage.error("PASSWORD ERROR!");
+                break;
+            }
+            case 2: {
+                ElMessage.error("USERNAME NOT FOUND!");
+                break;
+            }
+            case 0: {
+                ref_form.value.validate(async (valid) => {
+                    if (valid) {
+                        const data = await VE_API.system.login(form);
+                        router.push({ name: "AppMain" });
+                    } else {
+                        return;
+                    }
+                })
+            }
         }
     })
 }
 // const onSubmit = () => {
-//     ref_form.value.validate(async (valid) => {
-//         if (valid) {
-//             // const data = await VE_API.system.login(form);
-//             router.push({ name: "AppMain" });
-//         } else {
-//             return;
-//         }
+    // ref_form.value.validate(async (valid) => {
+    //     if (valid) {
+    //         // const data = await VE_API.system.login(form);
+    //         router.push({ name: "AppMain" });
+    //     } else {
+    //         return;
+    //     }
 //     });
 // };
 </script>

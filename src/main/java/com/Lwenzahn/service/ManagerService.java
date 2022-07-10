@@ -9,5 +9,5 @@ import java.util.List;
 public interface ManagerService {
     List<Manager> findManagerByMap(HashMap<String, String> queryMap);
 
-    boolean login(String mgrName, String pwd);
+    int login(String mgrName, String pwd);
 }
