@@ -343,7 +343,7 @@ const menuList = [
         url: "management/Workers", //这个类似上面的id一个，只是初始值是从100开始的
         menu: "",
         type: 1,
-        icon: "GoodsFilled",
+        icon: "UserFilled",
         sort: 3,
         iframe: 0,
     },

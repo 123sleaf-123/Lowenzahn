@@ -23,13 +23,13 @@
               <el-input v-model="scope.row.warehouseName" v-else-if="scope.$index === row_editing"></el-input>
             </template>
           </el-table-column>
-          <el-table-column prop="warehouseArea" label="warehouseArea">
+          <el-table-column prop="warehouseArea" label="Area">
             <template #default="scope">
               <span v-if="!is_editing">{{ scope.row.warehouseArea }}</span>
               <el-input v-model="scope.row.warehouseArea" v-else-if="scope.$index === row_editing"></el-input>
             </template>
           </el-table-column>
-          <el-table-column prop="warehouseAddress" label="warehouseAddress">
+          <el-table-column prop="warehouseAddress" label="Address">
             <template #default="scope">
               <span v-if="!is_editing">{{ scope.row.warehouseAddress }}</span>
               <el-input v-model="scope.row.warehouseAddress" v-else-if="scope.$index === row_editing"></el-input>

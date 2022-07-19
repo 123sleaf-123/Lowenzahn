@@ -10,10 +10,10 @@
         <el-form-item prop="warehouseName" label="Wh Name">
           <el-input v-model="warehouseName" placeholder="" clearable></el-input>
         </el-form-item>
-        <el-form-item prop="warehouseArea" label="warehouseArea">
+        <el-form-item prop="warehouseArea" label="Area">
           <el-input v-model="warehouseArea" placeholder="" clearable></el-input>
         </el-form-item>
-        <el-form-item prop="warehouseAddress" label="warehouseAddress">
+        <el-form-item prop="warehouseAddress" label="Address">
           <el-input v-model="warehouseAddress" placeholder="" clearable></el-input>
         </el-form-item>
       </el-form>

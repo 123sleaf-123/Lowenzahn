@@ -9,7 +9,7 @@
 <template>
     <el-row :gutter="20" style="padding-bottom: 10px">
         <el-col :span="12">
-            <div class="ve-card ve_card1" @click="query">
+            <div class="ve-card ve_card1" @click="jumpToWarehouse">
                 <el-icon>
                     <HomeFilled />
                 </el-icon>
@@ -33,7 +33,7 @@
     </el-row>
     <el-row :gutter="20" style="padding-top: 10px">
         <el-col :span="12">
-            <div class="ve-card ve_card3">
+            <div class="ve-card ve_card3" @click="jumpToWorker">
                 <el-icon>
                     <el-icon>
                         <UserFilled />
@@ -46,7 +46,7 @@
             </div>
         </el-col>
         <el-col :span="12">
-            <div class="ve-card ve_card4">
+            <div class="ve-card ve_card4" @click="jumpToGood">
                 <el-icon>
                     <Goods />
                 </el-icon>
@@ -61,13 +61,15 @@
 
 <script>
 import axios from "axios"
+import { useRouter } from "vue-router";
 export default {
     data() {
         return {
             warehouses: null,
             workers: null,
             managers: null,
-            goods: null
+            goods: null,
+            router: useRouter(),
         }
     },
     methods: {
@@ -100,7 +102,19 @@ export default {
                 console.log(res.data);
                 this.goods = res.data.length;
             });
-        }
+        },
+        jumpToWarehouse() {
+            this.router.push("management-Warehouses-18");
+        },
+        jumpToGood() {
+            this.router.push("management-Goods-19");
+        },
+        jumpToWorker() {
+            this.router.push("management-Workers-20")
+        },
+    },
+    mounted() {
+        this.query();
     }
 }
 </script>

@@ -12,43 +12,28 @@
             <el-card :body-style="{ background: 'rgba(0,0,0,0.15)' }">
                 <h1>Identity Check</h1>
                 <transition name="el-fade-in-linear">
-                    <el-form
-                        :model="form"
-                        :rules="rules"
-                        v-show="!success"
-                        class="ve_form"
-                        ref="ref_form"
-                        :inline="false"
-                        @keyup.enter="onSubmit"
-                    >
+                    <el-form :model="form" :rules="rules" v-show="!success" class="ve_form" ref="ref_form"
+                        :inline="false" @keyup.enter="onSubmit">
                         <el-form-item prop="userName">
-                            <el-input
-                                v-model.trim="userName"
-                                placeholder="USERNAME"
-                            >
+                            <el-input v-model.trim="userName" placeholder="USERNAME">
                                 <template #prepend>
-                                    <el-icon :size="20"><Avatar /></el-icon>
+                                    <el-icon :size="20">
+                                        <Avatar />
+                                    </el-icon>
                                 </template>
                             </el-input>
                         </el-form-item>
                         <el-form-item prop="pwd">
-                            <el-input
-                                v-model.trim="pwd"
-                                show-password
-                                placeholder="PASSWORD"
-                            >
+                            <el-input v-model.trim="pwd" show-password placeholder="PASSWORD">
                                 <template #prepend>
-                                    <el-icon :size="20"><Key /></el-icon>
+                                    <el-icon :size="20">
+                                        <Key />
+                                    </el-icon>
                                 </template>
                             </el-input>
                         </el-form-item>
                         <el-form-item>
-                            <el-button
-                                class="ve_submit"
-                                round
-                                type="primary"
-                                @click="onSubmit"
-                            >
+                            <el-button class="ve_submit" round type="primary" @click="onSubmit">
                                 Login
                             </el-button>
                         </el-form-item>
@@ -82,37 +67,41 @@ const ref_form = ref(null);
 const success = ref(false);
 sessionStorage.clear();
 store.dispatch(`app/${SET_TOKEN}`, "");
-// router.options.isAddDynamicMenuRoutes = false;
+router.options.isAddDynamicMenuRoutes = false;
 
 const onSubmit = () => {
-    let user = { managerName: userName.value, managerPassword: pwd.value }
-    axios.post("http://localhost:9090/manager/login", user).then(res => {
-        console.log(res);
-        switch (res.data) {
-            case -1: {
-                ElMessage.error("INVALID PASSWORD!");
-                break;
-            }
-            case 1: {
-                ElMessage.error("PASSWORD ERROR!");
-                break;
-            }
-            case 2: {
-                ElMessage.error("USERNAME NOT FOUND!");
-                break;
-            }
-            case 0: {
-                ref_form.value.validate(async (valid) => {
-                    if (valid) {
-                        const data = await VE_API.system.login(form);
-                        router.push({ name: "AppMain" });
-                    } else {
-                        return;
+    ref_form.value.validate((valid) => {
+        if (valid) {
+            let user = { managerName: userName.value, managerPassword: pwd.value }
+            axios.post("http://localhost:9090/manager/login", user).then(res => {
+                console.log(res);
+                switch (res.data) {
+                    case -1: {
+                        ElMessage.error("INVALID PASSWORD!");
+                        break;
                     }
-                })
-            }
+                    case 1: {
+                        ElMessage.error("PASSWORD ERROR!");
+                        break;
+                    }
+                    case 2: {
+                        ElMessage.error("USERNAME NOT FOUND!");
+                        break;
+                    }
+                    case 0: {
+                        login();
+                        router.push({ name: "AppMain" });
+                    }
+                }
+            })
+        } else {
+            return;
         }
     })
+}
+const login = async () => {
+    const data = await VE_API.system.login(form);
+    router.push({ name: "AppMain" });
 }
 // const onSubmit = () => {
     // ref_form.value.validate(async (valid) => {
@@ -137,16 +126,19 @@ const onSubmit = () => {
     transition: all 1s;
     min-height: 273px;
     text-align: center;
+
     h1 {
         font-size: 24px;
         transition: all 1s;
         font-weight: bold;
         margin-bottom: 36px;
     }
+
     .ve_form {
         .ve_submit {
             width: 100%;
         }
+
         :deep(.el-input-group__prepend) {
             padding: 0 10px;
         }

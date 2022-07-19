@@ -4,18 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="799d64fa-f8a0-49ed-8ab0-bffc15bcbbb7" name="Changes" comment="现在打开页面内容也会自动刷新了">
+    <list default="true" id="799d64fa-f8a0-49ed-8ab0-bffc15bcbbb7" name="Changes" comment="查询表格页面打开页面，内容会自动更新。增删查改操作后必然更新页面。&#10;&#10;方法：&#10;将App.vue修改为这样：&#10;&lt;template&gt;&#10;    &lt;router-view v-if=&quot;isRouterAlive&quot;&gt;&lt;/router-view&gt;&#10;&lt;/template&gt;&#10;&#10;&lt;script setup&gt;&#10;    import { ref, nextTick, provide } from &quot;vue&quot;;&#10;    const isRouterAlive = ref(true);&#10;    const reload = () =&gt; {&#10;        isRouterAlive.value = false;&#10;        nextTick(() =&gt; {&#10;            isRouterAlive.value = true;&#10;        });&#10;    };&#10;provide(&quot;reload&quot;, reload);&#10;&lt;/script&gt;&#10;并在需要调用的函数中注入（inject）reload方法：&#10;&#10;1. vue2:&#10;&lt;template&gt;&#10;    &lt;el-button @click=&quot;reload&quot;&gt;&lt;/router-view&gt;&#10;&lt;/template&gt;&#10;&lt;script&gt;&#10;export default {&#10;inject: ['reload'],&#10;}&#10;&lt;/script&gt;&#10;&#10;2. vue3:&#10;&lt;template&gt;&#10;    &lt;el-button @click=&quot;func&quot;&gt;&lt;/router-view&gt;&#10;&lt;/template&gt;&#10;&lt;script&gt;&#10;const func = inject(&quot;reload&quot;);&#10;&lt;/script&gt;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/controller/ManagerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/controller/ManagerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/service/ManagerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/service/ManagerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/service/impl/ManagerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/service/impl/ManagerServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/jsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/jsconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/App.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/api/modules/system.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/api/modules/system.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/components/layout/components/Logo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/components/layout/components/Logo.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/components/dashboard/Shortcuts.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/components/dashboard/Shortcuts.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/components/layout/SideBar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/components/layout/SideBar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/components/layout/components/Breadcrumb.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/components/layout/components/Breadcrumb.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/components/layout/components/Personal.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/components/layout/components/Personal.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/Login.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/layoutpages/management/components/GoodTable.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/layoutpages/management/components/GoodTable.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/layoutpages/management/components/AddWhDialog.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/layoutpages/management/components/AddWhDialog.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/layoutpages/management/components/WarehouseTable.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/layoutpages/management/components/WarehouseTable.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/layoutpages/management/components/WorkerTable.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/layoutpages/management/components/WorkerTable.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/tsconfig.json" afterDir="false" />
@@ -196,7 +193,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657392169694</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="查询表格页面打开页面，内容会自动更新。增删查改操作后必然更新页面。&#10;&#10;方法：&#10;将App.vue修改为这样：&#10;&lt;template&gt;&#10;    &lt;router-view v-if=&quot;isRouterAlive&quot;&gt;&lt;/router-view&gt;&#10;&lt;/template&gt;&#10;&#10;&lt;script setup&gt;&#10;    import { ref, nextTick, provide } from &quot;vue&quot;;&#10;    const isRouterAlive = ref(true);&#10;    const reload = () =&gt; {&#10;        isRouterAlive.value = false;&#10;        nextTick(() =&gt; {&#10;            isRouterAlive.value = true;&#10;        });&#10;    };&#10;provide(&quot;reload&quot;, reload);&#10;&lt;/script&gt;&#10;并在需要调用的函数中注入（inject）reload方法：&#10;&#10;1. vue2:&#10;&lt;template&gt;&#10;    &lt;el-button @click=&quot;reload&quot;&gt;&lt;/router-view&gt;&#10;&lt;/template&gt;&#10;&lt;script&gt;&#10;export default {&#10;inject: ['reload'],&#10;}&#10;&lt;/script&gt;&#10;&#10;2. vue3:&#10;&lt;template&gt;&#10;    &lt;el-button @click=&quot;func&quot;&gt;&lt;/router-view&gt;&#10;&lt;/template&gt;&#10;&lt;script&gt;&#10;const func = inject(&quot;reload&quot;);&#10;&lt;/script&gt;">
+      <created>1657433004974</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1657433004975</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -228,7 +232,8 @@
     <MESSAGE value="新增了货物位置查询页面和功能&#10;&#10;主要是在WarehouseController添加查询方法，并在warehouseMapper接口中利用@Select注解进行多表联查。&#10;&#10;其实不太规范，感觉在Service些比较好&#10;&#10;前端命途多舛，参数传递搞死人" />
     <MESSAGE value="新增了主页面的数据更新&#10;&#10;更改了logo和标题&#10;&#10;修改了“改”操作的操作方式（页面=&gt;输入框）" />
     <MESSAGE value="现在打开页面内容也会自动刷新了" />
-    <option name="LAST_COMMIT_MESSAGE" value="现在打开页面内容也会自动刷新了" />
+    <MESSAGE value="查询表格页面打开页面，内容会自动更新。增删查改操作后必然更新页面。&#10;&#10;方法：&#10;将App.vue修改为这样：&#10;&lt;template&gt;&#10;    &lt;router-view v-if=&quot;isRouterAlive&quot;&gt;&lt;/router-view&gt;&#10;&lt;/template&gt;&#10;&#10;&lt;script setup&gt;&#10;    import { ref, nextTick, provide } from &quot;vue&quot;;&#10;    const isRouterAlive = ref(true);&#10;    const reload = () =&gt; {&#10;        isRouterAlive.value = false;&#10;        nextTick(() =&gt; {&#10;            isRouterAlive.value = true;&#10;        });&#10;    };&#10;provide(&quot;reload&quot;, reload);&#10;&lt;/script&gt;&#10;并在需要调用的函数中注入（inject）reload方法：&#10;&#10;1. vue2:&#10;&lt;template&gt;&#10;    &lt;el-button @click=&quot;reload&quot;&gt;&lt;/router-view&gt;&#10;&lt;/template&gt;&#10;&lt;script&gt;&#10;export default {&#10;inject: ['reload'],&#10;}&#10;&lt;/script&gt;&#10;&#10;2. vue3:&#10;&lt;template&gt;&#10;    &lt;el-button @click=&quot;func&quot;&gt;&lt;/router-view&gt;&#10;&lt;/template&gt;&#10;&lt;script&gt;&#10;const func = inject(&quot;reload&quot;);&#10;&lt;/script&gt;" />
+    <option name="LAST_COMMIT_MESSAGE" value="查询表格页面打开页面，内容会自动更新。增删查改操作后必然更新页面。&#10;&#10;方法：&#10;将App.vue修改为这样：&#10;&lt;template&gt;&#10;    &lt;router-view v-if=&quot;isRouterAlive&quot;&gt;&lt;/router-view&gt;&#10;&lt;/template&gt;&#10;&#10;&lt;script setup&gt;&#10;    import { ref, nextTick, provide } from &quot;vue&quot;;&#10;    const isRouterAlive = ref(true);&#10;    const reload = () =&gt; {&#10;        isRouterAlive.value = false;&#10;        nextTick(() =&gt; {&#10;            isRouterAlive.value = true;&#10;        });&#10;    };&#10;provide(&quot;reload&quot;, reload);&#10;&lt;/script&gt;&#10;并在需要调用的函数中注入（inject）reload方法：&#10;&#10;1. vue2:&#10;&lt;template&gt;&#10;    &lt;el-button @click=&quot;reload&quot;&gt;&lt;/router-view&gt;&#10;&lt;/template&gt;&#10;&lt;script&gt;&#10;export default {&#10;inject: ['reload'],&#10;}&#10;&lt;/script&gt;&#10;&#10;2. vue3:&#10;&lt;template&gt;&#10;    &lt;el-button @click=&quot;func&quot;&gt;&lt;/router-view&gt;&#10;&lt;/template&gt;&#10;&lt;script&gt;&#10;const func = inject(&quot;reload&quot;);&#10;&lt;/script&gt;" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

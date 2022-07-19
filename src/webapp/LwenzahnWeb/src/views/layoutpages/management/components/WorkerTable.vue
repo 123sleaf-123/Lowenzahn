@@ -25,7 +25,7 @@
           <el-table-column prop="workerPassword" label="Password">
             <template #default="scope">
               <span v-if="!is_editing || scope.$index !== row_editing">******</span>
-              <el-input v-model="scope.row.workerPassword" v-else-if="scope.$index === row_editing"></el-input>
+              <el-input type="password" show-password v-model="scope.row.workerPassword" v-else-if="scope.$index === row_editing"></el-input>
             </template>
           </el-table-column>
           <el-table-column label="Operations">

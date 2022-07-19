@@ -8,9 +8,9 @@
 -->
 <template>
     <el-breadcrumb separator="/">
-        <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
+        <el-breadcrumb-item :to="{ path: '/' }"><el-button type="primary">Home</el-button></el-breadcrumb-item>
         <el-breadcrumb-item v-for="(item, index) in list" :key="index">
-            {{ item }}
+            <el-button text>{{ item }}</el-button>
         </el-breadcrumb-item>
     </el-breadcrumb>
 </template>
