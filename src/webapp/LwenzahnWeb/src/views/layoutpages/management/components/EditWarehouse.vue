@@ -10,10 +10,10 @@
         <el-form-item prop="warehouseName" label="Wh Name">
           <el-input v-model="warehouseName" placeholder="" clearable></el-input>
         </el-form-item>
-        <el-form-item prop="warehouseArea" label="Area">
+        <el-form-item prop="warehouseArea" label="warehouseArea">
           <el-input v-model="warehouseArea" placeholder="" clearable></el-input>
         </el-form-item>
-        <el-form-item prop="warehouseAddress" label="Address">
+        <el-form-item prop="warehouseAddress" label="warehouseAddress">
           <el-input v-model="warehouseAddress" placeholder="" clearable></el-input>
         </el-form-item>
       </el-form>
@@ -89,18 +89,18 @@ const form = reactive({
 });
 const { warehouseId, warehouseName, warehouseArea, warehouseAddress } = toRefs(form);
 const roleList = ref([]);
-
 /**
  * @description: 初始化
  * @param {*}
  * @return {*}
  */
-// rowData.value &&
-//   ((name.value = rowData.value.name),
-//     (userName.value = rowData.value.userName),
-//     (password.value = rowData.value.password),
-//     (role.value = rowData.value.role),
-//     (status.value = rowData.value.status));
+rowData.value &&
+  (
+    (warehouseId.value = rowData.value.warehouseId),
+    (warehouseName.value = rowData.value.warehouseName),
+    (warehouseArea.value = rowData.value.warehouseArea),
+    (warehouseAddress.value = rowData.value.warehouseAddress)
+  );
 /**
  * @description: 获取角色列表
  * @param {*}
@@ -119,16 +119,17 @@ const getRoleList = async () => {
     roleList.value = list;
   }
 };
-getRoleList();
+// getRoleList();
 /**
  * @description:提交
  * @param {*}
  * @return {*}
  */
 const onSubmit = () => {
+  console.log(rowData.value);
   formRef.value.validate(async (valid) => {
     if (valid) {
-      axios.post("http://localhost:9090/warehouses/adding", {
+      axios.post("http://localhost:9090/warehouses/updating", {
         warehouseId: warehouseId.value,
         warehouseName: warehouseName.value,
         warehouseArea: warehouseArea.value,
@@ -141,7 +142,7 @@ const onSubmit = () => {
       console.log("error submit!!");
       return false;
     }
-  });
+  })
 };
 </script>
 

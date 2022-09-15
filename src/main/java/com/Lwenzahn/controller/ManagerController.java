@@ -49,14 +49,14 @@ public class ManagerController {
 
     //登录
     @PostMapping("/login")
-    public boolean login(@RequestBody ManagerDTO managerDTO) {
-        String mgrName = managerDTO.getMgrName();
-        String pwd = managerDTO.getPwd();
+    public int login(@RequestBody ManagerDTO managerDTO) {
+        String mgrName = managerDTO.getManagerName();
+        String pwd = managerDTO.getManagerPassword();
         System.out.println(mgrName);
         System.out.println(pwd);
-        if (mgrName == null || pwd == null) return false;
-        if (mgrName.isEmpty() || pwd.isEmpty()) return false;
-        if (mgrName.isBlank() || pwd.isBlank()) return false;
+        if (mgrName == null || pwd == null) return -1;
+        if (mgrName.isEmpty() || pwd.isEmpty()) return -1;
+        if (mgrName.isBlank() || pwd.isBlank()) return -1;
         return managerService.login(mgrName, pwd);
     }
 

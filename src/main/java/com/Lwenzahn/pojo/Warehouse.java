@@ -6,8 +6,10 @@ import lombok.Data;
 @Data
 public class Warehouse {
     @TableId
-    private Integer whid;
-    private String whName;
-    private Float area;
-    private String address;
+    private Integer warehouseId;
+    private Integer founder;
+    private Integer workerId;
+    private String warehouseName;
+    private Float warehouseArea;
+    private String warehouseAddress;
 }

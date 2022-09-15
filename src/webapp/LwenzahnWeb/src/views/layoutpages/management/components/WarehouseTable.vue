@@ -1,123 +1,161 @@
 <template>
-  <!-- <div style="text-align: -webkit-center">
+  <div style="text-align: -webkit-center">
     <el-container>
       <el-header>
         <h1>Warehouses</h1>
       </el-header>
       <el-main>
-        <el-button-group>
-          <el-button type="primary" @click="getWarehouses" icon="MessageBox">Show</el-button>
-          <el-button type="primary" @click="addItem">
-            Add<el-icon class="el-icon--right">
-              <Plus />
-            </el-icon>
-          </el-button>
-        </el-button-group>
-        <el-table :data="warehouses" style="width: 100%">
-          <el-table-column prop="whid" label="Warehouse id"></el-table-column>
-          <el-table-column prop="whName" label="Warehouse Name"></el-table-column>
-          <el-table-column prop="area" label="Area"></el-table-column>
-          <el-table-column prop="address" label="Address"></el-table-column>
+        <div style="text-align:end">
+          <el-button-group>
+            <el-button @click="getWarehouses" icon="Refresh"></el-button>
+            <el-button type="primary" @click="onAdding">
+              <el-icon class="el-icon--right">
+                <Plus />
+              </el-icon>
+            </el-button>
+          </el-button-group>
+        </div>
+        <el-table :data="warehouses" style="width: 100%" empty-text="There aren't any warehouse!">
+          <el-table-column prop="warehouseId" label="Warehouse id"></el-table-column>
+          <el-table-column prop="warehouseName" label="Warehouse Name">
+            <template #default="scope">
+              <span v-if="!is_editing">{{ scope.row.warehouseName }}</span>
+              <el-input v-model="scope.row.warehouseName" v-else-if="scope.$index === row_editing"></el-input>
+            </template>
+          </el-table-column>
+          <el-table-column prop="warehouseArea" label="Area">
+            <template #default="scope">
+              <span v-if="!is_editing">{{ scope.row.warehouseArea }}</span>
+              <el-input v-model="scope.row.warehouseArea" v-else-if="scope.$index === row_editing"></el-input>
+            </template>
+          </el-table-column>
+          <el-table-column prop="warehouseAddress" label="Address">
+            <template #default="scope">
+              <span v-if="!is_editing">{{ scope.row.warehouseAddress }}</span>
+              <el-input v-model="scope.row.warehouseAddress" v-else-if="scope.$index === row_editing"></el-input>
+            </template>
+          </el-table-column>
           <el-table-column label="Operations">
-            <el-button type="primary" round @click="editItem">Edit</el-button>
-            <el-popconfirm title="Are you sure to delete this?">
-              <template #reference>
-                <el-button type="danger" round @click="deleteItem">Delete</el-button>
-              </template>
-            </el-popconfirm>
+            <template #default="scope">
+              <el-button v-show="!is_editing || (!is_editing && scope.$index === row_editing)" type="primary" round
+                @click.prevent="editRow(scope.$index)" icon="Edit">Edit
+              </el-button>
+              <el-button v-show="!is_editing || (!is_editing && scope.$index === row_editing)" type="danger" round
+                @click.prevent="deleteRow(scope.$index)" icon="Delete">
+                Del
+              </el-button>
+              <el-button v-show="is_editing && scope.$index === row_editing" type="success" round
+                @click.prevent="saveChange(scope.$index)" icon="Check">Save</el-button>
+              <el-button v-show="is_editing && scope.$index === row_editing" type="info" round
+                @click.prevent="cancelChange(scope.$index)" icon="Close">Cancel</el-button>
+            </template>
           </el-table-column>
         </el-table>
       </el-main>
     </el-container>
-  </div> -->
-  <!-- <div v-show="is_adding">
-    <AddWarehouseDialog></AddWarehouseDialog>
-  </div> -->
-  <table class="table caption-top table-hover">
-    <caption>
-      <h1 class="text-center">Warehouse Management System</h1>
-      <el-button-group>
-        <el-button type="primary" @click="getWarehouses" icon="MessageBox">Show</el-button>
-        <el-button type="primary" @click="dialogVisible = true">
-          Add<el-icon class="el-icon--right">
-            <Plus />
-          </el-icon>
-        </el-button>
-      </el-button-group>
-    </caption>
-    <thead class="table-dark">
-      <tr>
-        <th scope="col">Warehouse id</th>
-        <th scope="col">Warehouse Name</th>
-        <th scope="col">Warehouse Area(m^2)</th>
-        <th scope="col">Warehouse Address</th>
-        <th scope="col">Operations</th>
-      </tr>
-    </thead>
-    <tbody>
-      <warehouseItem v-for="wh in warehouses" :key="wh.id" :warehouse="wh"></warehouseItem>
-    </tbody>
-  </table>
-  <el-dialog v-model="dialogVisible" title="Tips" width="30%" :before-close="handleClose">
-    <span>This is a message</span>
-    <template #footer>
-      <span class="dialog-footer">
-        <el-button @click="dialogVisible = false">Cancel</el-button>
-        <el-button type="primary" @click="dialogVisible = false">Confirm</el-button>
-      </span>
-    </template>
-  </el-dialog>
+    <AddWhDialog :show-dialog="is_adding" :title="addTitle" @closeDialog="closeAdding"></AddWhDialog>
+    <!-- <EditWarehouse key="is_editing" :show-dialog="is_editing" :title="editTitle" :rowData="this.warehouse"
+      @closeDialog="closeEditing"></EditWarehouse> -->
+    <DeleteWarehouse key="is_deleting" :show-dialog="is_deleting" :title="deleteTitle" :rowData="this.warehouse"
+      @closeDialog="cancelDeleting"></DeleteWarehouse>
+    <!-- <SearchGoodInWarehouse key="is_searching" :show-dialog="is_searching" :title="searchingTitle"
+      :rowData="this.warehouse" @closeDialog="cancelDeleting"></SearchGoodInWarehouse> -->
+  </div>
 </template>
 
 <script>
 import axios from "axios";
-import warehouseItem from "./warehouseItem.vue";
-// import AddWarehouseDialog from "./AddWarehouseDialog.vue"
+import AddWhDialog from "./AddWhDialog.vue";
+import EditWarehouse from "./EditWarehouse.vue";
+import DeleteWarehouse from "./DeleteWarehouse.vue";
+// import SearchGoodInWarehouse from "./SearchGoodInWarehouse.vue"
+import { useRouter } from "vue-router";
 export default {
   name: "WarehouseTable",
   components: {
-    warehouseItem,
-    // AddWarehouseDialog,
+    AddWhDialog,
+    EditWarehouse,
+    DeleteWarehouse,
   },
+  inject: ['reload'],
   data() {
     return {
-      warehouses: []
+      warehouses: [],
+      warehouse: null,
+      addTitle: 'New Warehouse',
+      editTitle: 'Warehouse Information',
+      deleteTitle: 'WARNING!',
+      searchingTitle: 'Warehouse Goods',
+      is_adding: false,
+      is_editing: false,
+      is_deleting: false,
+      is_searching: false,
+      row_editing: -1,
+      router: useRouter(),
     }
   },
   methods: {
     getWarehouses() {
       axios({
-        url: "http://localhost:8080/warehouses",
+        url: "http://localhost:9090/warehouses",
         method: 'GET',
       }).then((res) => {
         console.log(res.data);
         this.warehouses = res.data;
       });
     },
-    editItem() {
-      this.is_edit = true
-    },
-    addItem() {
-      // axios.post("http://localhost:8080/warehouses/adding", this.warehouse).then(res => {
-      //   console.log(res)
-      // })
+    onAdding() {
       this.is_adding = true;
     },
-    deleteItem() {
-      axios.post("http://localhost:8080/warehouses/deleting", this.warehouse).then(res => {
+    onEditing() {
+      this.is_editing = !this.is_editing;
+    },
+    closeAdding() {
+      this.is_adding = false;
+      this.reload();
+    },
+    closeEditing() {
+      this.is_editing = false;
+    },
+    cancelDeleting() {
+      this.is_deleting = false;
+    },
+    clickRow(row) {
+      this.warehouse = row.data;
+    },
+    editRow(index) {
+      this.warehouse = this.warehouses[index];
+      this.is_editing = true;
+      this.row_editing = index;
+      console.log(this.row_editing);
+    },
+    deleteRow(index) {
+      this.warehouse = this.warehouses[index];
+      this.is_deleting = true;
+    },
+    saveChange(index) {
+      this.warehouse = this.warehouses[index];
+      this.is_editing = false;
+      axios.post("http://localhost:9090/warehouses/updating", this.warehouse).then(res => {
         console.log(res)
       })
+      this.reload();
     },
-    accept() {
-      axios.post("http://localhost:8080/warehouses/updating", this.warehouse).then(res => {
-        console.log(res)
-      })
-      this.is_edit = false
+    cancelChange(index) {
+      this.editRow = index;
+      this.warehouses[index] = this.warehouse;
+      this.is_editing = false;
+      this.reload();
     },
-    abort() {
-      this.is_edit = false
-    }
+    // reload() {
+    //   location.reload()
+    //   this.$router.go(0)
+    //   this.router.push({name: 'AppMain'})
+    // },
   },
+  mounted() {
+    this.getWarehouses();
+  }
 };
 </script>
 

@@ -21,13 +21,15 @@ public class ManagerServiceImpl implements ManagerService {
     }
 
     @Override
-    public boolean login(String mgrName, String pwd) {
+    public int login(String mgrName, String pwd) {
         QueryWrapper<Manager> queryWrapper = new QueryWrapper<>();
-        System.out.println(mgrName);
-        System.out.println(pwd);
-        queryWrapper.eq("mgr_Name", mgrName);
-        queryWrapper.eq("pwd", pwd);
+        queryWrapper.eq("manager_name", mgrName);
+        if (managerMapper.selectOne(queryWrapper) == null) return 2;
+        queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq("manager_name", mgrName);
+        queryWrapper.eq("manager_password", pwd);
         Manager manager = managerMapper.selectOne(queryWrapper);
-        return manager != null;
+        if (manager != null) return 0;
+        else return 1;
     }
 }

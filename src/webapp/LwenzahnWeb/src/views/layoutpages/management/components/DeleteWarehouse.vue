@@ -1,61 +1,45 @@
 <template>
   <div>
     <el-dialog :title="title" append-to-body destroy-on-close :model-value="showDialog" @close="closeDialog()">
-      <!-- <span>{{ rowData }}</span> -->
-      <!-- 表单 -->
-      <el-form :model="form" ref="formRef" :rules="rules" label-width="100px" :inline="false">
-        <el-form-item prop="warehouseId" label="Wh ID">
-          <el-input v-model="warehouseId" placeholder="" clearable></el-input>
-        </el-form-item>
-        <el-form-item prop="warehouseName" label="Wh Name">
-          <el-input v-model="warehouseName" placeholder="" clearable></el-input>
-        </el-form-item>
-        <el-form-item prop="warehouseArea" label="Area">
-          <el-input v-model="warehouseArea" placeholder="" clearable></el-input>
-        </el-form-item>
-        <el-form-item prop="warehouseAddress" label="Address">
-          <el-input v-model="warehouseAddress" placeholder="" clearable></el-input>
-        </el-form-item>
-      </el-form>
-
       <template v-slot:footer>
         <span>
-          <el-button @click="closeDialog()">取消</el-button>
-          <el-button type="primary" @click="onSubmit()">确定</el-button>
+          <el-button type="info" @click="closeDialog()">Cancel</el-button>
+          <el-button type="danger" @click="onSubmit()">Delete</el-button>
         </span>
       </template>
     </el-dialog>
   </div>
+
 </template>
 
 <script setup>
-import { reactive, toRefs, ref } from "vue";
+import { reactive, toRefs, ref, watch } from "vue";
 import axios from "axios";
 const rules = {
-  warehouseId: [
+  name: [
     {
       required: true,
       message: "请输入用户名",
       trigger: "blur",
     },
   ],
-  warehouseName: [
+  userName: [
     {
       required: true,
       message: "请输入账户",
       trigger: "blur",
     },
   ],
-  warehouseArea: [
+  password: [
     {
-      required: false,
+      required: true,
       message: "请输入密码",
       trigger: "blur",
     },
   ],
-  warehouseAddress: [
+  role: [
     {
-      required: false,
+      required: true,
       message: "请选择角色",
       trigger: "change",
     },
@@ -77,17 +61,18 @@ const props = defineProps({
 });
 const emit = defineEmits(["closeDialog"]);
 const { title, rowData } = toRefs(props);
+// console.log(rowData.data);
 const closeDialog = () => {
   emit("closeDialog", false);
 };
 const formRef = ref(null);
 const form = reactive({
-  warehouseId: "",
-  warehouseName: "",
+  id: "",
+  name: "",
   warehouseArea: "",
   warehouseAddress: "",
 });
-const { warehouseId, warehouseName, warehouseArea, warehouseAddress } = toRefs(form);
+const { id, name, warehouseArea, warehouseAddress } = toRefs(form);
 const roleList = ref([]);
 
 /**
@@ -119,29 +104,16 @@ const getRoleList = async () => {
     roleList.value = list;
   }
 };
-getRoleList();
 /**
  * @description:提交
  * @param {*}
  * @return {*}
  */
 const onSubmit = () => {
-  formRef.value.validate(async (valid) => {
-    if (valid) {
-      axios.post("http://localhost:9090/warehouses/adding", {
-        warehouseId: warehouseId.value,
-        warehouseName: warehouseName.value,
-        warehouseArea: warehouseArea.value,
-        warehouseAddress: warehouseAddress.value,
-      }).then(res => {
-        console.log(res)
-      })
-      emit("closeDialog", false);
-    } else {
-      console.log("error submit!!");
-      return false;
-    }
-  });
+  axios.post("http://localhost:9090/warehouses/deleting", rowData.value).then(res => {
+    console.log(res)
+  })
+  emit("closeDialog", false);
 };
 </script>
 
