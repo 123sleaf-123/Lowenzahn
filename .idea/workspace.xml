@@ -5,37 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="799d64fa-f8a0-49ed-8ab0-bffc15bcbbb7" name="Changes" comment="总算是，重新能用了&#10;&#10;主要的问题是&#10;&quot;node-sass&quot;: &quot;^7.0.1&quot;&#10;&quot;webpack&quot;: &quot;^4.29.0&quot;,&#10;        &quot;@babel/core&quot;: &quot;^7.2.2&quot;,&#10;        &quot;@babel/preset-env&quot;: &quot;^7.3.1&quot;,&#10;        &quot;babel-loader&quot;: &quot;^8.0.5&quot;,&#10;        &quot;webpack-cli&quot;: &quot;^3.2.1&quot;,&#10;        &quot;webpack-dev-server&quot;: &quot;^3.1.14&quot;&#10;&quot;webpack&quot;: &quot;^5.73.0&quot;&#10;这几个包在互相掐架，其实根本不用装这些，也实际上不需要typescript，但是我当时添加了，却没有再npm i成功过，所以一直都是用旧的包。&#10;因此才会出现我一直能用，他人接手一碰就死。&#10;这就是代码的屎山！">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/controller/dto/GoodInfoDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/pojo/Goods.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/layoutpages/management/Goods.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/layoutpages/management/Search.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/layoutpages/management/Workers.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/layoutpages/management/components/AddWorker.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/layoutpages/management/components/DeleteWarehouse.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/layoutpages/management/components/DeleteWorker.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/layoutpages/management/components/EditWarehouse.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/layoutpages/management/components/EditWorker.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/layoutpages/management/components/GoodTable.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/layoutpages/management/components/SearchGoodInWarehouse.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/layoutpages/management/components/WorkerTable.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/controller/GoodController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/controller/GoodsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/controller/ManagerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/controller/ManagerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/controller/WarehouseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/controller/WarehouseController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/controller/dto/ManagerDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/controller/dto/ManagerDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/mapper/GoodMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/mapper/GoodsMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/mapper/WarehouseMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/mapper/WarehouseMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/pojo/Good.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/pojo/Manager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/pojo/Manager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/pojo/Warehouse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/pojo/Warehouse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/pojo/Worker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/pojo/Worker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/service/ManagerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/service/ManagerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/service/impl/ManagerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/service/impl/ManagerServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/api/modules/system.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/api/modules/system.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/layoutpages/management/Warehouses.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/layoutpages/management/Warehouses.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/layoutpages/management/components/AddWhDialog.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/layoutpages/management/components/AddWhDialog.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/layoutpages/management/components/WarehouseTable.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/layoutpages/management/components/WarehouseTable.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -170,7 +141,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657141817618</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="总算是，重新能用了&#10;&#10;主要的问题是&#10;&quot;node-sass&quot;: &quot;^7.0.1&quot;&#10;&quot;webpack&quot;: &quot;^4.29.0&quot;,&#10;        &quot;@babel/core&quot;: &quot;^7.2.2&quot;,&#10;        &quot;@babel/preset-env&quot;: &quot;^7.3.1&quot;,&#10;        &quot;babel-loader&quot;: &quot;^8.0.5&quot;,&#10;        &quot;webpack-cli&quot;: &quot;^3.2.1&quot;,&#10;        &quot;webpack-dev-server&quot;: &quot;^3.1.14&quot;&#10;&quot;webpack&quot;: &quot;^5.73.0&quot;&#10;这几个包在互相掐架，其实根本不用装这些，也实际上不需要typescript，但是我当时添加了，却没有再npm i成功过，所以一直都是用旧的包。&#10;因此才会出现我一直能用，他人接手一碰就死。&#10;这就是代码的屎山！">
+      <created>1663248569375</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1663248569375</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -196,7 +174,8 @@
     <MESSAGE value="更新了后端，完成了登录验证，主要流程是：&#10;&#10;&#10;从前端接受json输入转化为中介变量ManagerDTO，&#10;&#10;而后ManagerController的login方法判断输入是否合法，&#10;&#10;并将合法变量交由ManagerService的login方法进行数据库查询判断，&#10;&#10;若结果不为空，登陆成功，返回true到前端。" />
     <MESSAGE value="登录功能已经实现了&#10;&#10;遇到的最大的问题就是没意识到强行把router改成静态的了，一打开立刻就好了&#10;&#10;接收从后端传来的结果，判断是否放行" />
     <MESSAGE value="吓死我了，我差点以为又出错了" />
-    <option name="LAST_COMMIT_MESSAGE" value="吓死我了，我差点以为又出错了" />
+    <MESSAGE value="总算是，重新能用了&#10;&#10;主要的问题是&#10;&quot;node-sass&quot;: &quot;^7.0.1&quot;&#10;&quot;webpack&quot;: &quot;^4.29.0&quot;,&#10;        &quot;@babel/core&quot;: &quot;^7.2.2&quot;,&#10;        &quot;@babel/preset-env&quot;: &quot;^7.3.1&quot;,&#10;        &quot;babel-loader&quot;: &quot;^8.0.5&quot;,&#10;        &quot;webpack-cli&quot;: &quot;^3.2.1&quot;,&#10;        &quot;webpack-dev-server&quot;: &quot;^3.1.14&quot;&#10;&quot;webpack&quot;: &quot;^5.73.0&quot;&#10;这几个包在互相掐架，其实根本不用装这些，也实际上不需要typescript，但是我当时添加了，却没有再npm i成功过，所以一直都是用旧的包。&#10;因此才会出现我一直能用，他人接手一碰就死。&#10;这就是代码的屎山！" />
+    <option name="LAST_COMMIT_MESSAGE" value="总算是，重新能用了&#10;&#10;主要的问题是&#10;&quot;node-sass&quot;: &quot;^7.0.1&quot;&#10;&quot;webpack&quot;: &quot;^4.29.0&quot;,&#10;        &quot;@babel/core&quot;: &quot;^7.2.2&quot;,&#10;        &quot;@babel/preset-env&quot;: &quot;^7.3.1&quot;,&#10;        &quot;babel-loader&quot;: &quot;^8.0.5&quot;,&#10;        &quot;webpack-cli&quot;: &quot;^3.2.1&quot;,&#10;        &quot;webpack-dev-server&quot;: &quot;^3.1.14&quot;&#10;&quot;webpack&quot;: &quot;^5.73.0&quot;&#10;这几个包在互相掐架，其实根本不用装这些，也实际上不需要typescript，但是我当时添加了，却没有再npm i成功过，所以一直都是用旧的包。&#10;因此才会出现我一直能用，他人接手一碰就死。&#10;这就是代码的屎山！" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
