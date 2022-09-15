@@ -10,6 +10,7 @@
     <router-link to="/">
         <logo />
     </router-link>
+    <personal-panel></personal-panel>
     <div class="ve_el_menu">
         <el-scrollbar>
             <el-menu
@@ -42,6 +43,7 @@ import { computed } from "vue";
 import { useStore } from "vuex";
 import { useRoute } from "vue-router";
 import Logo from "./components/Logo";
+import PersonalPanel from "./components/PersonalPanel"
 import SlideMenu from "./components/SlideMenu";
 
 const store = useStore();

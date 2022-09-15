@@ -9,13 +9,13 @@
 <template>
     <el-row :gutter="20" style="padding-bottom: 10px">
         <el-col :span="12">
-            <div class="ve-card ve_card1">
+            <div class="ve-card ve_card1" @click="jumpToWarehouse">
                 <el-icon>
                     <HomeFilled />
                 </el-icon>
                 <div>
                     <p>Warehouses</p>
-                    <span>6</span>
+                    <span>{{ this.warehouses }}</span>
                 </div>
             </div>
         </el-col>
@@ -26,14 +26,14 @@
                 </el-icon>
                 <div>
                     <p>Managers</p>
-                    <span>6</span>
+                    <span>{{ this.managers }}</span>
                 </div>
             </div>
         </el-col>
     </el-row>
     <el-row :gutter="20" style="padding-top: 10px">
         <el-col :span="12">
-            <div class="ve-card ve_card3">
+            <div class="ve-card ve_card3" @click="jumpToWorker">
                 <el-icon>
                     <el-icon>
                         <UserFilled />
@@ -41,25 +41,83 @@
                 </el-icon>
                 <div>
                     <p>Workers</p>
-                    <span>6</span>
+                    <span>{{ this.workers }}</span>
                 </div>
             </div>
         </el-col>
         <el-col :span="12">
-            <div class="ve-card ve_card4">
+            <div class="ve-card ve_card4" @click="jumpToGood">
                 <el-icon>
                     <Goods />
                 </el-icon>
                 <div>
                     <p>Goods</p>
-                    <span>6</span>
+                    <span>{{ this.goods }}</span>
                 </div>
             </div>
         </el-col>
     </el-row>
 </template>
 
-<!-- <script setup></script> -->
+<script>
+import axios from "axios"
+import { useRouter } from "vue-router";
+export default {
+    data() {
+        return {
+            warehouses: null,
+            workers: null,
+            managers: null,
+            goods: null,
+            router: useRouter(),
+        }
+    },
+    methods: {
+        query() {
+            axios({
+                url: "http://localhost:9090/warehouses",
+                method: 'GET',
+            }).then((res) => {
+                console.log(res.data);
+                this.warehouses = res.data.length;
+            });
+            axios({
+                url: "http://localhost:9090/worker",
+                method: 'GET',
+            }).then((res) => {
+                console.log(res.data);
+                this.workers = res.data.length;
+            });
+            axios({
+                url: "http://localhost:9090/manager",
+                method: 'GET',
+            }).then((res) => {
+                console.log(res.data);
+                this.managers = res.data.length;
+            });
+            axios({
+                url: "http://localhost:9090/good",
+                method: 'GET',
+            }).then((res) => {
+                console.log(res.data);
+                this.goods = res.data.length;
+            });
+        },
+        jumpToWarehouse() {
+            this.router.push("management-Warehouses-18");
+        },
+        jumpToGood() {
+            this.router.push("management-Goods-19");
+        },
+        jumpToWorker() {
+            this.router.push("management-Workers-20")
+        },
+    },
+    mounted() {
+        this.query();
+    }
+}
+</script>
 
 <style lang="scss" scoped>
 .el-row {

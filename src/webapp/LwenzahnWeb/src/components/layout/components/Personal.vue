@@ -10,35 +10,35 @@
     <div class="ve_personal">
         <el-button-group>
             <el-button
-                title="刷新"
+                title="Refresh"
                 style="border: none; font-size: 20px"
                 circle
                 plain
                 @click="reload()"
             >
-                <el-icon :size="20" style="vertical-align: middle">
+                <el-icon :size="30" style="vertical-align: middle">
                     <Refresh />
                 </el-icon>
             </el-button>
             <el-button
-                title="全屏"
+                title="Full-screen"
                 style="border: none; font-size: 20px"
                 circle
                 plain
                 @click="toggle()"
             >
-                <el-icon :size="14" style="vertical-align: middle">
+                <el-icon :size="25" style="vertical-align: middle">
                     <full-screen />
                 </el-icon>
             </el-button>
             <el-button
-                :title="dark ? '夜间模式' : '明亮模式'"
+                :title="dark ? 'Darkness' : 'Lighting'"
                 style="border: none; font-size: 20px"
                 circle
                 plain
                 @click="toggleTheme()"
             >
-                <el-icon :size="14" style="vertical-align: middle">
+                <el-icon :size="30" style="vertical-align: middle">
                     <component :is="dark ? 'moon' : 'sunny'" />
                 </el-icon>
             </el-button>
@@ -46,15 +46,18 @@
         <el-divider direction="vertical"></el-divider>
         <el-dropdown @command="handleCommand">
             <span class="ve_nav_dropdown">
-                你好!{{ uname }}
+                Hello!{{ uname }}
                 <el-icon>
                     <arrow-down-bold />
                 </el-icon>
             </span>
             <template #dropdown>
                 <el-dropdown-menu>
+                    <el-dropdown-item>
+                        <el-icon><Setting /></el-icon>Settings
+                    </el-dropdown-item>
                     <el-dropdown-item :command="{ name: 'Login' }">
-                        退出登录
+                        <el-icon><SwitchButton /></el-icon>Sign Out
                     </el-dropdown-item>
                 </el-dropdown-menu>
             </template>
