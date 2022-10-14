@@ -7,14 +7,14 @@
         <el-form-item prop="warehouseId" label="Wh ID">
           <el-input v-model="warehouseId" placeholder="" clearable></el-input>
         </el-form-item>
-        <el-form-item prop="warehouseName" label="Wh Name">
+        <!-- <el-form-item prop="warehouseName" label="Wh Name">
           <el-input v-model="warehouseName" placeholder="" clearable></el-input>
+        </el-form-item> -->
+        <el-form-item prop="warehouseAddress" label="Address">
+          <el-input v-model="warehouseAddress" placeholder="" clearable></el-input>
         </el-form-item>
         <el-form-item prop="warehouseArea" label="Area">
           <el-input v-model="warehouseArea" placeholder="" clearable></el-input>
-        </el-form-item>
-        <el-form-item prop="warehouseAddress" label="Address">
-          <el-input v-model="warehouseAddress" placeholder="" clearable></el-input>
         </el-form-item>
       </el-form>
 
@@ -35,31 +35,38 @@ const rules = {
   warehouseId: [
     {
       required: true,
-      message: "请输入用户名",
+      message: "Please enter warehouse Id",
       trigger: "blur",
     },
   ],
-  warehouseName: [
+  // warehouseName: [
+  //   {
+  //     required: true,
+  //     message: "请输入账户",
+  //     trigger: "blur",
+  //   },
+  // ],
+  warehouseAddress: [
     {
       required: true,
-      message: "请输入账户",
-      trigger: "blur",
+      message: "Please Enter Address",
+      trigger: "change",
     },
   ],
   warehouseArea: [
     {
       required: false,
-      message: "请输入密码",
+      message: "Please Enter Warehouse Area",
       trigger: "blur",
     },
   ],
-  warehouseAddress: [
-    {
-      required: false,
-      message: "请选择角色",
-      trigger: "change",
-    },
-  ],
+  // warehouseAddress: [
+  //   {
+  //     required: false,
+  //     message: "请选择角色",
+  //     trigger: "change",
+  //   },
+  // ],
 };
 const props = defineProps({
   showDialog: {

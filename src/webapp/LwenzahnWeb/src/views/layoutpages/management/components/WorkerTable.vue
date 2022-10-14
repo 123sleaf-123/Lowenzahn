@@ -6,7 +6,7 @@
       </el-header>
       <el-main>
         <el-button-group>
-          <el-button type="primary" @click="getWorkers" icon="Refresh">Refresh</el-button>
+          <el-button type="primary" @click="this.reload" icon="Refresh">Refresh</el-button>
           <el-button type="primary" @click="onAdding">
             New WKR<el-icon class="el-icon--right">
               <Plus />

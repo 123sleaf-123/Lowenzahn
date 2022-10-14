@@ -7,7 +7,7 @@
       <el-main>
         <div style="text-align:end">
           <el-button-group>
-            <el-button @click="getWarehouses" icon="Refresh"></el-button>
+            <el-button @click="this.reload" icon="Refresh"></el-button>
             <el-button type="primary" @click="onAdding">
               <el-icon class="el-icon--right">
                 <Plus />
@@ -17,24 +17,24 @@
         </div>
         <el-table :data="warehouses" style="width: 100%" empty-text="There aren't any warehouse!">
           <el-table-column prop="warehouseId" label="Warehouse id"></el-table-column>
-          <el-table-column prop="warehouseName" label="Warehouse Name">
-            <template #default="scope">
-              <span v-if="!is_editing">{{ scope.row.warehouseName }}</span>
-              <el-input v-model="scope.row.warehouseName" v-else-if="scope.$index === row_editing"></el-input>
-            </template>
-          </el-table-column>
-          <el-table-column prop="warehouseArea" label="Area">
-            <template #default="scope">
-              <span v-if="!is_editing">{{ scope.row.warehouseArea }}</span>
-              <el-input v-model="scope.row.warehouseArea" v-else-if="scope.$index === row_editing"></el-input>
-            </template>
-          </el-table-column>
           <el-table-column prop="warehouseAddress" label="Address">
             <template #default="scope">
               <span v-if="!is_editing">{{ scope.row.warehouseAddress }}</span>
               <el-input v-model="scope.row.warehouseAddress" v-else-if="scope.$index === row_editing"></el-input>
             </template>
           </el-table-column>
+          <el-table-column prop="warehouseArea" label="Area (m²)">
+            <template #default="scope">
+              <span v-if="!is_editing">{{ scope.row.warehouseArea }}</span>
+              <el-input v-model="scope.row.warehouseArea" v-else-if="scope.$index === row_editing"></el-input>
+            </template>
+          </el-table-column>
+          <!-- <el-table-column prop="warehouseName" label="Warehouse Name">
+            <template #default="scope">
+              <span v-if="!is_editing">{{ scope.row.warehouseName }}</span>
+              <el-input v-model="scope.row.warehouseName" v-else-if="scope.$index === row_editing"></el-input>
+            </template>
+          </el-table-column> -->
           <el-table-column label="Operations">
             <template #default="scope">
               <el-button v-show="!is_editing || (!is_editing && scope.$index === row_editing)" type="primary" round

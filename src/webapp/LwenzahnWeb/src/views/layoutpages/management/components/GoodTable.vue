@@ -6,7 +6,7 @@
       </el-header>
       <el-main>
         <el-button-group>
-          <el-button type="primary" @click="getGoods" icon="Refresh">Refresh</el-button>
+          <el-button type="primary" @click="this.reload" icon="Refresh">Refresh</el-button>
         </el-button-group>
         <el-table :data="goods" style="width: 100%">
           <el-table-column label="Image">

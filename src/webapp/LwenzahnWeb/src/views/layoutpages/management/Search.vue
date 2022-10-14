@@ -14,14 +14,14 @@
                 <el-table-column prop="goodsName" label="Name"></el-table-column>
                 <el-table-column prop="goodsType" label="Type"></el-table-column>
                 <el-table-column prop="warehouseId" label="Warehouse"></el-table-column>
-                <el-table-column prop="rowNum" label="Row"></el-table-column>
-                <el-table-column prop="columnNum" label="Column"></el-table-column>
-                <el-table-column prop="floorNum" label="Floor"></el-table-column>
-                <el-table-column prop="positionNum" label="Position"></el-table-column>
+                <el-table-column prop="shelfId" label="Shelf ID"></el-table-column>
+                <el-table-column prop="positionCode" label="Shelf Position"></el-table-column>
+                <el-table-column prop="rowPosition" label="Row"></el-table-column>
+                <el-table-column prop="columnPosition" label="Column"></el-table-column>
                 <el-table-column label="Location Code">
                     <template #default="scope">
                         <div>
-                            {{ scope.row.warehouseId }}-{{ scope.row.rowNum }}-{{ scope.row.columnNum }}-{{ scope.row.floorNum }}-{{ scope.row.positionNum }}
+                            {{ scope.row.warehouseId }}-{{ scope.row.positionCode }}-{{ scope.row.rowPosition }}-{{ scope.row.columnPosition }}
                         </div>
                     </template>
                 </el-table-column>

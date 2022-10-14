@@ -83,11 +83,11 @@ const closeDialog = () => {
 const formRef = ref(null);
 const form = reactive({
   warehouseId: "",
-  warehouseName: "",
-  warehouseArea: "",
+  // warehouseName: "",
   warehouseAddress: "",
+  warehouseArea: "",
 });
-const { warehouseId, warehouseName, warehouseArea, warehouseAddress } = toRefs(form);
+const { warehouseId, warehouseAddress, warehouseArea } = toRefs(form);
 const roleList = ref([]);
 /**
  * @description: 初始化
@@ -97,9 +97,8 @@ const roleList = ref([]);
 rowData.value &&
   (
     (warehouseId.value = rowData.value.warehouseId),
-    (warehouseName.value = rowData.value.warehouseName),
-    (warehouseArea.value = rowData.value.warehouseArea),
-    (warehouseAddress.value = rowData.value.warehouseAddress)
+    (warehouseAddress.value = rowData.value.warehouseAddress),
+    (warehouseArea.value = rowData.value.warehouseArea)
   );
 /**
  * @description: 获取角色列表
@@ -131,7 +130,6 @@ const onSubmit = () => {
     if (valid) {
       axios.post("http://localhost:9090/warehouses/updating", {
         warehouseId: warehouseId.value,
-        warehouseName: warehouseName.value,
         warehouseArea: warehouseArea.value,
         warehouseAddress: warehouseAddress.value,
       }).then(res => {
