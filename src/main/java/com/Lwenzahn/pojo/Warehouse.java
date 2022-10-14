@@ -7,9 +7,10 @@ import lombok.Data;
 public class Warehouse {
     @TableId
     private Integer warehouseId;
-    private Integer founder;
-    private Integer workerId;
-    private String warehouseName;
+//    private String warehouseName;
     private Float warehouseArea;
     private String warehouseAddress;
+    private Integer workerId;
+    private Character shelfNum;
+    private Integer founder;
 }

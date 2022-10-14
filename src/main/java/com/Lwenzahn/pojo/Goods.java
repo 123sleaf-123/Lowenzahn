@@ -7,8 +7,11 @@ import lombok.Data;
 public class Goods {
     @TableId
     private Integer goodsId;
-    private String goodsName;
     private String goodsType;
+    private String goodsName;
     private Float goodsWeight;
-    private String goodsImagePath;
+    private Integer rowPosition;
+    private Integer columnPosition;
+    private Boolean isStorage;
+//    private String goodsImagePath;
 }
