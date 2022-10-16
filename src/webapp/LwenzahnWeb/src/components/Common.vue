@@ -22,7 +22,7 @@
             <div class="error">
                 <div class="error__title">404</div>
                 <div class="error__subtitle">🐱🐱🐱(⓿_⓿)🐱🐱🐱</div>
-                <div class="error__description">看来你是迷路了......</div>
+                <div class="error__description">Ops... Resources were removed or moved to somewhere else!</div>
                 <router-link to="/">
                     <button class="error__button error__button--active">
                         回到首页

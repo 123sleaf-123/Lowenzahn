@@ -9,7 +9,7 @@
 <template>
     <div
         v-loading="load"
-        element-loading-text="拼命加载中"
+        element-loading-text="Trying Hard"
         element-loading-spinner="el-icon-loading"
     >
         <iframe ref="iframe" :src="props.url" frameborder="0"></iframe>

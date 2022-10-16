@@ -59,7 +59,7 @@ export default {
         },
         getGoodInfo() {
             console.log(this.whData);
-            axios.post("http://localhost:9090/warehouses/queryGoods", this.whData).then((res) => {
+            axios.get("http://localhost:9090/good/queryGoods").then((res) => {
                 console.log(res.data);
                 this.goodsInfo = res.data;
             });

@@ -1,5 +1,5 @@
 html {
-    background: #fff;
+    background: rgb(255, 255, 255);
     transition: color 300ms, background-color 300ms;
     &.dark {
         filter: contrast(100%) invert(100%);

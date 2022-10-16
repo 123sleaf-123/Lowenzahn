@@ -23,7 +23,7 @@ const searchList = (sRole, sLimit, sPage, sList, sName) => {
     res.limit = sLimit * 1;
     res.list = list.slice((sPage - 1) * sLimit, (sPage - 1) * sLimit + sLimit);
     return {
-        message: "查询成功!",
+        message: "Query Success!",
         code: "00",
         data: res,
     };
@@ -270,39 +270,39 @@ const menuList = [
         sort: 1,
         iframe: 1,
     },
-    {
-        parentId: -1,
-        id: 15,
-        name: "REFERENCE", //看官网，这个名字是3-5之间的
-        url: "",
-        menu: "",
-        type: 0,
-        icon: "DocumentCopy",
-        sort: 1,
-        iframe: 1,
-    },
-    {
-        parentId: 15,
-        id: 16,
-        name: "vue3.0", //看官网，这个名字是3-5之间的
-        url: "https://www.vue3js.cn/docs/zh/", //这个类似上面的id一个，只是初始值是从100开始的
-        menu: "",
-        type: 1,
-        icon: "Promotion",
-        sort: 1,
-        iframe: 1,
-    },
-    {
-        parentId: 15,
-        id: 17,
-        name: "element-plus", //看官网，这个名字是3-5之间的
-        url: "https://element-plus.org/#/zh-CN", //这个类似上面的id一个，只是初始值是从100开始的
-        menu: "",
-        type: 1,
-        icon: "ElemeFilled",
-        sort: 1,
-        iframe: 1,
-    },
+    // {
+    //     parentId: -1,
+    //     id: 15,
+    //     name: "REFERENCE", //看官网，这个名字是3-5之间的
+    //     url: "",
+    //     menu: "",
+    //     type: 0,
+    //     icon: "DocumentCopy",
+    //     sort: 1,
+    //     iframe: 1,
+    // },
+    // {
+    //     parentId: 15,
+    //     id: 16,
+    //     name: "vue3.0", //看官网，这个名字是3-5之间的
+    //     url: "https://www.vue3js.cn/docs/zh/", //这个类似上面的id一个，只是初始值是从100开始的
+    //     menu: "",
+    //     type: 1,
+    //     icon: "Promotion",
+    //     sort: 1,
+    //     iframe: 1,
+    // },
+    // {
+    //     parentId: 15,
+    //     id: 17,
+    //     name: "element-plus", //看官网，这个名字是3-5之间的
+    //     url: "https://element-plus.org/#/zh-CN", //这个类似上面的id一个，只是初始值是从100开始的
+    //     menu: "",
+    //     type: 1,
+    //     icon: "ElemeFilled",
+    //     sort: 1,
+    //     iframe: 1,
+    // },
     {
         parentId: -1,
         id: 200,
@@ -322,6 +322,7 @@ const menuList = [
         menu: "",
         type: 1,
         icon: "HomeFilled",
+        color: "#59C173",
         sort: 3,
         iframe: 0,
     },
@@ -333,6 +334,7 @@ const menuList = [
         menu: "",
         type: 1,
         icon: "GoodsFilled",
+        color: "#FDC830",
         sort: 3,
         iframe: 0,
     },
@@ -344,6 +346,7 @@ const menuList = [
         menu: "",
         type: 1,
         icon: "UserFilled",
+        color: "#f7797d",
         sort: 3,
         iframe: 0,
     },
@@ -355,6 +358,7 @@ const menuList = [
         menu: "",
         type: 1,
         icon: "GoodsFilled",
+        color: "#c471ed",
         sort: 3,
         iframe: 0,
     }
@@ -554,7 +558,7 @@ module.exports = {
         response: () => {
             user.menus = roleList.find((item) => item.id == user.roleId).role;
             return {
-                message: "查询成功!",
+                message: "Welcome back Lowenzahn!",
                 code: "00",
                 list: user.menus,
             };

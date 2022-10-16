@@ -30,7 +30,7 @@
     >
         <template #title>
             <el-icon :size="16" style="margin-right: 6px">
-                <component :is="menu.icon" />
+                <component :is="menu.icon" :color="menu.color" />
             </el-icon>
             <span>{{ menu.name }}</span>
         </template>
@@ -79,7 +79,7 @@ const filerMenus = (menus) => {
 
 <style lang="scss">
 li.el-menu-item.is-active {
-    background-color: darken($sideBgColor, 15%) !important;
+    background-color: darken($sideBgColor, 100%) !important;
 }
 .el-menu-item .el-icon svg {
     vertical-align: unset;
