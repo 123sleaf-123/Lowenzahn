@@ -4,13 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="799d64fa-f8a0-49ed-8ab0-bffc15bcbbb7" name="Changes" comment="恢复到上次停下来的进度了">
+    <list default="true" id="799d64fa-f8a0-49ed-8ab0-bffc15bcbbb7" name="Changes" comment="修改了数据库，与物联数据库合并，并且完善了逻辑">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/controller/dto/GoodInfoDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/controller/dto/GoodInfoDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/controller/GoodsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/controller/GoodsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/controller/WarehouseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/controller/WarehouseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/mapper/GoodsMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/mapper/GoodsMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/mapper/WarehouseMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/mapper/WarehouseMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/pojo/Goods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/pojo/Goods.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/pojo/Warehouse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/pojo/Warehouse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +31,7 @@
       </GitPushTagMode>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="SOFT" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -152,14 +152,7 @@
       <option name="project" value="LOCAL" />
       <updated>1663248569375</updated>
     </task>
-    <task id="LOCAL-00007" summary="恢复到上次停下来的进度了">
-      <created>1663248975325</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1663248975325</updated>
-    </task>
-    <option name="localTasksCounter" value="8" />
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -170,7 +163,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="dev/master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -186,8 +191,7 @@
     <MESSAGE value="登录功能已经实现了&#10;&#10;遇到的最大的问题就是没意识到强行把router改成静态的了，一打开立刻就好了&#10;&#10;接收从后端传来的结果，判断是否放行" />
     <MESSAGE value="吓死我了，我差点以为又出错了" />
     <MESSAGE value="总算是，重新能用了&#10;&#10;主要的问题是&#10;&quot;node-sass&quot;: &quot;^7.0.1&quot;&#10;&quot;webpack&quot;: &quot;^4.29.0&quot;,&#10;        &quot;@babel/core&quot;: &quot;^7.2.2&quot;,&#10;        &quot;@babel/preset-env&quot;: &quot;^7.3.1&quot;,&#10;        &quot;babel-loader&quot;: &quot;^8.0.5&quot;,&#10;        &quot;webpack-cli&quot;: &quot;^3.2.1&quot;,&#10;        &quot;webpack-dev-server&quot;: &quot;^3.1.14&quot;&#10;&quot;webpack&quot;: &quot;^5.73.0&quot;&#10;这几个包在互相掐架，其实根本不用装这些，也实际上不需要typescript，但是我当时添加了，却没有再npm i成功过，所以一直都是用旧的包。&#10;因此才会出现我一直能用，他人接手一碰就死。&#10;这就是代码的屎山！" />
-    <MESSAGE value="恢复到上次停下来的进度了" />
-    <option name="LAST_COMMIT_MESSAGE" value="恢复到上次停下来的进度了" />
+    <option name="LAST_COMMIT_MESSAGE" value="总算是，重新能用了&#10;&#10;主要的问题是&#10;&quot;node-sass&quot;: &quot;^7.0.1&quot;&#10;&quot;webpack&quot;: &quot;^4.29.0&quot;,&#10;        &quot;@babel/core&quot;: &quot;^7.2.2&quot;,&#10;        &quot;@babel/preset-env&quot;: &quot;^7.3.1&quot;,&#10;        &quot;babel-loader&quot;: &quot;^8.0.5&quot;,&#10;        &quot;webpack-cli&quot;: &quot;^3.2.1&quot;,&#10;        &quot;webpack-dev-server&quot;: &quot;^3.1.14&quot;&#10;&quot;webpack&quot;: &quot;^5.73.0&quot;&#10;这几个包在互相掐架，其实根本不用装这些，也实际上不需要typescript，但是我当时添加了，却没有再npm i成功过，所以一直都是用旧的包。&#10;因此才会出现我一直能用，他人接手一碰就死。&#10;这就是代码的屎山！" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
