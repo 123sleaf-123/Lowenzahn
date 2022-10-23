@@ -32,21 +32,21 @@ const rules = {
   workerId: [
     {
       required: true,
-      message: "请输入用户名",
+      message: "Type Worker ID",
       trigger: "blur",
     },
   ],
   workerName: [
     {
       required: true,
-      message: "请输入账户",
+      message: "Type Worker Name",
       trigger: "blur",
     },
   ],
   workerPassword: [
     {
       required: true,
-      message: "请输入密码",
+      message: "Type Your Password",
       trigger: "blur",
     },
   ],

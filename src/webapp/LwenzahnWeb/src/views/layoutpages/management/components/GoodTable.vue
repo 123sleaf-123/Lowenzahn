@@ -9,7 +9,10 @@
           <el-button type="primary" @click="this.reload" icon="Refresh">Refresh</el-button>
         </el-button-group>
         <el-table :data="goods" style="width: 100%">
-          <el-table-column label="Image">
+          <el-table-column prop="goodsImagePath" label="Image">
+            <template #default="scope">
+               <img :src="scope.row.goodsImagePath" min-width="70" height="70"/>
+            </template>
           </el-table-column>
           <el-table-column prop="goodsId" label="Good id"></el-table-column>
           <el-table-column prop="goodsName" label="Good Name"></el-table-column>

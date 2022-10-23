@@ -3,8 +3,17 @@
     <el-dialog :title="title" append-to-body destroy-on-close :model-value="showDialog" @close="closeDialog()">
       <template v-slot:footer>
         <span>
-          <el-button type="info" @click="closeDialog()">Cancel</el-button>
-          <el-button type="danger" @click="onSubmit()">Delete</el-button>
+          <el-card class="card">
+            <template #header>
+              <span>{{ rowData.workerName }}</span>
+            </template>
+            <div class="item">{{ rowData.workerId }}</div>
+            <div class="item">{{ rowData.workerPassword }}</div>
+          </el-card>
+        </span>
+        <span>
+          <el-button type="info" @click="closeDialog">Cancel</el-button>
+          <el-button type="danger" @click="onSubmit">Delete</el-button>
         </span>
       </template>
     </el-dialog>
@@ -113,9 +122,12 @@ const onSubmit = () => {
   axios.post("http://localhost:9090/worker/deleting", rowData.value).then(res => {
     console.log(res)
   })
-  emit("closeDialog", false);
+  emit("closeDialog", true);
 };
 </script>
 
 <style lang="scss" scoped>
+  .item {
+    align-items: center;
+  }
 </style>

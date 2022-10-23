@@ -62,16 +62,14 @@
                 </el-dropdown-menu>
             </template>
         </el-dropdown>
-        <!-- <router-link :to="{ name: 'Login' }">
-            <el-link :underline="false">退出</el-link>
-        </router-link> -->
     </div>
 </template>
 
 <script setup>
+import { axios } from "axios";
 import { useStore } from "vuex";
 import { useRouter } from "vue-router";
-import { inject, computed, ref } from "vue";
+import { inject, computed, ref, onMounted } from "vue";
 import { useFullscreen } from "@vueuse/core";
 const { toggle } = useFullscreen();
 const store = useStore();
@@ -82,10 +80,23 @@ const handleCommand = (command) => {
     router.push(command);
 };
 const dark = ref(false);
+const user = ref();
 const toggleTheme = () => {
     dark.value = !dark.value;
     document.documentElement.classList.toggle("dark");
 };
+const queryUser = () => {
+    axios.get("http://localhost:9090/manager/queryUser", {
+    }).then((res) => {
+        this.user.data = res.data;
+        console.log(this.user);
+    })
+};
+const setting = () => {
+}
+// onMounted(() => {
+//     queryUser();
+// });
 </script>
 
 <style lang="scss" scoped>

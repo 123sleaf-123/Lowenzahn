@@ -75,6 +75,8 @@ const onSubmit = () => {
             let user = { managerName: userName.value, managerPassword: pwd.value }
             axios.post("http://localhost:9090/manager/login", user).then(res => {
                 console.log(res);
+                store.dispatch(`app/${SET_UNAME}`, user.managerName);
+                store.commit
                 switch (res.data) {
                     case -1: {
                         ElMessage.error("INVALID PASSWORD!");

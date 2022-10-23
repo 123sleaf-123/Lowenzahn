@@ -1,25 +1,30 @@
 <template>
     <div>
         <div>
-            <el-form :model="form">
+            <el-form :model="form" style="width: 50%;">
                 <el-form-item label="Warehouse ID">
                     <el-input v-model="form.warehouseId" placeholder="Type warehouse ID" />
                 </el-form-item>
                 <el-form-item label="Good Name">
                     <el-input v-model="form.goodName" placeholder="Type good name">
                         <template #append>
-                            <el-select v-model="form.searchMode" placeholder="Select" style="width: 130px" default-first-option>
+                            <el-select v-model="form.searchMode" style="width: 130px" default-first-option>
                                 <el-option label="Fuzzy Search" value="2" />
                                 <el-option label="Accurate Search" value="1" />
                             </el-select>
                         </template>
                     </el-input>
                 </el-form-item>
-                <el-form-item>
-                    <el-input v-model="form.goodType" placeholder="Type good Type" />
-                </el-form-item>
-                <el-form-item>
-                    <el-button type="primary" icon="Search" @click="searchGoodsWithConditions">Search</el-button>
+                <el-form-item label="Good Type">
+                    <el-select v-model="form.goodType">
+                        <el-option 
+                        v-for="item in goodsType"
+                        :label="item"
+                        :value="item"
+                        ></el-option>
+                    </el-select>
+                    <el-button type="info" icon="Refresh" @click="reset">Reset</el-button>
+                    <el-button type="success" icon="Search" @click="searchGoodsWithConditions">Search</el-button>
                 </el-form-item>
             </el-form>
         </div>
@@ -74,6 +79,12 @@ export default {
                 this.goodsType = res.data;
             });
         },
+        reset() {
+            this.form.warehouseId = null,
+            this.form.searchMode = 2,
+            this.form.goodName = null;
+            this.form.goodType = null;
+        },
         isEmpty(str) {
             if (str == '' || str == "" || str == null || str == undefined) return true;
             else return false;
@@ -84,7 +95,7 @@ export default {
                 axios.get("http://localhost:9090/good/queryGoods",  {
                 }).then((res) => {
                     console.log(res.data);
-                    this.goodsType = res.data;
+                    this.goodsInfo = res.data;
                 });
                 return;
             }
@@ -154,7 +165,7 @@ export default {
                 });
                 return;
             }
-            if(this.isEmpty(this.form.goodName) && !this.isEmpty(this.form.warehouseId) && !this.isEmpty(this.form.goodType)) {
+            if(!this.isEmpty(this.form.goodName) && this.isEmpty(this.form.warehouseId) && !this.isEmpty(this.form.goodType)) {
                 if (this.form.searchMode == 1)
                     axios.post("http://localhost:9090/good/queryGoodsByNameAndType",  {
                         goodsName: this.form.goodName,

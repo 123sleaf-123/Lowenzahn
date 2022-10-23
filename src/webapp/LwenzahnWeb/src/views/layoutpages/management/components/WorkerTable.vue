@@ -49,8 +49,8 @@
     <AddWorker :show-dialog="is_adding" :title="addTitle" @close-dialog="closeAdding"></AddWorker>
     <!-- <EditWorker key="is_editing" :show-dialog="is_editing" :title="editTitle" :rowData="this.worker"
       @close-dialog="closeEditing"></EditWorker> -->
-    <DeleteWorker key="is_deleting" :show-dialog="is_deleting" :title="deleteTitle" :rowData="this.warehouse"
-      @close-dialog="cancelDeleting"></DeleteWorker>
+    <DeleteWorker key="is_deleting" :show-dialog="is_deleting" :title="deleteTitle" :rowData="this.worker"
+      @closeDialog="cancelDeleting"></DeleteWorker>
   </div>
 </template>
 
@@ -103,8 +103,9 @@ export default {
     closeEditing() {
       this.is_editing = false;
     },
-    cancelDeleting() {
+    cancelDeleting(status) {
       this.is_deleting = false;
+      if (status == true) this.reload();
     },
     clickRow(row) {
       console.log(row);
