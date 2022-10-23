@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="799d64fa-f8a0-49ed-8ab0-bffc15bcbbb7" name="Changes" comment="增加了多查询逻辑的相关操作" />
+    <list default="true" id="799d64fa-f8a0-49ed-8ab0-bffc15bcbbb7" name="Changes" comment="不是很懂这是啥">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/controller/ManagerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/controller/ManagerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/pojo/Goods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/pojo/Goods.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/pojo/Manager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/pojo/Manager.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,12 +24,6 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="PUSH_TAGS">
-      <GitPushTagMode>
-        <option name="argument" value="--tags" />
-        <option name="title" value="All" />
-      </GitPushTagMode>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="SOFT" />
   </component>
@@ -153,7 +153,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665907064474</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="不是很懂这是啥">
+      <created>1665907096901</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1665907096901</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -193,7 +200,8 @@
     <MESSAGE value="吓死我了，我差点以为又出错了" />
     <MESSAGE value="总算是，重新能用了&#10;&#10;主要的问题是&#10;&quot;node-sass&quot;: &quot;^7.0.1&quot;&#10;&quot;webpack&quot;: &quot;^4.29.0&quot;,&#10;        &quot;@babel/core&quot;: &quot;^7.2.2&quot;,&#10;        &quot;@babel/preset-env&quot;: &quot;^7.3.1&quot;,&#10;        &quot;babel-loader&quot;: &quot;^8.0.5&quot;,&#10;        &quot;webpack-cli&quot;: &quot;^3.2.1&quot;,&#10;        &quot;webpack-dev-server&quot;: &quot;^3.1.14&quot;&#10;&quot;webpack&quot;: &quot;^5.73.0&quot;&#10;这几个包在互相掐架，其实根本不用装这些，也实际上不需要typescript，但是我当时添加了，却没有再npm i成功过，所以一直都是用旧的包。&#10;因此才会出现我一直能用，他人接手一碰就死。&#10;这就是代码的屎山！" />
     <MESSAGE value="增加了多查询逻辑的相关操作" />
-    <option name="LAST_COMMIT_MESSAGE" value="增加了多查询逻辑的相关操作" />
+    <MESSAGE value="不是很懂这是啥" />
+    <option name="LAST_COMMIT_MESSAGE" value="不是很懂这是啥" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -10,4 +10,8 @@ public class Manager {
     private String managerPassword;
     private String managerName;
     private Integer managerPower;
+    private String managerBirthday;
+    private String managerGender;
+    private String managerDescription;
+    private String managerAvatar;
 }

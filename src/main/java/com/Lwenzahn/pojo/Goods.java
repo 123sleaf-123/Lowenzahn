@@ -6,12 +6,12 @@ import lombok.Data;
 @Data
 public class Goods {
     @TableId
-    private Integer goodsId;
+    private String goodsId;
     private String goodsType;
     private String goodsName;
     private Float goodsWeight;
     private Integer rowPosition;
     private Integer columnPosition;
     private Boolean isStorage;
-//    private String goodsImagePath;
+    private String goodsImagePath;
 }

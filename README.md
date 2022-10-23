@@ -1,8 +1,42 @@
-# Problems & Solutions
+# README
 
-## How to add typescript to a vue project
+This is a front and rear end separation project.
 
-## 1. How to transmit data to subcomponents dynamically?
+## How to run
+
+### Database
+
+Import the database zuizhong to MySQL.
+
+### Connection
+
+Modify src/main/resources/application.yml, replace with your MySQL username and password 
+
+### Back End
+
+Select LwenzahnApplication.java, run the main method. Then the back end system is running now.
+
+### Front end
+
+Then is the front end system. This is a Vue project.
+
+```shell
+cd src/webapp/LwenzahnWeb/src
+
+npm i
+```
+
+Wait and start.
+
+```shell
+npm run serve
+```
+
+## Problems & Solutions
+
+### How to add typescript to a vue project
+
+### 1. How to transmit data to subcomponents dynamically?
 
 Example:
 We can add key to subComponent in _SuperComponent.vue_:
@@ -34,7 +68,7 @@ import subComponent from "RelativePathOfSubComponent"
 When the value of aKey change, the subComponent will be re-rendered. At this moment, this.Data will be transmitted to
 subComponent again
 
-## 2. How to automatically refresh a web page in vue3?
+### 2. How to automatically refresh a web page in vue3?
 
 In vue3 setup is important, so in App.vue, we can write a reload function:
 
@@ -72,7 +106,7 @@ And in the target vue file, we can write these:
 
 Then we can call reload() statement where we need to refresh the web page.
 
-## 3. How to locate a row in an el-table?
+### 3. How to locate a row in an el-table?
 
 At any el-table-column in the el-table, we can run such codes:
 
@@ -90,7 +124,7 @@ At any el-table-column in the el-table, we can run such codes:
 </template>
 ```
 
-## 4. How to init the web pages?
+### 4. How to init the web pages?
 Using mounted() function in export default
 
 ```html
