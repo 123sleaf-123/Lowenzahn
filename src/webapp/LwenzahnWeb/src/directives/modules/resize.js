@@ -4,7 +4,7 @@
  * @LastEditTime: 2022-01-20 14:24:15
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
- * @FilePath: \vue3-element-admin\src\directives\modules\resize.js
+ * @FilePath: \Lowenzahn\src\directives\modules\resize.js
  */
 import { useElementSize, debouncedWatch } from "@vueuse/core";
 const resize = (el, binding) => {

@@ -53,7 +53,8 @@ public class ManagerController {
     // 更新管理员
     @PostMapping("/updating")
     public void updateManager(@RequestBody Manager manager){
-        managerMapper.updateById(manager);
+        int res = managerMapper.updateById(manager);
+        if (res == 1) user = manager;
     }
 
     // 登录

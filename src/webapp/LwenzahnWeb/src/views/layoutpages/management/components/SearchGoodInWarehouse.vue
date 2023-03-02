@@ -2,13 +2,22 @@
     <div>
         <el-dialog :title="title" append-to-body destroy-on-close :model-value="showDialog" @close="closeDialog()">
             <div style="text-align: -webkit-center">
-                <el-table :data="goodsInfo" style="width: 100%" empty-text="There aren't any good info!">
+                <el-table :data="goodsInfo.slice((currentPage-1)*pagesize,currentPage*pagesize)" style="width: 100%" empty-text="There aren't any good info!">
                     <el-table-column prop="goodName" label="Name"></el-table-column>
                     <el-table-column prop="goodType" label="Type"></el-table-column>
                     <el-table-column prop="warehouseId" label="Pos"></el-table-column>
                     <el-table-column prop="storeFloor" label="Floor"></el-table-column>
                 </el-table>
             </div>
+            <el-pagination
+            @size-change="handleSizeChange"
+            @current-change="handleCurrentChange"
+            :current-page="currentPage"
+            :page-sizes="[10, 20, 30, 40, 50]"
+            :page-size="pagesize"
+            :total="goodsInfo.length"
+            layout="total, sizes, prev, pager, next, jumper">
+            </el-pagination>
             <template v-slot:footer>
                 <span style="text-align: -webkit-center">
                     <el-button type="primary" @click="getGoodInfo" icon="Refresh"></el-button>
@@ -28,7 +37,8 @@ export default {
     data() {
         return {
             goodsInfo: [],
-            // whData: rowData
+            pagesize:10,//默认分页每页数据量
+            currentPage:1,//默认展示第一页数据
         }
     },
     props: {
@@ -63,6 +73,12 @@ export default {
                 console.log(res.data);
                 this.goodsInfo = res.data;
             });
+        },
+        handleSizeChange: function(val) {
+        this.pagesize = val;
+        },
+        handleCurrentChange: function(currentPage) {
+            this.currentPage = currentPage;
         },
     }
 };

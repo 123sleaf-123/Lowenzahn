@@ -4,7 +4,7 @@
  * @LastEditTime: 2022-01-20 11:37:11
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
- * @FilePath: \vue3-element-admin\src\components\VeTable.vue
+ * @FilePath: \Lowenzahn\src\components\VeTable.vue
 -->
 <template>
     <div v-addClass class="ve_table">

@@ -4,7 +4,7 @@
  * @LastEditTime: 2022-01-27 15:30:41
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Ed
- * @FilePath: \vue3-element-admin\src\main.js
+ * @FilePath: \Lowenzahn\src\main.js
  */
 import { createApp } from "vue";
 import axios from "@/plugins/axios";

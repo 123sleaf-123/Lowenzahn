@@ -4,7 +4,7 @@
  * @LastEditTime: 2021-10-15 17:27:41
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
- * @FilePath: \vue3-element-admin\src\components\layout\components\Logo.vue
+ * @FilePath: \Lowenzahn\src\components\layout\components\Logo.vue
 -->
 <template>
     <el-tooltip :content="title" placement="right-end" effect="dark">

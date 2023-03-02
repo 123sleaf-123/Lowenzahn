@@ -4,7 +4,7 @@
  * @LastEditTime: 2022-01-20 10:40:41
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
- * @FilePath: \vue3-element-admin\src\plugins\element.js
+ * @FilePath: \Lowenzahn\src\plugins\element.js
  */
 
 import ElementPlus from "element-plus";

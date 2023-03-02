@@ -4,7 +4,7 @@
  * @LastEditTime: 2021-10-15 17:37:44
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
- * @FilePath: \vue3-element-admin\src\components\dashboard\Shortcuts.vue
+ * @FilePath: \Lowenzahn\src\components\dashboard\Shortcuts.vue
 -->
 <template>
     <el-row :gutter="20" style="padding-bottom: 10px">

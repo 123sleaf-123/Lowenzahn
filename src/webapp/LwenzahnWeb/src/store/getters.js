@@ -4,7 +4,7 @@
  * @LastEditTime: 2021-03-12 14:31:58
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
- * @FilePath: \vue3-element-admin\src\store\getters.js
+ * @FilePath: \Lowenzahn\src\store\getters.js
  */
 export default {
     opened: (state) => state.app.slider.opened,

@@ -13,7 +13,7 @@
             </el-icon>
           </el-button>
         </el-button-group>
-        <el-table :data="workers" style="width: 100%">
+        <el-table :data="workers.slice((currentPage-1)*pagesize,currentPage*pagesize)" style="width: 100%">
           <el-table-column prop="workerId" label="Worker ID">
           </el-table-column>
           <el-table-column prop="workerName" label="Worker Name">
@@ -44,6 +44,15 @@
             </template>
           </el-table-column>
         </el-table>
+        <el-pagination
+        @size-change="handleSizeChange"
+        @current-change="handleCurrentChange"
+        :current-page="currentPage"
+        :page-sizes="[10, 20, 30, 40, 50]"
+        :page-size="pagesize"
+        :total="workers.length"
+        layout="total, sizes, prev, pager, next, jumper">
+        </el-pagination>
       </el-main>
     </el-container>
     <AddWorker :show-dialog="is_adding" :title="addTitle" @close-dialog="closeAdding"></AddWorker>
@@ -77,6 +86,8 @@ export default {
       is_editing: false,
       is_deleting: false,
       row_editing: -1,
+      pagesize:10,//默认分页每页数据量
+      currentPage:1,//默认展示第一页数据
     }
   },
   inject: ['reload'],
@@ -134,6 +145,12 @@ export default {
       this.workers[index] = this.worker;
       this.is_editing = false;
       this.reload();
+    },
+    handleSizeChange: function(val) {
+        this.pagesize = val;
+    },
+    handleCurrentChange: function(currentPage) {
+        this.currentPage = currentPage;
     },
   },
   mounted() {

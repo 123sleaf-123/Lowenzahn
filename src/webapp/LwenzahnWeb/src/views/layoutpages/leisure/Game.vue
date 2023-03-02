@@ -3,7 +3,7 @@
  * @Date: 2021-04-01 17:06:04
  * @LastEditTime: 2021-11-30 18:55:11
  * @Description: file content
- * @FilePath: \vue3-element-admin\src\views\layoutpages\leisure\Game.vue
+ * @FilePath: \Lowenzahn\src\views\layoutpages\leisure\Game.vue
 -->
 <template>
     <div id="ve_puzzle">

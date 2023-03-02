@@ -4,7 +4,7 @@
  * @LastEditTime: 2022-04-28 18:35:39
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
- * @FilePath: \vue3-element-admin\src\views\Login.vue
+ * @FilePath: \Lowenzahn\src\views\Login.vue
 -->
 <template>
     <common>
@@ -53,8 +53,8 @@ import { ElMessage } from 'element-plus';
 import { useStore } from "vuex";
 import { useRouter } from "vue-router";
 const rules = {
-    userName: [{ required: true, message: "请输入用户名", trigger: "blur" }],
-    pwd: [{ required: true, message: "请输入密码", trigger: "blur" }],
+    userName: [{ required: true, message: "Please type your username", trigger: "blur" }],
+    pwd: [{ required: true, message: "Please type your password", trigger: "blur" }],
 };
 const store = useStore();
 const router = useRouter();

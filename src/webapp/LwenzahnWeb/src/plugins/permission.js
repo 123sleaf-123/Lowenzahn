@@ -4,7 +4,7 @@
  * @LastEditTime: 2021-12-02 17:02:24
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
- * @FilePath: \vue3-element-admin\src\plugins\permission.js
+ * @FilePath: \Lowenzahn\src\plugins\permission.js
  */
 import { SET_MENU_LIST, SET_PERMISSION_LIST } from "@/store/modules/app/type";
 

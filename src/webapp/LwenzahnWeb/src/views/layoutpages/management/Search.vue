@@ -1,7 +1,7 @@
 <template>
     <div>
         <div>
-            <el-form :model="form" style="width: 50%;">
+            <el-form :model="form" style="width: 50%;" label-width="130px">
                 <el-form-item label="Warehouse ID">
                     <el-input v-model="form.warehouseId" placeholder="Type warehouse ID" />
                 </el-form-item>
@@ -16,7 +16,7 @@
                     </el-input>
                 </el-form-item>
                 <el-form-item label="Good Type">
-                    <el-select v-model="form.goodType">
+                    <el-select v-model="form.goodType" placeholder="Please Select">
                         <el-option 
                         v-for="item in goodsType"
                         :label="item"
@@ -29,7 +29,7 @@
             </el-form>
         </div>
         <div style="text-align: -webkit-center">
-            <el-table :data="goodsInfo" style="width: 100%" empty-text="There aren't any good info!">
+            <el-table :data="goodsInfo.slice((currentPage-1)*pagesize,currentPage*pagesize)" style="width: 100%" empty-text="There aren't any good info!">
                 <el-table-column prop="goodsName" label="Name"></el-table-column>
                 <el-table-column prop="goodsType" label="Type"></el-table-column>
                 <el-table-column prop="warehouseId" label="Warehouse"></el-table-column>
@@ -45,6 +45,15 @@
                     </template>
                 </el-table-column>
             </el-table>
+            <el-pagination
+            @size-change="handleSizeChange"
+            @current-change="handleCurrentChange"
+            :current-page="currentPage"
+            :page-sizes="[10, 20, 30, 40, 50]"
+            :page-size="pagesize"
+            :total="goodsInfo.length"
+            layout="total, sizes, prev, pager, next, jumper">
+            </el-pagination>
         </div>
     </div>
 </template>
@@ -62,6 +71,8 @@ export default {
             },
             goodsInfo: [],
             goodsType: [],
+            pagesize:10,//默认分页每页数据量
+            currentPage:1,//默认展示第一页数据
         }
     },
     methods: {
@@ -206,7 +217,13 @@ export default {
                     });
                 }
             }
-        }
+        },
+        handleSizeChange: function(val) {
+            this.pagesize = val;
+        },
+        handleCurrentChange: function(currentPage) {
+            this.currentPage = currentPage;
+        },
     },
     mounted() {
         this.searchGoods();

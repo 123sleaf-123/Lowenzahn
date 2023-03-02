@@ -4,7 +4,7 @@
  * @LastEditTime: 2021-10-14 16:15:30
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
- * @FilePath: \vue3-element-admin\babel.config.js
+ * @FilePath: \Lowenzahn\babel.config.js
  */
 module.exports = {
     presets: ["@vue/cli-plugin-babel/preset"],

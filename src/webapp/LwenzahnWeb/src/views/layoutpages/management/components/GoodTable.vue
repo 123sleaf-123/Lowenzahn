@@ -8,7 +8,7 @@
         <el-button-group>
           <el-button type="primary" @click="this.reload" icon="Refresh">Refresh</el-button>
         </el-button-group>
-        <el-table :data="goods" style="width: 100%">
+        <el-table :data="goods.slice((currentPage-1)*pagesize,currentPage*pagesize)" style="width: 100%">
           <el-table-column prop="goodsImagePath" label="Image">
             <template #default="scope">
                <img :src="scope.row.goodsImagePath" min-width="70" height="70"/>
@@ -35,6 +35,15 @@
             </template>
           </el-table-column>
         </el-table>
+        <el-pagination
+        @size-change="handleSizeChange"
+        @current-change="handleCurrentChange"
+        :current-page="currentPage"
+        :page-sizes="[10, 20, 30, 40, 50]"
+        :page-size="pagesize"
+        :total="goods.length"
+        layout="total, sizes, prev, pager, next, jumper">
+        </el-pagination>
       </el-main>
     </el-container>
   </div>
@@ -49,6 +58,8 @@ export default {
   data() {
     return {
       goods: [],
+      pagesize:10,//默认分页每页数据量
+      currentPage:1,//默认展示第一页数据
     }
   },
   methods: {
@@ -60,6 +71,12 @@ export default {
         console.log(res.data);
         this.goods = res.data;
       });
+    },
+    handleSizeChange: function(val) {
+        this.pagesize = val;
+    },
+    handleCurrentChange: function(currentPage) {
+        this.currentPage = currentPage;
     },
   },
   mounted() {

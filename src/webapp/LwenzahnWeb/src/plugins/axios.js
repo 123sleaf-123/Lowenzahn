@@ -5,7 +5,7 @@
  * @LastEditTime: 2021-12-02 15:50:51
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
- * @FilePath: \vue3-element-admin\src\plugins\axios.js
+ * @FilePath: \Lowenzahn\src\plugins\axios.js
  */
 "use strict";
 

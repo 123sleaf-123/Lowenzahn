@@ -4,7 +4,7 @@
  * @LastEditTime: 2021-10-15 17:18:43
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
- * @FilePath: \vue3-element-admin\src\components\layout\navbar.vue
+ * @FilePath: \Lowenzahn\src\components\layout\navbar.vue
 -->
 <template>
     <div class="ve_nav_bar">

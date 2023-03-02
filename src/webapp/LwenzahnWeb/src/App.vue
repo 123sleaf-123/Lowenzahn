@@ -4,7 +4,7 @@
  * @LastEditTime: 2021-11-01 14:08:55
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
- * @FilePath: \vue3-element-admin\src\App.vue
+ * @FilePath: \Lowenzahn\src\App.vue
 -->
 <template>
     <router-view v-if="isRouterAlive"></router-view>

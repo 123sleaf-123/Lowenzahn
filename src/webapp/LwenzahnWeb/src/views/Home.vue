@@ -4,7 +4,7 @@
  * @LastEditTime: 2021-11-30 18:54:36
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
- * @FilePath: \vue3-element-admin\src\views\Home.vue
+ * @FilePath: \Lowenzahn\src\views\Home.vue
 -->
 <template>
     <div class="ve_home">

@@ -4,7 +4,7 @@
  * @LastEditTime: 2022-01-20 14:26:41
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
- * @FilePath: \vue3-element-admin\src\components\Common.vue
+ * @FilePath: \Lowenzahn\src\components\Common.vue
 -->
 <template>
     <div class="ve_404">

@@ -4,7 +4,7 @@
  * @LastEditTime: 2021-11-30 18:53:58
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
- * @FilePath: \vue3-element-admin\src\views\AppMain.vue
+ * @FilePath: \Lowenzahn\src\views\AppMain.vue
  *<el-scrollbar></el-scrollbar>
 -->
 <template>

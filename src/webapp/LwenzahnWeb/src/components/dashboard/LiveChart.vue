@@ -4,7 +4,7 @@
  * @LastEditTime: 2022-01-20 14:19:13
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
- * @FilePath: \vue3-element-admin\src\components\dashboard\LiveChart.vue
+ * @FilePath: \Lowenzahn\src\components\dashboard\LiveChart.vue
 -->
 <template>
     <div v-resize="myChart" style="height:400px;margin-top:20px" ref="liveChart"></div>

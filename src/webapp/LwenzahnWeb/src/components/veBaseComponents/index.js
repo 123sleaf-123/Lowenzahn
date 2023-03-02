@@ -4,7 +4,7 @@
  * @LastEditTime: 2021-08-12 17:21:34
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
- * @FilePath: \vue3-element-admin\src\components\veBaseComponents\index.js
+ * @FilePath: \Lowenzahn\src\components\veBaseComponents\index.js
  */
 export default {
     install: (app) => {

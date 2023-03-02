@@ -4,7 +4,7 @@
  * @LastEditTime: 2022-01-20 10:35:29
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
- * @FilePath: \vue3-element-admin\src\plugins\svgicon.js
+ * @FilePath: \Lowenzahn\src\plugins\svgicon.js
  */
 import * as components from "@element-plus/icons-vue";
 export default {

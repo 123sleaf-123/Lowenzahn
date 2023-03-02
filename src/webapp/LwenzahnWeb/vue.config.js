@@ -4,7 +4,7 @@
  * @LastEditTime: 2022-01-20 11:38:21
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
- * @FilePath: \vue3-element-admin\vue.config.js
+ * @FilePath: \Lowenzahn\vue.config.js
  */
 const config = require("./src/config");
 const webpack = require("webpack");

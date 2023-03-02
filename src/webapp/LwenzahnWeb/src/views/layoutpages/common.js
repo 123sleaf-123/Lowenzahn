@@ -4,7 +4,7 @@
  * @LastEditTime: 2021-08-18 17:51:13
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
- * @FilePath: \vue3-element-admin\src\views\layoutpages\common.js
+ * @FilePath: \Lowenzahn\src\views\layoutpages\common.js
  */
 
 /**
