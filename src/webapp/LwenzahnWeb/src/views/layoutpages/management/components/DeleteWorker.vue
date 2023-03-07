@@ -119,7 +119,7 @@ const getRoleList = async () => {
  * @return {*}
  */
 const onSubmit = () => {
-  axios.post("http://localhost:9090/worker/deleting", rowData.value).then(res => {
+  axios.post("http://47.106.174.78:9090/worker/deleting", rowData.value).then(res => {
     console.log(res)
   })
   emit("closeDialog", true);

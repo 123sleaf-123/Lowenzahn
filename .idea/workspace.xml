@@ -4,70 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="799d64fa-f8a0-49ed-8ab0-bffc15bcbbb7" name="Changes" comment="不是很懂这是啥">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="799d64fa-f8a0-49ed-8ab0-bffc15bcbbb7" name="Changes" comment="估计是加入了音乐、图片装饰、个人头像、分页和多页搜索逻辑之类得，时间过于久远，或许只能等到再次接手时处理了">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/controller/ManagerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/Lwenzahn/controller/ManagerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/.eslintrc.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/.eslintrc.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/babel.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/babel.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/api/modules/system.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/api/modules/system.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/components/Common.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/components/Common.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/components/FunctionPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/components/FunctionPage.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/components/dashboard/LiveChart.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/components/dashboard/LiveChart.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/components/dashboard/Shortcuts.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/components/dashboard/Shortcuts.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/components/layout/NavigateBar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/components/layout/NavigateBar.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/components/layout/SideBar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/components/layout/SideBar.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/components/layout/components/Breadcrumb.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/components/layout/components/Breadcrumb.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/components/layout/components/Hamburger.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/components/layout/components/Hamburger.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/components/layout/components/Logo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/components/layout/components/Logo.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/components/layout/components/Personal.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/components/layout/components/Personal.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/components/layout/components/SlideMenu.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/components/layout/components/SlideMenu.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/components/veBaseComponents/VeTable.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/components/veBaseComponents/VeTable.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/components/veBaseComponents/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/components/veBaseComponents/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/directives/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/directives/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/directives/modules/permission.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/directives/modules/permission.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/directives/modules/resize.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/directives/modules/resize.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/plugins/axios.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/plugins/axios.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/plugins/element.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/plugins/element.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/plugins/mock.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/plugins/mock.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/plugins/permission.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/plugins/permission.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/plugins/svgicon.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/plugins/svgicon.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/router/globalRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/router/globalRoutes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/router/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/router/mainRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/router/mainRoutes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/store/getters.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/store/getters.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/store/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/store/modules/app/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/store/modules/app/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/store/modules/app/type.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/store/modules/app/type.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/styles/variables.scss.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/styles/variables.scss.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/utils/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/utils/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/404.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/404.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/AppMain.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/AppMain.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/Home.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/IFrame.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/IFrame.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/Login.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/layoutpages/common.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/layoutpages/common.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/layoutpages/leisure/Game.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/layoutpages/leisure/Game.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/layoutpages/management/Search.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/layoutpages/management/Search.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/layoutpages/management/components/AddWhDialog.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/layoutpages/management/components/AddWhDialog.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/layoutpages/management/components/AddWorker.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/layoutpages/management/components/AddWorker.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/layoutpages/management/components/DeleteWarehouse.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/layoutpages/management/components/DeleteWarehouse.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/layoutpages/management/components/DeleteWorker.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/layoutpages/management/components/DeleteWorker.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/layoutpages/management/components/EditWarehouse.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/layoutpages/management/components/EditWarehouse.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/layoutpages/management/components/EditWorker.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/layoutpages/management/components/EditWorker.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/layoutpages/management/components/GoodTable.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/layoutpages/management/components/GoodTable.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/layoutpages/management/components/SearchGoodInWarehouse.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/layoutpages/management/components/SearchGoodInWarehouse.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/layoutpages/management/components/WarehouseTable.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/layoutpages/management/components/WarehouseTable.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/layoutpages/management/components/WorkerTable.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/layoutpages/management/components/WorkerTable.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/layoutpages/system/Menus.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/layoutpages/system/Menus.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/layoutpages/system/Roles.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/layoutpages/system/Roles.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/layoutpages/system/UserCenter.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/layoutpages/system/UserCenter.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/layoutpages/system/UserTable.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/layoutpages/system/UserTable.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/layoutpages/system/Users.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/layoutpages/system/Users.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/layoutpages/system/components/MenuEdit.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/layoutpages/system/components/MenuEdit.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/layoutpages/system/components/RoleEdit.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/layoutpages/system/components/RoleEdit.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/layoutpages/system/components/UsersEdit.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/layoutpages/system/components/UsersEdit.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/layoutpages/system/components/UsersEditRoute.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/src/views/layoutpages/system/components/UsersEditRoute.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/vue.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/webapp/LwenzahnWeb/vue.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -108,23 +64,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "E:/课件/大二/下/小学期/小学期/Project/WarehouseManagement",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.importing"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/课件/大二/下/小学期/小学期/Project/WarehouseManagement&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.alibabacloud.intellij.config.AccountConfigurable&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\课件\大二\下\小学期\小学期\Project\WarehouseManagement\src\webapp\LwenzahnWeb" />
@@ -224,7 +180,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665907096901</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="估计是加入了音乐、图片装饰、个人头像、分页和多页搜索逻辑之类得，时间过于久远，或许只能等到再次接手时处理了">
+      <created>1677758301316</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1677758301316</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -241,7 +204,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="dev/master" />
+                        <option value="master" />
                       </list>
                     </value>
                   </entry>
@@ -265,7 +228,8 @@
     <MESSAGE value="总算是，重新能用了&#10;&#10;主要的问题是&#10;&quot;node-sass&quot;: &quot;^7.0.1&quot;&#10;&quot;webpack&quot;: &quot;^4.29.0&quot;,&#10;        &quot;@babel/core&quot;: &quot;^7.2.2&quot;,&#10;        &quot;@babel/preset-env&quot;: &quot;^7.3.1&quot;,&#10;        &quot;babel-loader&quot;: &quot;^8.0.5&quot;,&#10;        &quot;webpack-cli&quot;: &quot;^3.2.1&quot;,&#10;        &quot;webpack-dev-server&quot;: &quot;^3.1.14&quot;&#10;&quot;webpack&quot;: &quot;^5.73.0&quot;&#10;这几个包在互相掐架，其实根本不用装这些，也实际上不需要typescript，但是我当时添加了，却没有再npm i成功过，所以一直都是用旧的包。&#10;因此才会出现我一直能用，他人接手一碰就死。&#10;这就是代码的屎山！" />
     <MESSAGE value="增加了多查询逻辑的相关操作" />
     <MESSAGE value="不是很懂这是啥" />
-    <option name="LAST_COMMIT_MESSAGE" value="不是很懂这是啥" />
+    <MESSAGE value="估计是加入了音乐、图片装饰、个人头像、分页和多页搜索逻辑之类得，时间过于久远，或许只能等到再次接手时处理了" />
+    <option name="LAST_COMMIT_MESSAGE" value="估计是加入了音乐、图片装饰、个人头像、分页和多页搜索逻辑之类得，时间过于久远，或许只能等到再次接手时处理了" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

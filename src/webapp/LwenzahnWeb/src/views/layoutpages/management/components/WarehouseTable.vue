@@ -97,7 +97,7 @@ export default {
   methods: {
     getWarehouses() {
       axios({
-        url: "http://localhost:9090/warehouses",
+        url: "http://47.106.174.78:9090/warehouses",
         method: 'GET',
       }).then((res) => {
         console.log(res.data);
@@ -136,7 +136,7 @@ export default {
     saveChange(index) {
       this.warehouse = this.warehouses[index];
       this.is_editing = false;
-      axios.post("http://localhost:9090/warehouses/updating", this.warehouse).then(res => {
+      axios.post("http://47.106.174.78:9090/warehouses/updating", this.warehouse).then(res => {
         console.log(res)
       })
       this.reload();

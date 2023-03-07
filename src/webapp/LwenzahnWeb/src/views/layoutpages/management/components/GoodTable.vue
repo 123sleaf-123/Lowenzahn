@@ -65,7 +65,7 @@ export default {
   methods: {
     getGoods() {
       axios({
-        url: "http://localhost:9090/good",
+        url: "http://47.106.174.78:9090/good",
         method: 'GET',
       }).then((res) => {
         console.log(res.data);

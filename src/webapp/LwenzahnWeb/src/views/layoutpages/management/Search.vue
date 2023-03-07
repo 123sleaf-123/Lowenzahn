@@ -77,14 +77,14 @@ export default {
     },
     methods: {
         searchGoods() {
-            axios.get("http://localhost:9090/good/queryGoods", {
+            axios.get("http://47.106.174.78:9090/good/queryGoods", {
             }).then((res) => {
                 console.log(res.data);
                 this.goodsInfo = res.data;
             });
         },
         searchGoodsType() {
-            axios.get("http://localhost:9090/good/queryGoodsTypes", {
+            axios.get("http://47.106.174.78:9090/good/queryGoodsTypes", {
             }).then((res) => {
                 console.log(res.data);
                 this.goodsType = res.data;
@@ -103,7 +103,7 @@ export default {
         searchGoodsWithConditions() {
             console.log(this.form);
             if(this.isEmpty(this.form.goodName) && this.isEmpty(this.form.warehouseId) && this.isEmpty(this.form.goodType)) {
-                axios.get("http://localhost:9090/good/queryGoods",  {
+                axios.get("http://47.106.174.78:9090/good/queryGoods",  {
                 }).then((res) => {
                     console.log(res.data);
                     this.goodsInfo = res.data;
@@ -111,7 +111,7 @@ export default {
                 return;
             }
             if(this.isEmpty(this.form.goodName) && !this.isEmpty(this.form.warehouseId) && this.isEmpty(this.form.goodType)) {
-                axios.post("http://localhost:9090/good/queryGoodsByWarehouse", { 
+                axios.post("http://47.106.174.78:9090/good/queryGoodsByWarehouse", { 
                     warehouseId: this.form.warehouseId,
                 }).then((res) => {
                     console.log(res.data);
@@ -120,7 +120,7 @@ export default {
                 return;
             }
             if(!this.isEmpty(this.form.goodName) && this.isEmpty(this.form.warehouseId) && this.isEmpty(this.form.goodType) && this.form.searchMode == 1) {
-                axios.post("http://localhost:9090/good/queryGoodsByName",  {
+                axios.post("http://47.106.174.78:9090/good/queryGoodsByName",  {
                     goodsName: this.form.goodName,
                 }).then((res) => {
                     console.log(res.data);
@@ -129,7 +129,7 @@ export default {
                 return;
             }
             if(!this.isEmpty(this.form.goodName) && this.isEmpty(this.form.warehouseId) && this.isEmpty(this.form.goodType) && this.form.searchMode == 2) {
-                axios.post("http://localhost:9090/good/queryGoodsByNameInclude",  {
+                axios.post("http://47.106.174.78:9090/good/queryGoodsByNameInclude",  {
                     goodsName: this.form.goodName,
                 }).then((res) => {
                     console.log(res.data);
@@ -138,7 +138,7 @@ export default {
                 return;
             }
             if(this.isEmpty(this.form.goodName) && this.isEmpty(this.form.warehouseId) && !this.isEmpty(this.form.goodType)) {
-                axios.post("http://localhost:9090/good/queryGoodsByType",  {
+                axios.post("http://47.106.174.78:9090/good/queryGoodsByType",  {
                     goodsType: this.form.goodType,
                 }).then((res) => {
                     console.log(res.data);
@@ -147,7 +147,7 @@ export default {
                 return;
             }
             if(!this.isEmpty(this.form.goodName) && !this.isEmpty(this.form.warehouseId) && this.isEmpty(this.form.goodType) && this.form.searchMode == 1) {
-                axios.post("http://localhost:9090/good/queryGoodsByWarehousesAndName",  {
+                axios.post("http://47.106.174.78:9090/good/queryGoodsByWarehousesAndName",  {
                     warehouseId: this.form.warehouseId,
                     goodsName: this.form.goodName,
                 }).then((res) => {
@@ -157,7 +157,7 @@ export default {
                 return;
             }
             if(!this.isEmpty(this.form.goodName) && !this.isEmpty(this.form.warehouseId) && this.isEmpty(this.form.goodType) && this.form.searchMode == 2) {
-                axios.post("http://localhost:9090/good/queryGoodsByWarehousesAndNameInclude",  {
+                axios.post("http://47.106.174.78:9090/good/queryGoodsByWarehousesAndNameInclude",  {
                     warehouseId: this.form.warehouseId,
                     goodsName: this.form.goodName,
                 }).then((res) => {
@@ -167,7 +167,7 @@ export default {
                 return;
             }
             if(this.isEmpty(this.form.goodName) && !this.isEmpty(this.form.warehouseId) && !this.isEmpty(this.form.goodType)) {
-                axios.post("http://localhost:9090/good/queryGoodsByWarehousesAndType",  {
+                axios.post("http://47.106.174.78:9090/good/queryGoodsByWarehousesAndType",  {
                     warehouseId: this.form.warehouseId,
                     goodsType: this.form.goodType,
                 }).then((res) => {
@@ -178,7 +178,7 @@ export default {
             }
             if(!this.isEmpty(this.form.goodName) && this.isEmpty(this.form.warehouseId) && !this.isEmpty(this.form.goodType)) {
                 if (this.form.searchMode == 1)
-                    axios.post("http://localhost:9090/good/queryGoodsByNameAndType",  {
+                    axios.post("http://47.106.174.78:9090/good/queryGoodsByNameAndType",  {
                         goodsName: this.form.goodName,
                         goodsType: this.form.goodType,
                     }).then((res) => {
@@ -186,7 +186,7 @@ export default {
                         this.goodsInfo = res.data;
                     });
                 else {
-                    axios.post("http://localhost:9090/good/queryGoodsByNameIncludeAndType",  {
+                    axios.post("http://47.106.174.78:9090/good/queryGoodsByNameIncludeAndType",  {
                         goodsName: this.form.goodName,
                         goodsType: this.form.goodType,
                     }).then((res) => {
@@ -198,7 +198,7 @@ export default {
             }
             if(!this.isEmpty(this.form.goodName) && !this.isEmpty(this.form.warehouseId) && !this.isEmpty(this.form.goodType)) {
                 if (this.form.searchMode == 1)
-                    axios.post("http://localhost:9090/good/queryGoodsByWarehousesNameAndType",  {
+                    axios.post("http://47.106.174.78:9090/good/queryGoodsByWarehousesNameAndType",  {
                         warehouseId: this.form.warehouseId,
                         goodsName: this.form.goodName,
                         goodsType: this.form.goodType,
@@ -207,7 +207,7 @@ export default {
                         this.goodsInfo = res.data;
                     });
                 else {
-                    axios.post("http://localhost:9090/good/queryGoodsByWarehousesNameIncludeAndType",  {
+                    axios.post("http://47.106.174.78:9090/good/queryGoodsByWarehousesNameIncludeAndType",  {
                         warehouseId: this.form.warehouseId,
                         goodsName: this.form.goodName,
                         goodsType: this.form.goodType,

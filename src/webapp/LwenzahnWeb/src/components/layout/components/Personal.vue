@@ -86,7 +86,7 @@ const toggleTheme = () => {
     document.documentElement.classList.toggle("dark");
 };
 const queryUser = () => {
-    axios.get("http://localhost:9090/manager/queryUser", {
+    axios.get("http://47.106.174.78:9090/manager/queryUser", {
     }).then((res) => {
         this.user.data = res.data;
         console.log(this.user);

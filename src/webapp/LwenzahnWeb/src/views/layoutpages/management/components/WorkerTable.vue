@@ -94,7 +94,7 @@ export default {
   methods: {
     getWorkers() {
       axios({
-        url: "http://localhost:9090/worker",
+        url: "http://47.106.174.78:9090/worker",
         method: 'GET',
       }).then((res) => {
         console.log(res.data);
@@ -135,7 +135,7 @@ export default {
     saveChange(index) {
       this.worker = this.workers[index];
       this.is_editing = false;
-      axios.post("http://localhost:9090/worker/updating", this.worker).then(res => {
+      axios.post("http://47.106.174.78:9090/worker/updating", this.worker).then(res => {
         console.log(res)
       })
       this.reload();

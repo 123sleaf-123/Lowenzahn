@@ -14,6 +14,7 @@ let scssVariables = require("./src/styles/variables.scss.js");
 
 module.exports = {
     publicPath: "",
+    assetsDir: "static",
     productionSourceMap: false,
     lintOnSave: false,
 

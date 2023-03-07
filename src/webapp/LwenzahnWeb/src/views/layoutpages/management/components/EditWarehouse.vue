@@ -128,7 +128,7 @@ const onSubmit = () => {
   console.log(rowData.value);
   formRef.value.validate(async (valid) => {
     if (valid) {
-      axios.post("http://localhost:9090/warehouses/updating", {
+      axios.post("http://47.106.174.78:9090/warehouses/updating", {
         warehouseId: warehouseId.value,
         warehouseArea: warehouseArea.value,
         warehouseAddress: warehouseAddress.value,
