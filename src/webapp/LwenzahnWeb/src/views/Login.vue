@@ -73,7 +73,7 @@ const onSubmit = () => {
     ref_form.value.validate((valid) => {
         if (valid) {
             let user = { managerName: userName.value, managerPassword: pwd.value }
-            axios.post("http://47.106.174.78:9090/manager/login", user).then(res => {
+            axios.post("http://103.153.101.119:9090/manager/login", user).then(res => {
                 console.log(res);
                 store.dispatch(`app/${SET_UNAME}`, user.managerName);
                 store.commit

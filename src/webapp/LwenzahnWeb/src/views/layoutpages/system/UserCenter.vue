@@ -115,7 +115,7 @@ export default {
     },
     methods: {
         async queryUser() {
-            axios.get("http://47.106.174.78:9090/manager/queryUser", {
+            axios.get("http://103.153.101.119:9090/manager/queryUser", {
             }).then((res) => {
                 this.user = res.data;
                 console.log(this.user);

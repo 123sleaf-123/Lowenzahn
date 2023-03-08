@@ -86,16 +86,44 @@ const defaultActive = computed(() => {
         return "/" + route.name.slice(0, i);
     }
 });
-const deliverance  = 'https://upload-bbs.mihoyo.com/upload/2022/09/01/76413883/df2be5de1b041c48436262704a11a5e4_3242604389942984127.png?x-oss-process=image//resize,s_500/quality,q_80/auto-orient,0/interlace,1/format,png';
-const realm = 'https://upload-bbs.mihoyo.com/upload/2022/09/01/76413883/879b3e226aef59e64a3bd4e4e1f8caa8_7059912764470960966.png?x-oss-process=image//resize,s_500/quality,q_80/auto-orient,0/interlace,1/format,png';
-const gold = 'https://upload-bbs.mihoyo.com/upload/2022/09/01/76413883/6e709bd2e4d2450faf4417e978b17e3d_7551664541755581185.png?x-oss-process=image//resize,s_500/quality,q_80/auto-orient,0/interlace,1/format,png';
-const restrict = 'https://upload-bbs.mihoyo.com/upload/2022/09/01/76413883/0ae3843cd640fc0b7555a24504358423_924073242095675008.png?x-oss-process=image//resize,s_500/quality,q_80/auto-orient,0/interlace,1/format,png';
-const stars = 'https://upload-bbs.mihoyo.com/upload/2022/09/01/76413883/bb47ef143630353ada0189dd768e3a3c_6046008501742423349.png?x-oss-process=image//resize,s_500/quality,q_80/auto-orient,0/interlace,1/format,png';
-const infinity = 'https://upload-bbs.mihoyo.com/upload/2022/09/01/76413883/91bc7b95ea7c07082c78800c606121ab_4595837322903012138.png?x-oss-process=image//resize,s_500/quality,q_80/auto-orient,0/interlace,1/format,png';
-const light = 'https://upload-bbs.mihoyo.com/upload/2022/09/01/76413883/ea2a1d97df931d49c5cf192b10a82d7c_2952544506445421444.png?x-oss-process=image//resize,s_500/quality,q_80/auto-orient,0/interlace,1/format,png';
-const vicissitude = 'https://upload-bbs.mihoyo.com/upload/2022/09/01/76413883/4ae693643977536311c612e196d65d23_5867757470877592391.png?x-oss-process=image//resize,s_500/quality,q_80/auto-orient,0/interlace,1/format,png';
-const setsuna = 'https://upload-bbs.mihoyo.com/upload/2022/09/01/76413883/cc5e8686260f07df1da12afeb5a18730_8181300956407481074.png?x-oss-process=image//resize,s_500/quality,q_80/auto-orient,0/interlace,1/format,png';
-const bodhi = 'https://upload-bbs.mihoyo.com/upload/2022/09/01/76413883/19a91be4cac07738ed6c317aafaa4d9c_2402733630003657235.png?x-oss-process=image//resize,s_500/quality,q_80/auto-orient,0/interlace,1/format,png';
+// const pic_src = '/刻印/高清png图片/';
+// const pics = 
+// [
+//     '救世.webp',
+//     '真我.webp',
+//     '黄金.webp',
+//     '戒律.webp',
+//     '繁星.webp',
+//     '无限.webp',
+//     '旭光.webp',
+//     '浮生.webp',
+//     '刹那.webp',
+//     '天慧.webp',
+// ]
+const pic_src = 'https://i.postimg.cc/';
+const pics = 
+[
+    '9Qykb28h/image.webp',
+    'JhPPYzj9/image.webp',
+    'MHhs031H/image.webp',
+    'B677bn6x/image.webp',
+    'bv8BF5W2/image.webp',
+    'bvzmRtSx/image.webp',
+    'K8hqRVZs/image.webp',
+    'BvgVWgf7/image.webp',
+    'h4w3qvNn/image.webp',
+    'vZ7P9zT8/image.webp',
+]
+const deliverance  = pic_src + pics[0];
+const realm = pic_src + pics[1];
+const gold = pic_src + pics[2];
+const restrict = pic_src + pics[3];
+const stars = pic_src + pics[4];
+const infinity = pic_src + pics[5];
+const light = pic_src + pics[6];
+const vicissitude = pic_src + pics[7];
+const setsuna = pic_src + pics[8];
+const bodhi = pic_src + pics[9];
 </script>
 
 <style lang="scss" scoped>

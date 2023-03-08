@@ -116,7 +116,7 @@ getRoleList();
 const onSubmit = () => {
     formRef.value.validate(async (valid) => {
         if (valid) {
-            axios.post("http://47.106.174.78:9090/worker/updating", {
+            axios.post("http://103.153.101.119:9090/worker/updating", {
                 workerId: workerId.value,
                 workerName: workerName.value,
                 workerPassword: workerPassword.value,

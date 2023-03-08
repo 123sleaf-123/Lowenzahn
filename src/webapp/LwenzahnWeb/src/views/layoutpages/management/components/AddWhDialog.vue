@@ -135,7 +135,7 @@ getRoleList();
 const onSubmit = () => {
   formRef.value.validate(async (valid) => {
     if (valid) {
-      axios.post("http://47.106.174.78:9090/warehouses/adding", {
+      axios.post("http://103.153.101.119:9090/warehouses/adding", {
         warehouseId: warehouseId.value,
         warehouseName: warehouseName.value,
         warehouseArea: warehouseArea.value,

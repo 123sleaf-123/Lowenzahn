@@ -12,4 +12,5 @@ export default {
     uname: (state) => state.app.uname,
     menuList: (state) => state.app.menuList,
     permissionList: (state) => state.app.permissionList,
+    httpUrl: (state) => 'http://http://103.153.101.119:9090/'
 };
