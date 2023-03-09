@@ -11,7 +11,8 @@ import globalRoutes from "./globalRoutes";
 import mainRoutes from "./mainRoutes";
 
 const router = createRouter({
-    mode: "hash",
+    mode: "history",
+    base: "/lowenzahn/",
     history: createWebHashHistory(),
     scrollBehavior: () => ({ y: 0 }),
     isAddDynamicMenuRoutes: false, // 是否已经添加动态(菜单)路由

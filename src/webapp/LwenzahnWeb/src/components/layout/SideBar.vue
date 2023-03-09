@@ -104,6 +104,7 @@ const pic_src = 'https://i.postimg.cc/';
 const pics = 
 [
     '9Qykb28h/image.webp',
+    // 'JhPPYzj9/image.webp',
     'JhPPYzj9/image.webp',
     'MHhs031H/image.webp',
     'B677bn6x/image.webp',
@@ -115,7 +116,8 @@ const pics =
     'vZ7P9zT8/image.webp',
 ]
 const deliverance  = pic_src + pics[0];
-const realm = pic_src + pics[1];
+// const realm = pic_src + pics[1];
+const realm = '真我.png';
 const gold = pic_src + pics[2];
 const restrict = pic_src + pics[3];
 const stars = pic_src + pics[4];

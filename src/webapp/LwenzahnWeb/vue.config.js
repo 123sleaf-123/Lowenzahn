@@ -13,7 +13,7 @@ const CompressionWebpackPlugin = require("compression-webpack-plugin");
 let scssVariables = require("./src/styles/variables.scss.js");
 
 module.exports = {
-    publicPath: "",
+    publicPath: "/lowenzahn/",
     assetsDir: "static",
     productionSourceMap: false,
     lintOnSave: false,
