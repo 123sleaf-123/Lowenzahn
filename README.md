@@ -3,19 +3,27 @@
 这是一个前后端分离的项目。
 This is a front and rear end separation project.
 
+## 项目示例
+***
+[Löwenzahn 狮牙仓库管理系统](http://www.elysia.website/lowenzahn/)
+
 ## 如何运行 How to run
+***
 
 ### 数据库 Database
+***
 
 安装MySQL或者Mariadb。新建数据库zuizhong，将zuizhong.sql导入数据库
 
 Import the database zuizhong to MySQL.
 
 ### 连接 Connection
+***
 
-Modify src/main/resources/application.yml, replace with your MySQL username and password 
+修改 `src/main/resources/application.yml`, 更改MySQL username和password 
 
 ### 后端 Back End - Spring
+***
 
 - 用Maven打包项目
 ```shell
@@ -31,6 +39,7 @@ java -jar xxx.jar
 ```
 
 ### 前端 Front end - Vue
+***
 
 Then is the front end system. This is a Vue project.
 
@@ -52,6 +61,7 @@ npm run build # 或者 bun run build
 ```
 
 ## 项目结构
+***
 
 1. 后端项目： Lowenzahn Warehouse Management System
 src/main下的文件结构
@@ -116,6 +126,7 @@ src
 - system文件下主要是主界面，其中login.vue是着力修改的文件，并在此文件实现了登录功能的前端部分。基本吃透了这个文件相关的部分。
 
 ## Q&A
+***
 
 ### How to add typescript to a vue project
 
